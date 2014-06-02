@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="FacultyStaffDirectory">
+
+  <head></head>
+
+  <body>
+
+    <metal:fill fill-slot="main" tal:define="committees python:context.getFolderContents({'portal_type': 'FSDCommittee', 'sort_on': 'sortable_title'})">
+        <h1 tal:content="context/Title"></h1>
+        <div class="facultyStaffDirectory committeesFolderView">
+            <dl>
+                <tal:block tal:repeat="committee committees">
+                    <dt>
+                        <a href="" tal:content="committee/Title"
+                                   tal:attributes="href committee/getURL" />
+                    </dt>
+                    <dd tal:content="committee/Description"></dd>
+                </tal:block>
+            </dl>
+        </div>
+    </metal:fill>
+
+  </body>
+</html>
+
+

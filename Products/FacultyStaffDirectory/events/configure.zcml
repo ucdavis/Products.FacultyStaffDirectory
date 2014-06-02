@@ -1,0 +1,18 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="FacultyStaffDirectory">
+
+  <subscriber for="..interfaces.person.IPersonModifiedEvent"
+              handler=".person.modifyPersonOwnership" />
+              
+  <subscriber for="..interfaces.facultystaffdirectorytool.IFacultyStaffDirectoryToolModifiedEvent"
+              handler=".facultystaffdirectorytool.modifyMembraneTypes" />
+
+  <subscriber for="Products.Relations.events.IRelationConnectedEvent"
+              handler=".events.relationModified" />
+              
+  <subscriber for="Products.Relations.events.IRelationDisconnectedEvent"
+              handler=".events.relationModified" />
+
+</configure>

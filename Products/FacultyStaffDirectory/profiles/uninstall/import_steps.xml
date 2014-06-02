@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<import-steps>
+
+  <import-step id="uninstallNavTreeSettings"
+               version="20110223-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.uninstallNavTreeSettings"
+               title="Remove the FacultyStaffDirectory navigation tree settings">
+  </import-step>
+
+  <import-step id="uninstallKupuResources"
+               version="20110223-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.uninstallKupuResources"
+               title="Remove FacultyStaffDirectory types from Kupu's resource libraries">
+  </import-step>
+
+  <import-step id="uninstallConfiglet"
+               version="20110223-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.uninstallConfiglet"
+               title="Remove FacultyStaffDirectory configlet">
+  </import-step>
+
+
+  <import-step id="restoreMemberPrefs"
+               version="20110223-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.restoreMemberPrefs"
+               title="Restore the default Member Preferences action.">
+  </import-step>
+  
+</import-steps>
+

@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+      metal:use-macro="here/main_template/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+        <metal:content-core fill-slot="content-core">
+            <metal:content-core define-macro="content-core">
+                <div class="facultyStaffDirectory classification">
+                    <div tal:define="classificationExists nocall:classification | nothing;
+                                           classificationContext python:classificationExists and context.contextualClassification(classification) or context;
+                                           people classificationContext/getSortedPeople;
+                                           fsdtool python:modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool');
+                                           directory fsdtool/getDirectoryRoot;
+                                           width directory/getClassificationViewThumbnailWidth"
+                               metal:define-macro="list_people"
+                               class="standardView">
+                        <div class="classificationListing" tal:condition="people">
+                            <metal:block define-slot="classification_header" tal:condition="nocall:classificationExists">
+                                <h2>
+                                <metal:block define-macro="classification_header_link">
+                                    <a tal:define="normalizeString nocall:context/@@plone/normalizeString" tal:attributes="name python:normalizeString(classificationContext.Title()); href python:'%s?classification=%s' % (here.absolute_url(), classification.id)" tal:content="classificationContext/Title"><tal:comment replace="nothing">[classification]</tal:comment></a>
+                                </metal:block>
+                                </h2>
+                            </metal:block>
+                            <div class="listing row" tal:repeat="person people">
+                                <div class="cell width-3 position-0">
+                                    <metal:block define-slot="person_headshot">
+                                        <a href=""
+                                           tal:attributes="href person/absolute_url">
+                                            <tal:block condition="person/image_thumb|nothing">
+                                                <img src="" alt=""
+                                                     tal:replace="structure python:person.getScaledImageByWidth(width)" />
+                                            </tal:block>
+                                        </a>
+                                    </metal:block>
+                                </div>
+
+                                <div class="cell width-13 position-4">
+                                    <metal:block define-slot="person_caption">
+                                        <h4 tal:content="person/Title" class="personName"><tal:comment replace="nothing">[Name]</tal:comment></h4>
+                                        <ul tal:condition="person/getJobTitles" class="jobTitle">
+                                            <li tal:repeat="jobTitle person/getJobTitles"
+                                                tal:content="jobTitle" />
+                                        </ul>
+                                        <div tal:condition="person/getOfficePhone"
+                                             tal:content="person/getOfficePhone"
+                                             class="officePhone"/>
+                                        <div tal:condition="person/getEmail"
+                                             tal:content="structure python:person.spamProtectFSD(person.getEmail())"
+                                             class="emailAddress"/>
+                                        <div class="moreInfo">
+                                            <a tal:attributes="href person/absolute_url"
+                                               i18n:translate="FacultyStaffDirectory_moreAbout">
+                                                More about
+                                                <span i18n:name="more-about-person-title" tal:replace="person/Title">[Name]</span>...
+                                            </a>
+                                        </div>
+                                    </metal:block>
+                                </div>
+
+                                <div class="visualClear"><!-- --></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </metal:content-core>
+        </metal:content-core>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<object>
+  <difftypes>
+    <type portal_type="FSDPerson">
+      <field name="any" difftype="Compound Diff for AT types"/>
+    </type>
+
+    <type portal_type="FSDCommittee">
+      <field name="any" difftype="Compound Diff for AT types"/>
+    </type>
+
+    <type portal_type="FSDSpecialty">
+      <field name="any" difftype="Compound Diff for AT types"/>
+    </type>
+  </difftypes>
+</object>

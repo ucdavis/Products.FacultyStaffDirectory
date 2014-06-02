@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="FacultyStaffDirectory">
+  <head><title></title></head>
+
+  <body>
+      <metal:content-core fill-slot="content-core">
+          <metal:content-core define-macro="content-core">
+
+            <div tal:content="structure here/getText" />
+
+            <h3><span i18n:translate="FacultyStaffDirectory_label_members">Members</span>:</h3>
+            <ul>
+                <li tal:define="member context/@@plone_portal_state/member" tal:repeat="member context/getMembers">
+                    <tal:block tal:define="membershipData python:context.getMembershipInformation(member);">
+                        <a tal:attributes="href member/absolute_url"
+                           tal:content="member/Title" />
+                        <tal:block tal:condition="membershipData/getPosition">
+                            -
+                            <span tal:replace="membershipData/getPosition" />
+                        </tal:block>
+                        <span tal:condition="python:checkPermission('Modify portal content', member)"
+                              class="discreet">[
+                            <a tal:attributes="href python:'%s/edit' % membershipData.absolute_url()">
+                               <tal:block tal:condition="membershipData/getPosition" i18n:translate="FacultyStaffDirectory_editrole">Edit role</tal:block>
+                               <tal:block tal:condition="not:membershipData/getPosition" i18n:translate="FacultyStaffDirectory_assignrole">Assign a role</tal:block>
+                            </a>
+                        ]</span>
+                    </tal:block>
+                </li>
+            </ul>
+        </metal:content-core>
+    </metal:content-core>
+  </body>
+</html>

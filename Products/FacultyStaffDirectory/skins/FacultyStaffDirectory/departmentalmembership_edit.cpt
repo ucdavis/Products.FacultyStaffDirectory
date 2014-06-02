@@ -1,0 +1,6 @@
+<tal:block define="macro here/base_edit/macros/master">
+      <tal:comment replace="nothing">
+      This template is here solely to allow for a formcontroller redirect to the department on success.
+      </tal:comment>
+      <metal:block use-macro="macro" />
+</tal:block>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<object name="portal_skins" meta_type="Plone Skins Tool">
+  <object name="FacultyStaffDirectory"
+      meta_type="Filesystem Directory View"
+      directory="Products.FacultyStaffDirectory:skins/FacultyStaffDirectory" />
+  <skin-path name="*">
+    <layer name="FacultyStaffDirectory" insert-after="custom" />
+  </skin-path>
+</object>

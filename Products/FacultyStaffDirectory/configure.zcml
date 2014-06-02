@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="FacultyStaffDirectory">
+
+    <cmf:registerDirectory name="FacultyStaffDirectory"/>
+
+    <include package="zope.annotation" />
+    <include package=".events" />
+    <include package=".membership" />
+    <include file="profiles.zcml" />
+    <include package="archetypes.schemaextender" />
+    <include file="upgrades.zcml" />
+
+    <i18n:registerTranslations directory="locales" />
+
+    <utility name="Personnel Manager" factory=".sharing.PersonnelManagerRole" />
+
+    <utility factory=".utility.FSDNonInstallable" name="FacultyStaffDirectory" />
+
+</configure>

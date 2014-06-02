@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<object name="portal_factory" meta_type="Plone Factory Tool">
+    <factorytypes>
+        <type portal_type="FSDClassification"/>
+        <type portal_type="FSDCommittee"/>
+        <type portal_type="FSDCommitteeMembership"/>
+        <type portal_type="FSDCommitteesFolder"/>
+        <type portal_type="FSDCourse"/>
+        <type portal_type="FSDDepartment"/>
+        <type portal_type="FSDDepartmentalMembership"/>
+        <type portal_type="FSDFacultyStaffDirectory"/>
+        <type portal_type="FSDPerson"/>
+        <type portal_type="FSDPersonGrouping"/>
+        <type portal_type="FSDSpecialtiesFolder"/>
+        <type portal_type="FSDSpecialty"/>
+        <type portal_type="FSDSpecialtyInformation"/>
+    </factorytypes>
+</object>

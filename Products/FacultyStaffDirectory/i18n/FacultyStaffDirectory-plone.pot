@@ -1,0 +1,616 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2011-06-13 16:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: ../profiles/default/types/FSDPersonGrouping.xml
+msgid "A FacultyStaffDirectory base class for groups of people."
+msgstr ""
+
+#: ../profiles/default/types/FSDCourse.xml
+msgid "A course taught by this person."
+msgstr ""
+
+#: ../profiles/default/types/FSDFacultyStaffDirectory.xml
+msgid "A directory of faculty and staff members"
+msgstr ""
+
+#: ../profiles/default/types/FSDClassification.xml
+msgid "A grouping of associated people eg 'Faculty' or 'Staff'."
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "A person's listed committees"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "A person's listed specialty areas"
+msgstr ""
+
+#: ../profiles/default/types/FSDCommittee.xml
+msgid "A simple page describing a committee or working group with the associated committee members."
+msgstr ""
+
+#. Default: "A-to-Z Listing"
+#: dynamic view name template fsd_atoz_view on type FacultyStaffDirectory
+msgid "A-to-Z Listing"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Activate"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Activate a person"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Active"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Active this Person"
+msgstr ""
+
+#: ../profiles/default/types/FSDDepartment.xml
+msgid "An academic department."
+msgstr ""
+
+#: ../profiles/default/types/FSDSpecialty.xml
+msgid "An area of academic study."
+msgstr ""
+
+#. Default: "Base View"
+#: dynamic view name template base_view on type FSDCommittee
+#: dynamic view name template base_view on type FSDCommitteesFolder
+#: dynamic view name template base_view on type Person
+msgid "Base View"
+msgstr ""
+
+#. Default: "Basic Information"
+#: ../Person.py
+msgid "Basic Information"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Can only be seen and edited by the owner."
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDClassification.xml
+msgid "Classification"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Comment about the last transition"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Comments about the last transition"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDCommittee.xml
+msgid "Committee"
+msgstr ""
+
+#: ../profiles/default/types/FSDCommitteeMembership.xml
+msgid "Committee Membership Information"
+msgstr ""
+
+#. Default: "Committees"
+#: dynamic view name template committee_view on type FSDCommittee
+#: dynamic view name template committeesfolder_view on type FSDCommitteesFolder
+msgid "Committees"
+msgstr ""
+
+#: ../profiles/default/types/FSDCommitteesFolder.xml
+msgid "Committees Folder"
+msgstr ""
+
+#. Default: "Contact Information"
+#: ../Person.py
+msgid "Contact Information"
+msgstr ""
+
+#: ../profiles/default/types/FSDCommitteeMembership.xml
+msgid "Contains information pertaining to a person's membership in a committee."
+msgstr ""
+
+#: ../profiles/default/types/FSDDepartmentalMembership.xml
+msgid "Contains information pertaining to a person's membership in a department."
+msgstr ""
+
+#: ../profiles/default/types/FSDCourse.xml
+msgid "Course"
+msgstr ""
+
+#. Default: "Dates"
+#: ../Person.py
+msgid "Dates"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "De-activate"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "De-activate a person"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDDepartment.xml
+msgid "Department"
+msgstr ""
+
+#: ../profiles/default/types/FSDDepartmentalMembership.xml
+msgid "Departmental Membership Information"
+msgstr ""
+
+#. Default: "Employment Information"
+#: ../Person.py
+msgid "Employment Information"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "FSD Directory Workflow"
+msgstr ""
+
+#: ../profiles/default/types/FSDFacultyStaffDirectory.xml
+msgid "Faculty/Staff Directory"
+msgstr ""
+
+#: ../skins/FacultyStaffDirectory/facultystaffdirectory_tool_edit.cpt:44
+msgid "Faculty/Staff Directory Configuration"
+msgstr ""
+
+#: ../profiles/default/types/FSDFacultyStaffDirectoryTool.xml
+msgid "FacultyStaffDirectory Tool"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "Full Name"
+msgstr ""
+
+#. Default: "Gallery View"
+#: dynamic view name template classification_standard_view on type FSDClassification
+#: dynamic view name template directory_standard_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_standard_view on type FSDSpecialty
+msgid "Gallery View"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Hide"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Hide this Membership"
+msgstr ""
+
+#: ../profiles/default/types/FSDCommitteesFolder.xml
+msgid "Holds and displays committees."
+msgstr ""
+
+#: ../profiles/default/types/FSDSpecialtiesFolder.xml
+msgid "Holds and displays specialties."
+msgstr ""
+
+#: ../profiles/default/types/FSDPerson.xml
+msgid "Holds information about a single person"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "If you submitted the item by mistake or want to perform additional edits, this will take it back."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Inactive"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Inactive this Person"
+msgstr ""
+
+#: ../profiles/default/types/FSDSpecialtyInformation.xml
+msgid "Information pertaining to a person's association with a specialty."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Invisible Member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Invisible this Member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Member retracts submission"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Member submits content for publication"
+msgstr ""
+
+#. Default: "Overview"
+#: ../Specialty.py
+msgid "Overview"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Pending review"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "People"
+msgstr ""
+
+#: ../profiles/default/types/FSDPerson.xml
+msgid "Person"
+msgstr ""
+
+#: ../profiles/default/types/FSDPersonGrouping.xml
+msgid "Person Grouping"
+msgstr ""
+
+#. Default: "Personnel Manager"
+msgid "Personnel Manager"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Previous transition"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Private"
+msgstr ""
+
+#. Default: "Professional Information"
+#: ../Person.py
+msgid "Professional Information"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Provides access to workflow history"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Publish"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_descriptor_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_tool_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_descriptor_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_tool_workflow/definition.xml
+msgid "Published this element"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Publishing the item makes it visible to other users."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Puts your item in a review queue, so it can be published on the site."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Restore Membership"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Restore this Membership"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Retract"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Reviewer publishes content"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Reviewer send content back for re-drafting"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Reviewer tasks"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Revoke Membership"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Revoke this Membership"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Send back"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Sending the item back will return the item to the original author instead of publishing it. You should preferably include a reason for why it was not published."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Show"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Show this Membership"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Simple publication workflow for FacultyStaffDirectory objects"
+msgstr ""
+
+#. Default: "Specialites overview"
+#: dynamic view name template specialtiesfolder_overview on type FSDSpecialtiesFolder
+msgid "Specialites overview"
+msgstr ""
+
+#: ../profiles/default/types/FSDSpecialtiesFolder.xml
+msgid "Specialties Folder"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDSpecialty.xml
+msgid "Specialty"
+msgstr ""
+
+#: ../profiles/default/types/FSDSpecialtyInformation.xml
+msgid "Specialty Information"
+msgstr ""
+
+#. Default: "Standard View"
+#: dynamic view name template person_view on type FSDPerson
+msgid "Standard View"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Submit for publication"
+msgstr ""
+
+#. Default: "Tabular View"
+#: dynamic view name template classification_tabular_view on type FSDClassification
+#: dynamic view name template directory_tabular_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_tabular_view on type FSDSpecialty
+msgid "Tabular View"
+msgstr ""
+
+#. Default: "Textual View"
+#: dynamic view name template department_textual_view on type FacultyStaffDirectory
+msgid "Textual View"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "The ID of the user who performed the last transition"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "The ID of the user who performed the previous transition"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "The classification assigned to a person"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "The departments assigned to a person"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "The last transition"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "The people assigned to a person grouping (ie committee, department, specialty, classification)"
+msgstr ""
+
+#: ../profiles/default/portal_atct.xml
+msgid "The person's name, last name first"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Time of the last transition"
+msgstr ""
+
+#. Default: "User Preferences Editor"
+msgid "User Preferences Editor"
+msgstr ""
+
+#. Default: "User Settings"
+#: ../Person.py
+msgid "User Settings"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Visible Member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Visible Non-member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Visible this Member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "Visible to Non-member"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Visible to everyone, not editable by the owner."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "Waiting to be reviewed, not editable by the owner."
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_directory_workflow/definition.xml
+msgid "When the previous transition was performed"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_descriptor_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person Grouping Descriptor workflow"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person Grouping workflow"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person workflow"
+msgstr ""
+
+#: ../profiles/default/workflows/fsd_tool_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Tool workflow"
+msgstr ""
+
+#. Default: "categorization"
+#: ../Person.py
+msgid "categorization"
+msgstr ""
+
+#. Default: "If you want to contact this author, fill in the form below."
+#: ../skins/FacultyStaffDirectory/author.cpt:144
+msgid "description_author_feedback"
+msgstr ""
+
+#. Default: "Display"
+#: ../FacultyStaffDirectory.py
+msgid "display"
+msgstr ""
+
+#. Default: "All content created by ${user}…"
+#: ../skins/FacultyStaffDirectory/author.cpt:269
+msgid "go_to_search_author_content"
+msgstr ""
+
+#. Default: "Latest content created by this user"
+#: ../skins/FacultyStaffDirectory/author.cpt:228
+msgid "heading_author_content"
+msgstr ""
+
+#. Default: "Author's external home page…"
+#: ../skins/FacultyStaffDirectory/author.cpt:124
+msgid "label_author_external_home_page"
+msgstr ""
+
+#. Default: "Author's home page in this site…"
+#: ../skins/FacultyStaffDirectory/author.cpt:119
+msgid "label_author_internal_home_page"
+msgstr ""
+
+#. Default: "Edit"
+#: ../skins/FacultyStaffDirectory/author.cpt:58
+msgid "label_edit"
+msgstr ""
+
+#. Default: "Log in to send feedback"
+#: ../skins/FacultyStaffDirectory/author.cpt:132
+msgid "label_login_to_send_feedback"
+msgstr ""
+
+#. Default: "Main Language:"
+#: ../skins/FacultyStaffDirectory/author.cpt:99
+msgid "label_main_language"
+msgstr ""
+
+#. Default: "Message"
+#: ../skins/FacultyStaffDirectory/author.cpt:183
+msgid "label_message"
+msgstr ""
+
+#. Default: "(Required)"
+#: ../skins/FacultyStaffDirectory/author.cpt:166
+msgid "label_required"
+msgstr ""
+
+#. Default: "Send"
+#: ../skins/FacultyStaffDirectory/author.cpt:203
+msgid "label_send"
+msgstr ""
+
+#. Default: "Subject"
+#: ../skins/FacultyStaffDirectory/author.cpt:162
+msgid "label_subject"
+msgstr ""
+
+#. Default: "View"
+#: ../skins/FacultyStaffDirectory/author.cpt:53
+msgid "label_view"
+msgstr ""
+
+#. Default: "Feedback for author"
+#: ../skins/FacultyStaffDirectory/author.cpt:157
+msgid "legend_feedback_for_author"
+msgstr ""
+
+#. Default: "ownership"
+#: ../Person.py
+msgid "ownership"
+msgstr ""
+
+#. Default: "settings"
+#: ../Person.py
+msgid "settings"
+msgstr ""
+
+#. Default: "Lists content written by an author grouped by content type"
+#: ../skins/FacultyStaffDirectory/author.cpt:233
+msgid "summary_author_content_list"
+msgstr ""
+
+#. Default: "Location: ${location}"
+#: ../skins/FacultyStaffDirectory/author.cpt:90
+msgid "text_location"
+msgstr ""
+
+#. Default: "No user by that name"
+#: ../skins/FacultyStaffDirectory/author.cpt:35
+msgid "text_no_user_by_name"
+msgstr ""
+
+#. Default: "Activate"
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "title_fsd_wf_activate"
+msgstr ""
+
+#. Default: "De-activate"
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "title_fsd_wf_deactivate"
+msgstr ""
+
+#. Default: "Required"
+#: ../skins/FacultyStaffDirectory/author.cpt:166
+msgid "title_required"
+msgstr ""
+

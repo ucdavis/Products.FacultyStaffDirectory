@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+	  metal:use-macro="here/directory_view/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+        <metal:block fill-slot="classification_links" />
+		<metal:block fill-slot="listing_section" tal:define="people context/getSortedPeople">
+            <div tal:content="structure here/getText"
+                 tal:condition="here/getText|nothing" />
+
+            <div class="atozView">
+                <div tal:define="usedLetters python:[unicode(person.getLastName(), 'utf-8').upper()[0] for person in people];
+                    cleanUsedLetters python:modules['Products.Archetypes.utils'].unique(usedLetters);
+                    dummy python:cleanUsedLetters.sort()"
+                     class="alphabetLinks">
+                    <ol>
+                        <li tal:repeat="letter cleanUsedLetters">
+                            <a tal:content="letter"
+                               tal:attributes="href python:u'%s#%s' % (context.absolute_url(), letter);" />
+                        </li>     
+                    </ol>                                 
+                </div>
+                     
+                <table class="listing" id="sortable">
+                    <tbody>
+                        <metal:block define-macro="list_people">
+                            <tal:block tal:condition="people">     
+                                <metal:block define-slot="table_headings">
+                                    <tr>
+                                        <th class="column" i18n:translate="FacultyStaffDirectory_name">
+                                            Name
+                                        </th>
+                                        <th class="column" i18n:translate="FacultyStaffDirectory_phone">
+                                            Phone
+                                        </th>
+                                        <th class="column" i18n:translate="FacultyStaffDirectory_email">
+                                            Email
+                                        </th>
+                                    </tr>
+                                </metal:block>
+                                <tal:block tal:repeat="person people">
+                                    <tr tal:define="oddrow repeat/person/odd" 
+                                        tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                                        <metal:block define-slot="table_cells">
+                                            <td class="personName">
+                                                <a href="" tal:attributes="href person/absolute_url; name python:unicode(person.getLastName(), 'utf-8').upper()[0];"><span tal:content="string:${person/getLastName}" class="emphasis"><tal:comment replace="nothing">[last name]</tal:comment></span>, <span tal:content="string:${person/getFirstName}"><tal:comment replace="nothing">[first-name]</tal:comment></span> </a>
+                                            </td>
+                                            <td class="officePhone">
+                                                <span tal:condition="person/getOfficePhone" tal:content="person/getOfficePhone">[phone number]</span>
+                                            </td>
+                                            <td>
+                                                <span tal:condition="person/getEmail" tal:replace="structure python:person.spamProtectFSD(person.getEmail())" class="emailAddress">[email address]</span>
+                                            </td>
+                                        </metal:block>
+                                    </tr>
+                                </tal:block>
+                            </tal:block>
+                        </metal:block>
+                    </tbody>
+                </table>
+            </div>
+
+		</metal:block>
+	</body>
+</html>

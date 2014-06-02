@@ -1,0 +1,12 @@
+[default]
+title = Faculty/Staff Directory Configuration
+
+[validators]
+validators = validate_base
+validators..form_add =
+validators..cancel =
+
+[actions]
+action.success = traverse_to:string:content_edit
+action.success..cancel = redirect_to:string:../plone_control_panel
+action.failure = traverse_to_action:string:edit

@@ -1,0 +1,664 @@
+# translation of FacultyStaffDirectory.po to Spanish
+# Gildardo Bautista <gil.cano@gmail.com>, 2009
+# Leonardo Caballero <leonardocaballero@gmail.com>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: FacultyStaffDirectory\n"
+"POT-Creation-Date: 2011-06-13 16:19+0000\n"
+"PO-Revision-Date: 2011-06-09 07:10-0400\n"
+"Last-Translator: Leonardo J. Caballero G. <leonardocaballero@gmail.com>\n"
+"Language-Team: Spanish <plone-conosur@lists.plone.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: es\n"
+"Language-Name: Spanish\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: FacultyStaffDirectory\n"
+"X-Is-Fallback-For: es-ar es-bo es-cl es-co es-cr es-do es-ec es-es es-sv es-gt es-hn es-mx es-ni es-pa es-py es-pe es-pr es-us es-uy es-ve\n"
+
+#: ../FacultyStaffDirectory.py:158
+msgid "A group with id '%s' already exists in the portal"
+msgstr "Un grupo con el identificado '%s' ya existe en el portal"
+
+#: ../Person.py:883
+msgid "An initial password must be set"
+msgstr "Una contraseña inicial debe ser definida"
+
+#: ../Person.py:853
+msgid "An object with ID '%s' already exists in this folder"
+msgstr "Un objeto con un identificador '%s' ya existe en esta carpeta"
+
+#: ../FacultyStaffDirectory.py:154
+msgid "An object with id '%s' already exists in this folder"
+msgstr "Un objeto con el identificado '%s' ya existe en la carpeta"
+
+#. Default: "Demo field added by the MobilePhoneExtender product."
+#: MobilePhoneExtender/person.py:33
+msgid "FSDMobilePhoneExtender_description_MobilePhone"
+msgstr "Campo demostrativo agregado por el producto MobilePhoneExtender. "
+
+#. Default: "Mobile Phone"
+#: MobilePhoneExtender/person.py:32
+msgid "FSDMobilePhoneExtender_label_MobilePhone"
+msgstr "Teléfono movil"
+
+#. Default: "Assign a position"
+#: ../skins/FacultyStaffDirectory/department_standard_view.pt:26
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:43
+#: ../skins/FacultyStaffDirectory/department_textual_view.pt:65
+msgid "FacultyStaffDirectory_assignPosition"
+msgstr "Asigna un cargo"
+
+#. Default: "Assign a research topic"
+#: ../skins/FacultyStaffDirectory/person_view.pt:135
+#: ../skins/FacultyStaffDirectory/specialty_standard_view.pt:27
+#: ../skins/FacultyStaffDirectory/specialty_tabular_view.pt:43
+msgid "FacultyStaffDirectory_assignResearchTopic"
+msgstr "Asignar un área de investigacíon"
+
+#. Default: "Assign a role"
+#: ../skins/FacultyStaffDirectory/committee_view.pt:40
+msgid "FacultyStaffDirectory_assignrole"
+msgstr "Asigna un rol"
+
+#. Default: "The roles all people in this directory will be granted site-wide"
+#: ../FacultyStaffDirectory.py:31
+msgid "FacultyStaffDirectory_description_FacultyStaffDirectoryRoles"
+msgstr "Roles que la gente de este directorio tendrá en todo el sitio"
+
+#. Default: "List one workflow state per line; the states listed below will indicate membership behavior should be enabled for Person objects or group behavior should be enabled for Classification, Committee, and Department objects."
+#: ../tools/FacultyStaffDirectoryTool.py:137
+#, fuzzy
+msgid "FacultyStaffDirectory_description_activeMembraneStates"
+msgstr "Lista de un estado de flujo de trabajo por línea, los estados se enumeran a continuación se indican el comportamiento de adhesión debe estar habilitado para los objetos de la persona o el comportamiento del grupo debe estar habilitado para la clasificación, el Comité, y los objetos del Departamento."
+
+#. Default: "Assistants can edit your directory entry."
+#: ../Person.py:442
+msgid "FacultyStaffDirectory_description_assistants"
+msgstr "El personal asistente puede editar su entrada en el directorio."
+
+#. Default: "Please re-enter the password. (Leave blank if you don't want to change the password.)"
+#: ../Person.py:365
+msgid "FacultyStaffDirectory_description_confirmPassword"
+msgstr "Por favor escriba de nuevo la contraseña. (Dejar en blanco si no lo quieres cambiar)"
+
+#. Default: "Integrated types appear on the right; non-integrated on the left. You may move selected items from one column to the other."
+#: ../tools/FacultyStaffDirectoryTool.py:123
+msgid "FacultyStaffDirectory_description_enableMembraneTypes"
+msgstr "Están integrados los tipos que aparecen a la derecha, no están integrados los tipos que aparecen a la izquierda. Usted puede mover los elementos seleccionados de una columna a la otra."
+
+#. Default: "Example: abc123"
+#: ../Person.py:254
+msgid "FacultyStaffDirectory_description_id"
+msgstr "Ejemplo: jperez"
+
+#. Default: "One per line"
+#: ../Person.py:143
+msgid "FacultyStaffDirectory_description_jobTitles"
+msgstr "Uno por linea"
+
+#. Default: "Format email addresses like \"someone AT here DOT com\" rather than using Plone's default spam armoring."
+#: ../tools/FacultyStaffDirectoryTool.py:75
+msgid "FacultyStaffDirectory_description_obfuscateEmailAddressesDescription"
+msgstr "El formato de dirección de correo electrónico es como el siguiente ejemplo: \"usuario EN dominio PUNTO com\", el cual es raramente usado por defecto en el blindaje spam de Plone."
+
+#: ../Person.py:192
+msgid "FacultyStaffDirectory_description_officePhone"
+msgstr "Teléfono de Oficina"
+
+#. Default: "Password for this person (Leave blank if you don't want to change the password.)"
+#: ../Person.py:351
+msgid "FacultyStaffDirectory_description_password"
+msgstr "La contraseña para esta persona (Dejar en blanco si no lo quieres cambiar.)"
+
+#. Default: "Show all person thumbnails with a fixed width (in pixels) within the classification view"
+#: ../FacultyStaffDirectory.py:43
+msgid "FacultyStaffDirectory_description_personClassificationViewThumbnailWidth"
+msgstr "Mostrar todas las miniaturas de personas con un ancho fijo (en píxeles) en la vista de la clasificación."
+
+#. Default: "A regular expression that a Persons ID must match. Defaults to the value specified in portal_registration."
+#: ../tools/FacultyStaffDirectoryTool.py:98
+msgid "FacultyStaffDirectory_description_personIdFormat"
+msgstr "Una expresión regular que debe coincidir con un Identificador de la Persona. Por defecto, usa la expresión que usa Plone para los Identificadores de usuario."
+
+#. Default: "The error message returned when the Person ID entered does not match the specified format"
+#: ../tools/FacultyStaffDirectoryTool.py:111
+msgid "FacultyStaffDirectory_description_personIdFormatErrorMessage"
+msgstr "El mensaje de error es devuelto cuando el identificador de usuario de la persona ingresado no coincide con el formato especificado"
+
+#. Default: "The name of the ID used by your institution"
+#: ../tools/FacultyStaffDirectoryTool.py:86
+msgid "FacultyStaffDirectory_description_personIdLabel"
+msgstr "El nombre del identificador que utiliza su institución"
+
+#. Default: "Describe the above phone number rule in a human-readable format: for example, (555) 555-5555."
+#: ../tools/FacultyStaffDirectoryTool.py:64
+msgid "FacultyStaffDirectory_description_personPhoneNumberDescription"
+msgstr "Describe el número telefónico"
+
+#. Default: "A regular expression that a Person's phone number must match. Leave blank to disable phone number validation."
+#: ../tools/FacultyStaffDirectoryTool.py:52
+msgid "FacultyStaffDirectory_description_personPhoneNumberFormat"
+msgstr "Una expresión regular que debe coincidir con un número telefónico de la Persona. Dejar en blanco para deshabilitar la validación del número."
+
+#. Default: "Academic, professional, honorary, and social suffixes."
+#: ../Person.py:120
+msgid "FacultyStaffDirectory_description_suffix"
+msgstr "Título honorífico y académico, profesional, reconocimiento social."
+
+#. Default: "Message displayed to site visitors when the person's termination date has passed. Can be used to provide forwarding information or a link to someone who has taken over their responsibilities."
+#: ../Person.py:463
+msgid "FacultyStaffDirectory_description_termination_details"
+msgstr "El mensaje mostrado a los visitantes del sitio cuando la fecha de terminación de la persona ya ha pasado. Puede ser utilizado para proporcionar la información o un enlace a alguien que se ha hecho cargo de sus responsabilidades."
+
+#. Default: "Should user passwords be stored as part of the Person? If you're using another PAS plugin to handle authorization, you'll want to turn this off."
+#: ../tools/FacultyStaffDirectoryTool.py:151
+msgid "FacultyStaffDirectory_description_useInternalPassword"
+msgstr "En el caso de las contraseñas de usuario ¿se debería almacenar como parte de la persona?. Si tiene un plugin PAS diferente para manejar autorización, desactivar esta opción."
+
+#. Default: "One per line. Example: http://www.example.com/"
+#: ../Person.py:242
+msgid "FacultyStaffDirectory_description_websites"
+msgstr "Uno por linea. Ejemplo: http://www.ejemplo.com/"
+
+#. Default: "Edit position"
+#: ../skins/FacultyStaffDirectory/department_standard_view.pt:25
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:42
+#: ../skins/FacultyStaffDirectory/department_textual_view.pt:64
+msgid "FacultyStaffDirectory_editPosition"
+msgstr "Editar cargo"
+
+#. Default: "Edit research topic"
+#: ../skins/FacultyStaffDirectory/person_view.pt:133
+#: ../skins/FacultyStaffDirectory/specialty_standard_view.pt:26
+#: ../skins/FacultyStaffDirectory/specialty_tabular_view.pt:42
+msgid "FacultyStaffDirectory_editResearchTopic"
+msgstr "Editar área de investigación"
+
+#. Default: "Edit role"
+#: ../skins/FacultyStaffDirectory/committee_view.pt:39
+msgid "FacultyStaffDirectory_editrole"
+msgstr "Editar rol"
+
+#. Default: "Email"
+#: ../skins/FacultyStaffDirectory/classification_tabular_view.pt:53
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:21
+#: ../skins/FacultyStaffDirectory/fsd_atoz_view.pt:38
+msgid "FacultyStaffDirectory_email"
+msgstr "Correo electrónico"
+
+#. Default: "This person is no longer associated with the organization."
+#: ../skins/FacultyStaffDirectory/person_view.pt:51
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:51
+msgid "FacultyStaffDirectory_expired_notice"
+msgstr "Esta persona no esta más asociada con la organización."
+
+#. Default: "This person is no longer associated with the organization. You are seeing all their information because you have editing rights, regular site visitors will only see the person's name."
+#: ../skins/FacultyStaffDirectory/person_view.pt:24
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:24
+msgid "FacultyStaffDirectory_expired_notice_editor"
+msgstr "Esta persona ya no está asociado con la organización. Usted está viendo toda su información porque tiene derechos de edición, los visitantes regulares del sitio sólo verá el nombre de la persona."
+
+#. Default: "Note"
+#: ../skins/FacultyStaffDirectory/person_view.pt:23
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:23
+msgid "FacultyStaffDirectory_expired_notice_editor_label"
+msgstr "Nota"
+
+#. Default: "Example: http://www.example.com/"
+#: ../Course.py:63
+msgid "FacultyStaffDirectory_help_website"
+msgstr "Ejemplo: http://www.ejemplo.com/"
+
+#. Default: "Roles"
+#: ../FacultyStaffDirectory.py:30
+msgid "FacultyStaffDirectory_label_FacultyStaffDirectoryRoles"
+msgstr "Roles"
+
+#. Default: "Abbreviation"
+#: ../Course.py:22
+msgid "FacultyStaffDirectory_label_abbreviation"
+msgstr "Abreviación"
+
+#. Default: "List the workflow states which indicate membership and/or group behavior"
+#: ../tools/FacultyStaffDirectoryTool.py:136
+msgid "FacultyStaffDirectory_label_activeMembraneStates"
+msgstr "Lista de los estados de flujo de trabajo que indican el comportamiento de miembro y / o grupo"
+
+#. Default: "Personal Assistant(s)"
+#: ../Person.py:441
+msgid "FacultyStaffDirectory_label_assistants"
+msgstr "Personal Asistente(s)"
+
+#. Default: "Assistants:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:194
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:198
+msgid "FacultyStaffDirectory_label_assistants_heading"
+msgstr "Asistente(s):"
+
+#. Default: "Biography"
+#: ../Person.py:218
+msgid "FacultyStaffDirectory_label_biography"
+msgstr "Biografía"
+
+#. Default: "Biography:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:102
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:106
+msgid "FacultyStaffDirectory_label_biography_heading"
+msgstr "Biografía:"
+
+#. Default: "${fullName} is an assistant to"
+#: ../skins/FacultyStaffDirectory/person_view.pt:210
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:214
+msgid "FacultyStaffDirectory_label_bosses"
+msgstr "${fullName} es asistente de"
+
+#. Default: "Classifications"
+#: ../Person.py:280
+msgid "FacultyStaffDirectory_label_classifications"
+msgstr "Clasificaciones"
+
+#. Default: "Committees"
+#: ../Person.py:311
+msgid "FacultyStaffDirectory_label_committees"
+msgstr "Comités"
+
+#. Default: "Confirm password"
+#: ../Person.py:364
+msgid "FacultyStaffDirectory_label_confirmPassword"
+msgstr "Confirmar contraseña"
+
+#. Default: "Courses:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:177
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:181
+msgid "FacultyStaffDirectory_label_courses"
+msgstr "Cursos:"
+
+#. Default: "Departments"
+#: ../Person.py:292
+msgid "FacultyStaffDirectory_label_departments"
+msgstr "Departamentos"
+
+#. Default: "Departments:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:148
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:152
+msgid "FacultyStaffDirectory_label_departments_heading"
+msgstr "Departamentos:"
+
+#. Default: "Description"
+#: ../Course.py:41
+msgid "FacultyStaffDirectory_label_description"
+msgstr "Descripción"
+
+#. Default: "Education"
+#: ../Person.py:231
+msgid "FacultyStaffDirectory_label_education"
+msgstr "Educación"
+
+#. Default: "Education:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:93
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:97
+msgid "FacultyStaffDirectory_label_education_heading"
+msgstr "Educación:"
+
+#. Default: "Email"
+#: ../Person.py:131
+#: ../skins/FacultyStaffDirectory/person_view.pt:68
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:68
+msgid "FacultyStaffDirectory_label_email"
+msgstr "Correo electrónico"
+
+#. Default: "Select the content types to integrate with Plone's users and groups"
+#: ../tools/FacultyStaffDirectoryTool.py:122
+msgid "FacultyStaffDirectory_label_enableMembraneTypes"
+msgstr "Seleccione el tipo de contenido a integrar con los grupos y usuarios de Plone"
+
+#. Default: "First Name"
+#: ../Person.py:86
+msgid "FacultyStaffDirectory_label_firstName"
+msgstr "Nombre"
+
+#. Default: "Full Name"
+#: ../Person.py:265
+msgid "FacultyStaffDirectory_label_fullName"
+msgstr "Nombre completo"
+
+#. Default: "Access Account ID"
+#: ../Person.py:252
+msgid "FacultyStaffDirectory_label_id"
+msgstr "Identificador de inicio de sesión"
+
+#. Default: "Image"
+#: ../Person.py:203
+msgid "FacultyStaffDirectory_label_image"
+msgstr "Fotografía"
+
+#. Default: "Job Titles"
+#: ../Person.py:142
+msgid "FacultyStaffDirectory_label_jobTitles"
+msgstr "Los nombres de las funciones profesionales "
+
+#. Default: "Last Name"
+#: ../Person.py:108
+msgid "FacultyStaffDirectory_label_lastName"
+msgstr "Apellido"
+
+#. Default: "Members"
+#: ../Committee.py:26
+#: ../Department.py:25
+#: ../skins/FacultyStaffDirectory/committee_view.pt:26
+msgid "FacultyStaffDirectory_label_members"
+msgstr "Miembros"
+
+#. Default: "Middle Name"
+#: ../Person.py:97
+msgid "FacultyStaffDirectory_label_middleName"
+msgstr "Nombre intermedio"
+
+#. Default: "Number"
+#: ../Course.py:31
+msgid "FacultyStaffDirectory_label_number"
+msgstr "Número"
+
+#. Default: "Custom email obfuscation"
+#: ../tools/FacultyStaffDirectoryTool.py:74
+msgid "FacultyStaffDirectory_label_obfuscateEmailAddressesDescription"
+msgstr "Personalizar ofuscación de correo electrónico"
+
+#. Default: "Office Street Address"
+#: ../Person.py:153
+msgid "FacultyStaffDirectory_label_officeAddress"
+msgstr "Dirección de la oficina"
+
+#. Default: "Office City"
+#: ../Person.py:163
+msgid "FacultyStaffDirectory_label_officeCity"
+msgstr "Ciudad de la oficina"
+
+#. Default: "Office Phone"
+#: ../Person.py:191
+#: ../skins/FacultyStaffDirectory/person_view.pt:73
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:73
+msgid "FacultyStaffDirectory_label_officePhone"
+msgstr "Teléfono de oficina"
+
+#. Default: "Office Postal Code"
+#: ../Person.py:182
+msgid "FacultyStaffDirectory_label_officePostalCode"
+msgstr "Código postal de Oficina"
+
+#. Default: "Office State"
+#: ../Person.py:173
+msgid "FacultyStaffDirectory_label_officeState"
+msgstr "Estado de la oficina"
+
+#. Default: "Overview image (used for specialty overview view)"
+#: ../Specialty.py:46
+msgid "FacultyStaffDirectory_label_overview_image"
+msgstr "Vista general de la imagen (usada para ver vista de la especialidad)"
+
+#. Default: "Overview text (used for specialty overview view)"
+#: ../Specialty.py:62
+msgid "FacultyStaffDirectory_label_overview_text"
+msgstr "Descripción de texto (usada para la vista de la especialidad)"
+
+#. Default: "Password"
+#: ../Person.py:350
+msgid "FacultyStaffDirectory_label_password"
+msgstr "Contraseña"
+
+#. Default: "People"
+#: ../Classification.py:29
+#: ../Specialty.py:28
+#: ../skins/FacultyStaffDirectory/department_view.pt:31
+msgid "FacultyStaffDirectory_label_people"
+msgstr "Gente"
+
+#. Default: "Width for thumbnails in classification view"
+#: ../FacultyStaffDirectory.py:42
+msgid "FacultyStaffDirectory_label_personClassificationViewThumbnailWidth"
+msgstr "Ancho de las miniaturas en la vista de clasificación"
+
+#. Default: "Person ID format"
+#: ../tools/FacultyStaffDirectoryTool.py:97
+msgid "FacultyStaffDirectory_label_personIdFormat"
+msgstr "Formato de identificador de persona"
+
+#. Default: "Person ID format error message"
+#: ../tools/FacultyStaffDirectoryTool.py:110
+msgid "FacultyStaffDirectory_label_personIdFormatErrorMessage"
+msgstr "Mensaje de error en formato de identificador de persona"
+
+#. Default: "Person ID Label"
+#: ../tools/FacultyStaffDirectoryTool.py:85
+msgid "FacultyStaffDirectory_label_personIdLabel"
+msgstr "Etiqueta de identificador de persona"
+
+#. Default: "Phone number example"
+#: ../tools/FacultyStaffDirectoryTool.py:63
+msgid "FacultyStaffDirectory_label_personPhoneNumberDescription"
+msgstr "Ejemplo de número telefónico"
+
+#. Default: "Phone number format"
+#: ../tools/FacultyStaffDirectoryTool.py:51
+msgid "FacultyStaffDirectory_label_personPhoneNumberFormat"
+msgstr "Formato de número telefónico"
+
+#. Default: "Position"
+#: ../CommitteeMembership.py:20
+#: ../DepartmentalMembership.py:18
+msgid "FacultyStaffDirectory_label_position"
+msgstr "Cargo"
+
+#. Default: "Research Interests:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:116
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:120
+msgid "FacultyStaffDirectory_label_researchInterests"
+msgstr "Intereses de investigación:"
+
+#. Default: "Research Topic"
+#: ../SpecialtyInformation.py:20
+msgid "FacultyStaffDirectory_label_researchTopic"
+msgstr "Área de Investigación"
+
+#. Default: "Specialties"
+#: ../Person.py:329
+msgid "FacultyStaffDirectory_label_specialties"
+msgstr "Especialidades"
+
+#. Default: "Suffix"
+#: ../Course.py:54
+#: ../Person.py:119
+msgid "FacultyStaffDirectory_label_suffix"
+msgstr "Sufijo"
+
+#. Default: "Termination details"
+#: ../Person.py:462
+msgid "FacultyStaffDirectory_label_termination_details"
+msgstr "Detalles de terminación"
+
+#. Default: "Termination details:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:109
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:113
+msgid "FacultyStaffDirectory_label_termination_details_heading"
+msgstr "Detalles de terminación:"
+
+#. Default: "Body Text"
+#: ../PersonGrouping.py:24
+msgid "FacultyStaffDirectory_label_text"
+msgstr "Cuerpo de texto"
+
+#. Default: "Title"
+#: ../CommitteeMembership.py:30
+#: ../DepartmentalMembership.py:26
+#: ../SpecialtyInformation.py:33
+msgid "FacultyStaffDirectory_label_title"
+msgstr "Título"
+
+#. Default: "Person objects provide user passwords"
+#: ../tools/FacultyStaffDirectoryTool.py:150
+msgid "FacultyStaffDirectory_label_useInternalPassword"
+msgstr "Los objetos de tipo Persona proporcionan contraseñas de usuario"
+
+#. Default: "Course Website"
+#: ../Course.py:62
+msgid "FacultyStaffDirectory_label_website"
+msgstr "Sitio Web del curso"
+
+#. Default: "Web Sites"
+#: ../Person.py:241
+msgid "FacultyStaffDirectory_label_websites"
+msgstr "Sitios web"
+
+#. Default: "Websites:"
+#: ../skins/FacultyStaffDirectory/person_view.pt:79
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:83
+msgid "FacultyStaffDirectory_label_websites_heading"
+msgstr "Sitios web:"
+
+#. Default: "More about ${more-about-person-title}..."
+#: ../skins/FacultyStaffDirectory/classification_standard_view.pt:73
+#: ../skins/FacultyStaffDirectory/department_standard_view.pt:35
+#: ../skins/FacultyStaffDirectory/department_textual_view.pt:74
+msgid "FacultyStaffDirectory_moreAbout"
+msgstr "Más acerca de ${more-about-person-title}..."
+
+#. Default: "Name"
+#: ../skins/FacultyStaffDirectory/classification_tabular_view.pt:47
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:15
+#: ../skins/FacultyStaffDirectory/fsd_atoz_view.pt:32
+msgid "FacultyStaffDirectory_name"
+msgstr "Nombre"
+
+#. Default: "People"
+#: ../skins/FacultyStaffDirectory/fsd_atoz_view.pt:11
+msgid "FacultyStaffDirectory_people"
+msgstr "Gente"
+
+#. Default: "Phone"
+#: ../skins/FacultyStaffDirectory/classification_tabular_view.pt:50
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:18
+#: ../skins/FacultyStaffDirectory/fsd_atoz_view.pt:35
+msgid "FacultyStaffDirectory_phone"
+msgstr "Teléfono personal"
+
+#. Default: "Research Topic"
+#: ../skins/FacultyStaffDirectory/department_tabular_view.pt:24
+#: ../skins/FacultyStaffDirectory/specialty_tabular_view.pt:24
+msgid "FacultyStaffDirectory_researchTopic"
+msgstr "Temática de Investigación"
+
+#. Default: "People specializing in this area"
+#: ../skins/FacultyStaffDirectory/specialty_view.pt:38
+msgid "FacultyStaffDirectory_specialtyMembers"
+msgstr "Gente especializada en está área"
+
+#. Default: "Subspecialties"
+#: ../skins/FacultyStaffDirectory/specialty_view.pt:24
+msgid "FacultyStaffDirectory_subspecialties"
+msgstr "Subespecialidades"
+
+#: MobilePhoneExtender/skins/MobilePhoneExtender/person_view.pt:77
+msgid "Mobile"
+msgstr "Teléfono móvil"
+
+#: ../Person.py:887
+msgid "Passwords do not match"
+msgstr "La contraseña no coinciden"
+
+#: ../Person.py:868
+msgid "Please provide the phone number in the format %s"
+msgstr "Por favor, provea el número telefónico en el formato %s"
+
+#: ../events/person.py:33
+msgid "User %s cannot be found."
+msgstr "Usuario %s no fue encontrado."
+
+#. Default: "The date when the person will be hired. If no date is selected the person will be considered hired immediately."
+#: ../Person.py:513
+msgid "description_edit_hire_date"
+msgstr "La fecha en que la persona va a estar contratada. En caso de no seleccionar ninguna fecha, la persona se considerará contratada de inmediato."
+
+#. Default: "The date when the person leaves the organization. This will automatically make the person invisible for others at the given date."
+#: ../Person.py:516
+msgid "description_edit_termination_date"
+msgstr "La fecha en que la persona abandona la organización. Esto hará a la persona invisible para los demás en la fecha determinada."
+
+#. Default: "Up one level"
+#: ../skins/FacultyStaffDirectory/classification_standard_view.pt:13
+#: ../skins/FacultyStaffDirectory/classification_tabular_view.pt:13
+#: ../skins/FacultyStaffDirectory/department_textual_view.pt:21
+msgid "go_to_parent_url"
+msgstr "Subir un nivel"
+
+#. Default: "Select the content editor that you would like to use. Note that content editors often have specific browser requirements."
+#: ../Person.py:388
+msgid "help_content_editor"
+msgstr "Seleccione el editor de contenido que desea utilizar. Tenga en cuenta que los editores de contenido a menudo tienen requisitos específicos del navegador."
+
+#. Default: "When checked, an icon will be made visible on each page which allows you to edit content with your favorite editor instead of using browser-based editors. This requires an additional application called ExternalEditor installed client-side. Ask your administrator for more information if needed."
+#: ../Person.py:402
+msgid "help_content_ext_editor"
+msgstr "Cuando se activa, un icono se hace visible en cada página que le permite editar el contenido con su editor favorito en lugar de usar editores basados en el navegador. Esto requiere una aplicación adicional llamada ExternalEditor instalado del lado del cliente. Pregunte a su administrador para obtener más información si es necesario."
+
+#. Default: "Determines if Short Names (also known as IDs) are changable when editing items. If Short Names are not displayed, they will be generated automatically."
+#: ../Person.py:428
+msgid "help_display_names"
+msgstr "Determina si los nombres cortos (también conocido como ID), son cambiables cuando esta editando los elementos. Si los nombres cortos no se muestran, se generarán de forma automática."
+
+#. Default: "Appearance of the site."
+#: ../Person.py:414
+msgid "help_look"
+msgstr "Aspecto del sitio."
+
+#. Default: "Your preferred language."
+#: ../Person.py:375
+msgid "help_preferred_language"
+msgstr "Sus preferencias de idioma. "
+
+#: ../validators.py:41
+msgid "is not a valid URL."
+msgstr "no es una dirección URL valida."
+
+#. Default: "Content editor"
+#: ../Person.py:387
+msgid "label_content_editor"
+msgstr "Editor de contenido"
+
+#. Default: "Hire Date"
+#: ../Person.py:512
+msgid "label_edit_hire_date"
+msgstr "Fecha de contratación"
+
+#. Default: "Allow editing of Short Names"
+#: ../Person.py:427
+msgid "label_edit_short_names"
+msgstr "Permitir edición de Nombres Cortos"
+
+#. Default: "Termination Date"
+#: ../Person.py:515
+msgid "label_edit_termination_date"
+msgstr "Fecha de vencimiento del contrato"
+
+#. Default: "Enable external editing"
+#: ../Person.py:401
+msgid "label_ext_editor"
+msgstr "Habilitar edición externa"
+
+#. Default: "Language"
+#: ../Person.py:374
+msgid "label_language"
+msgstr "Idioma"
+
+#. Default: "Look"
+#: ../Person.py:413
+msgid "label_look"
+msgstr "Aspecto"
+
+#. Default: "Can manage personnel"
+#: ../sharing.py:14
+msgid "title_can_manage_personnel"
+msgstr "¿Puede administrar personas?"
+

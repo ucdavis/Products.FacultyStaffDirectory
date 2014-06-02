@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+	  metal:use-macro="here/directory_view/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+		<metal:block fill-slot="listing_section">
+		    <div class="tabularView">
+				<table class="listing">
+					<metal:block use-macro="here/directory_view/macros/list_classifications">
+						<metal:block fill-slot="single_classification">
+								<tal:block metal:use-macro="classification/classification_tabular_view/macros/list_people" />
+						</metal:block>
+					</metal:block>
+				</table>
+			</div>
+		</metal:block>
+	</body>
+</html>

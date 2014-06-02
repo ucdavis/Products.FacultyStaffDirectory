@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             i18n:domain="plone"
+             workflow_id="fsd_tool_workflow"
+             title="[FacultyStaffDirectory] Tool workflow"
+             state_variable="review_state"
+             initial_state="published"
+             i18n:attributes="title; description">
+             
+ <permission>Access contents information</permission>
+ <permission>View</permission>
+ <permission>Modify portal content</permission>
+ <permission>Add portal content</permission>
+ 
+ <state state_id="published" title="Published" i18n:attributes="title">
+  <description i18n:translate="">Published this element</description>
+  <permission-map name="Access contents information" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+ </state> 
+</dc-workflow>

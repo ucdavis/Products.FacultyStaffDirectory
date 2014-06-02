@@ -1,0 +1,55 @@
+<metal:block define-macro="master">
+
+    <html xmlns="http://www.w3.org/1999/xhtml"
+          xml:lang="en" lang="en"
+          metal:use-macro="here/main_template/macros/master"
+          xmlns:tal="http://xml.zope.org/namespaces/tal"
+          xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+          i18n:domain="FacultyStaffDirectory">
+     <head />
+
+     <body>
+
+      <metal:fill fill-slot="main">
+
+        <div class="facultyStaffDirectory">
+
+
+            <h1 tal:content="context/Title" class="documentFirstHeading">
+              <tal:comment replace="nothing">Title or id</tal:comment>
+            </h1>
+
+            <p class="documentDescription"
+               tal:content="here/Description"
+               tal:condition="here/Description">
+                Description
+            </p>
+
+            <dl>
+                <tal:loop repeat="speciality context/getFolderContents">
+                    <dt>
+                        <a tal:attributes="href speciality/getURL" tal:content="speciality/Title" />
+                    </dt>
+                    <dd>
+                        <table tal:define="obj speciality/getObject">
+                            <td tal:content="structure obj/getOverviewText" style="vertical-align: top"/>
+                            <td style="vertical-align: top; width: 200px"
+                                tal:define="image obj/getOverviewImage">
+                                <img tal:condition="image"
+                                     tal:attributes="src string:${image/absolute_url}"
+                                />
+
+                            </td>
+                        </table>
+                    </dd>
+                </tal:loop>
+            </dl>
+
+        </div>
+
+      </metal:fill>
+
+     </body>
+
+    </html>
+</metal:block>

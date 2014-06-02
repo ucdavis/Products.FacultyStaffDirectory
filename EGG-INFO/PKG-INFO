@@ -1,0 +1,789 @@
+Metadata-Version: 1.1
+Name: Products.FacultyStaffDirectory
+Version: 3.1.3
+Summary: Provides content types for creating and organizing personnel directories within educational institutions. Integrates with Plone's users and groups infrastructure and supports an extensibility framework for custom requirements.
+Home-page: https://weblion.psu.edu/svn/weblion/weblion/Products.FacultyStaffDirectory
+Author: WebLion Group, The Pennsylvania State University
+Author-email: support@weblion.psu.edu
+License: GPL
+Description: .. contents::
+        
+        Description
+        ===========
+        
+        FacultyStaffDirectory is a personnel directory, a provider of shared workspaces
+        for committees, a way of keeping track of people's areas of expertise, a floor
+        wax, and a dessert topping. It integrates with Plone's users and groups
+        infrastructure and supports an extensibility framework for custom requirements.
+        
+        
+        Dependencies
+        ============
+            
+        FacultyStaffDirectory depends on Products.membrane and Products.Relations
+        
+        
+        Installation
+        ============
+        
+        FacultyStaffDirectory 3 requires Plone 4.0 or greater.
+        
+        1.  Add the following to buildout.cfg
+        
+        ::
+        
+            [buildout]
+            eggs =
+            . . .(other eggs). . .
+                Products.FacultyStaffDirectory
+        
+        2.  Re-run buildout (typically 'bin/buildout').
+        
+        3.  Restart Zope (typically 'bin/instance restart').
+        
+        4.  Install the FacultyStaffDirectory product using
+            portal_quickinstaller or the Plone Add/Remove Products tool
+            under Site Setup. The necessary dependencies will install
+            themselves automatically. (Membrane remains in the 'available'
+            column, but is in fact installed.)
+        
+        
+        Upgrading
+        =========
+        
+        From FacultyStaffDirectory 1.x
+        ------------------------------
+        
+        To upgrade from 1.x, first upgrade to a 2.x release thusly:
+        
+        Use the migration script in the Extensions folder of
+        FacultyStaffDirectory. Follow the instructions inside
+        migrate1dot0to2dot0.py. To perform the migration under Plone
+        3, you'll need the `contentmigration product`_.
+        
+        .. _contentmigration product: 
+           http://svn.plone.org/svn/collective/Products.contentmigration
+        
+        From FacultyStaffDirectory 2.x
+        ------------------------------
+        
+        To upgrade from 2.x to 3.0 use the "Upgrade" button on the 'Add-on Products'
+        page. (in Plone 4.0, this is called "Add-Ons").
+        
+        **Be sure** to check the workflow and publication state of your Faculty/Staff
+        directory. It has probably been changed to 'private'.
+        
+        If your Faculty/Staff directory was using a custom workflow, it is now in a new
+        workflow which comes with FacultyStaffDirectory 3.0. You'll need to change your
+        custom workflow to manage the "FacultyStaffDirectory: Provides Roles" permission
+        before you go back to it. Check out the 'fsd_directory_workflow' to see how it's
+        done.
+        
+        Special Note for users upgrading to Plone 4:
+        --------------------------------------------
+        
+        Because FacultyStaffDirectory 2.x is not compatible with Plone 4, you must first
+        upgrade FacultyStaffDirectory to version 3 then upgrade Plone.
+        
+        
+        
+        Using FacultyStaffDirectory
+        ===========================
+        
+        Adding a Faculty/Staff Directory
+        --------------------------------
+        
+        From the "add" dropdown menu in Plone, select "Faculty/Staff Directory". A
+        Faculty/Staff Directory will be created as well as several default items inside:
+        
+        * Faculty (a Classification)
+        
+        * Staff (a Classification)
+        
+        * Graduate Students (a Classification)
+        
+        * Committees (a Committees Folder, which can hold only Committees)
+        
+        * Specialties (a Specialties Folder, which can hold only Specialties)
+        
+        Any or all of these default items may be safely deleted as needed.
+        
+        Working with your directory
+        ---------------------------
+        
+        FacultyStaffDirectory provides content types for creating and organizing details
+        of people. It has principally been developed for personnel directories in
+        educational institutions but can be repurposed for use in a variety of settings.
+        
+        The core content type is Person. This has a variety of fields (email, telephone
+        number, job title, and so on). You can also easily add your own.
+        
+        Out of the box, FacultyStaffDirectory offers 3 Classifications that can be
+        assigned to Person objects: Faculty, Staff and Graduate Student. If these don't
+        work for you, you can add your own Classifications (e.g. Administrators,
+        Technicians, Board Members, or whatever you like).
+        
+        FacultyStaffDirectory also provides several content types for grouping people:
+        Departments, Specialties and Committees. If these labels don't make sense in
+        your organization, you can easily relabel them. In each case, the association
+        between the Person and the grouping (e.g. the Person-Specialty relationship) can
+        be given a description. So, for example, if Person Jane Doe is in the Artificial
+        Intelligence Specialty, you could give the Jane Doe-Artificial Intelligence
+        relationship a description (e.g. "Interested in the cultural impacts of machine
+        thinkers").
+        
+        FacultyStaffDirectory can be configured so people added to the directory
+        automatically become Members of your Plone site and each person can edit his or
+        her own page. It also adds some new roles, to facilitate management of people.
+        For instance, the PersonnelManager role can create new Specialties and assign
+        people to them.
+        
+        Membership integration
+        ----------------------
+        
+        Out of the box, FacultyStaffDirectory offers the following integration with
+        Plone users and groups:
+        
+        The Faculty/Staff Directory itself acts as a group.
+          All Person objectscreated in the Faculty/Staff Directory are automatically 
+          considered members of this group. This group also provides the option of 
+          assigning a global role to all Persons in the Directory. This option should be 
+          handled with care. It is generally best to select only the 'Member' role, as 
+          this is the most restrictive option.
+        
+        Departments, Classifications and Committees act as groups.
+          Global role assignment is not available for these
+          content types, but the groups they define may be granted
+          local roles throughout the Plone site.  For complex
+          academic units, this can be a great time-saver, since
+          personnel management can be tied closely to site
+          security management.
+        
+        Person objects act as users.
+          The Faculty/Staff Directory configlet in Site Setup
+          allows you to choose whether Person objects provide
+          passwords for authentication. If you are using some
+          other PAS plugin for authentication, such as PloneLDAP,
+          WebServerAuth, PubcookiePAS or CAS4PAS, you will want to
+          disable password provision so that authentication will
+          cascade to these other systems.
+        
+        Persons own their own profiles.
+          Users defined by Person objects are automatically granted the
+          Owner role locally for that object and its contents.  This
+          allows users to add to and edit their own biographies, contact
+          information, etc.  They also control sharing rights to their
+          object and can thus allow assistants to edit content on their
+          behalf without sharing their own passwords or user
+          preferences.
+        
+        My Folder action.
+          The 'My Folder' action, found on the personal toolbar, is
+          altered by the Faculty/Staff Directory product to take users
+          defined by Person objects directly to them. Users defined
+          through the standard Plone UI will be taken to the usual
+          location (portal/Members/<userid>).  Likewise, the personal
+          preferences link found in the personal toolbar and on the
+          plone_memberprefs_panel or dashboard will take Person users to
+          their Person objects.
+        
+        Restrictions on group membership.
+          Owners are not granted the rights to add or remove their
+          Person object from Departments, Committees, Classifications
+          and Specialties, since these collections are used as
+          authorization groups. Instead, this right is reserved for site
+          managers and for the newly-created 'Personnel Manager' role,
+          installed with the Faculty/Staff Directory product. The
+          Personnel Manager is likewise not granted access to the ZMI or
+          to personal preferences for Persons. This allows for
+          fine-grained separation of management concerns.
+        
+        Configurable integration.
+          Membership integration for Person, Department, Classification
+          and Committee objects is configurable.  A switch to turn the    
+          function on or off is in the Faculty/Staff Directory
+          configuration panel in Site Setup.  It may be necessary to
+          disable membership integration for Person objects in systems
+          that have established user bases built on LDAP systems, for
+          instance.
+        
+        Configuring the product
+        -----------------------
+        
+        Several global settings, such as phone number and user ID formats, can be
+        controlled through the Faculty/Staff Directory configuration panel within Site
+        Setup.
+        
+        Extensibility
+        
+        Because every organization has a few unique requirements, FacultyStaffDirectory
+        supports an extension mechanism based on the archetypes.schemaextender library.
+        Using it, you can write plugin products which add fields to or otherwise modify
+        our content types. For an example, see the FacultyStaffDirectoryExtender product
+        and `its readme`_.
+        
+        .. _its readme:
+           https://weblion.psu.edu/svn/weblion/weblion/Products.FacultyStaffDirectory/tags/3.0/src/Products/FacultyStaffDirectory/examples/FacultyStaffDirectoryExtender/README.txt.
+        
+        
+        Design Rationale & Thoughts
+        ===========================
+        
+        Why the push for just one Directory in a site? Why not just add people to Departments?
+          The main thought behind this was that People could be members
+          of multiple departments (i.e., faculty member John Smith
+          teaches courses in both MSIS and Computer Science). So where
+          do we put the Person object?  We'd like to refrain from making
+          two Persons if possible, and the alternative of making a
+          Department both a container and a referenced object could be
+          nightmarish.
+        
+        Why add membrane?
+          We wanted a relatively simple way to let members modify their own
+          profiles. With membrane, we get that right out of the box since that
+          profile *is* the member. We also get nifty groups like "Faculty" and
+          "Chemistry Department" and "Some Useless Committee".
+        
+        How do I manage People across multiple Plone sites?
+          We wish we knew. We suspect it will have something to do with LDAP.
+          Suggestions?
+        
+        
+        Authorship
+        ==========
+        
+        This product was developed by the WebLion group at Penn State University.
+        
+        membrane integration by Cris Ewing at the University of Washington.
+        
+        Special thanks to Andreas Jung for his early testing, code contributions, and
+        reminding us that, yes, people do live outside the United States.
+        
+        
+        Support
+        =======
+        
+        * Report bugs to support@weblion.psu.edu
+        
+        * More documentation at the `WebLion wiki`_.
+        
+        .. _weblion wiki: https://weblion.psu.edu/trac/weblion/wiki/FacultyStaffDirectory
+        
+        
+        * Contact us::
+        
+            WebLion Project Team
+            Penn State University
+            304 The 300 Building
+            University Park, PA 16802
+            support@weblion.psu.edu
+            814-863-4574
+        
+        
+        License
+        =======
+        
+        Copyright (c) 2006-2011 The Pennsylvania State University. WebLion is developed
+        and maintained by the WebLion Project Team, its partners, and members of the
+        Penn State Zope Users Group.
+        
+        This program is free software; you can redistribute it and/or modify it under
+        the terms of the GNU General Public License as published by the Free Software
+        Foundation; either version 2 of the License, or (at your option) any later
+        version.
+        
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY
+        WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+        PARTICULAR PURPOSE. See the GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License along with
+        this program; if not, write to the Free Software Foundation, Inc., 59 Temple
+        Place, Suite 330, Boston, MA 02111-1307 USA.
+        
+        
+        Version History
+        ===============
+        
+        3.1.3 (2012-11-14)
+        ------------------
+        
+        * Added a MANIFEST.in to exclude the examples folder from being packaged with
+          the egg to work around the SandboxViolation from EasyInstall when installing
+          FSD via buildout on Windows systems.
+          [cah190]
+        
+        * Work around membrane shortcoming which caused group property providers to
+          be enumerated as users, raising an error and preventing further user
+          enumeration.
+          [Laurence Rowe]
+        
+        
+        3.1.2 (2012-04-20)
+        ------------------
+        
+        * Added a 'use site default' option to the available editors list.  Thanks to
+          David Carter for reporting this issue and supplying a patch.
+          [cah190]
+        
+        * Require Products.membrane >= 2.1.4 to get the property sheet typing fix which
+          affects the ext_editor field.
+          [cah190]
+        
+        
+        3.1.1 (2012-03-28)
+        ------------------
+        
+        * Added a sample-content profile. [pumazi]
+        
+        * fsd_atoz_view and department_textual_view should now work on Department objects
+          living outside the FacultyStaffDirectory root on a site.  Warning: external
+          Departments will only work reliably for situations where there is a single
+          FacultyStaffDirectory object in a site.  If there are multiple
+          FacultyStaffDirectory objects, then use of external Departments will have
+          undefined behavior.
+          [cah190]
+        
+        * Fixes to author.cpt to support Plone 4.x.  Thanks to Paul Roeland for reporting
+          this problem and supplying a patch.
+          [cah190]
+        
+        * Fixed fsd_atoz_view to work with last names having first characters outside the
+          A to Z range.  We now allow for any valid unicode character.  Thanks to
+          Toni Haka-Risku for reporting this problem and supplying a patch which served
+          as a starting point for this fix.
+          [cah190]
+        
+        
+        3.1 (2012-03-16)
+        ----------------
+        
+        * Retagging as 3.1.
+          [cah190]
+        
+        
+        3.1b1 (2011-08-18)
+        ------------------
+        
+        * Rework templates to reflect the Plone 4.0 layout changes.
+          [esteele]
+        
+        * All FSD content type interfaces now subclass IFacultyStaffDirectoryContent. 
+          Q: Why didn't they do so previously?
+          A: I have no idea.
+          [esteele]
+        
+        * Drop support for Plone releases below 4.0.
+          [esteele]
+          
+        * Remove the reliance on the documentactions viewlet (not shown by default in 
+          Plone 4+). vCard link now appears below the contact information in
+          person_view.
+          [esteele]
+          
+          
+        3.0.1
+        -----
+        
+        * Add FacultyStaffDirectory to the content types controlled by the FSD Tool's
+          activeMembraneStates field. Corrects an issue with customized viewlets 
+          failing their permission checks.
+          [esteele, pumazi]
+        
+        * Updated Spanish translation for plone and FacultyStaffDirectory domain
+          [macagua (Leonardo J. Caballero G.)]
+        
+        * Moved the Python import of zope.i18nmessageid to __init__.py and import 
+          the MessageFactory for FacultyStaffDirectory domain as FSDMessageFactory
+          [macagua (Leonardo J. Caballero G.)]
+        
+        * Added more support for i18n to "default" profile generic setup.
+          [macagua (Leonardo J. Caballero G.)]
+        
+        3.0
+        ---
+        
+        * Update person.pt in MobilePhoneExtender to be consistent with FSD's person.pt
+          (to fix Plone 4 compatibility).
+          [cah190]
+        
+        * Added missing adapter registration to MobilePhoneExtender.
+          [cah190]
+          
+        * activeMembraneStates in the fsdtool now uses a MultiSelectionWidget and the
+          workflow states vocabulary.
+          [cah190]
+          
+        * Updated course_view.pt for Plone 4.
+          [cah190]
+        
+        3.0b4
+        -----
+        
+        * No longer support extenderInstallation install methods.  installExtender and
+          installExtenderGloballyIfLocallyIsNotSupported will now throw exceptions.
+          uninstallExtender will stay around for at least the 3.0 releases to permit
+          easy cleanup of old extender installs.
+          [cah190]
+        
+        * Extender developers should use IBrowserLayerAwareExtender to register their
+          extender against a browserlayer to make it possible to activate the extender
+          per Plone site.  MobilePhoneExtender has been updated as an example.
+          [cah190]
+        
+        * Drop the icon for the vCard action.
+          [esteele]
+          
+        * Slightly rearrange package layout.
+          [esteele]
+          
+        * Stop creating a 'my folder' action. This went away in Plone 3.
+          [esteele]
+          
+        * Stop using deprecated actionicons_tool and put the icon directly on the action.
+          [cah190 (Craig Haynal)]
+        
+        * Register facultystaffdirectory_tool via GS.
+          [cah190 (Craig Haynal)]
+        
+        * Catalog indexes and metadata are now loaded via GS.
+          [cah190 (Craig Haynal)]
+        
+        * Collection/SmartFolder indexes are now loaded via GS.
+          [cah190 (Craig Haynal)]
+        
+        * Register configlet via GenericSetup.
+          [esteele]
+          
+        * Set up navtree properties via GenericSetup.
+          [esteele]
+          
+        * Use an import step and GS profile to set up versioning and diffing,
+          respectively.
+          [esteele]
+          
+        * Reinstall/Refresh is not a Plone supported updating mechanism. Use
+          portal_setup instead. Removing the code encouraging this sort of thing.
+          [esteele]
+          
+        * Move kupu resource types registration to a GS import step. 
+          [esteele]
+          
+        * Drop the 1.0-2.0 migration script. We'll no longer support a direct 1.0-3.0
+          migration.
+          [esteele]
+        
+        * Moved css registry manipulation to GS profile, dropped css and js registry
+          install code.
+          [cah190 (Craig Haynal)]
+          
+        * Install dependencies via GS rather than through Install.py
+          [cah190 (Craig Haynal)]
+            
+        * Factory tool registration is now via GS.
+          [cah190 (Craig Haynal)]
+        
+        3.0b3
+        -----
+        * Dropped the plone3 GS profile, paved over the types/\*.xml with versions
+          from a working FSD Plone instance.
+          [cah190 (Craig Haynal)]
+        
+        * Don't call Products.Archetypes.Extensions.utils helpers, they seem to make
+          Archetypes move itself in the portal_skins lists in a way that breaks
+          TinyMCE.
+          [cah190 (Craig Haynal)]
+        
+        * Installer should not be installing ATReferenceBrowserWidget.
+          [cah190 (Craig Haynal)]
+        
+        * Register our skins directory the modern way (through ZCML and skins.xml)
+          [cah190 (Craig Haynal)]
+        
+        * Pin to archetypes.schemaextender < 2.1 because 2.1 and higher use plone.uuid
+          which breaks Products.Relations and older versions of Archetypes.
+          [cah190 (Craig Haynal)]
+        
+        * Fixed schema conditions and fsdtool data to prevent authorization failures
+          for non-managers editing FSD objects.
+          [cah190 (Craig Haynal)]
+        
+        * Updates to facultystaffdirectory_tool access and security
+          [cah190 (Craig Haynal)]
+        
+        * Made FSD not installable when creating a Plone 4 site (our GS profiles are not
+          sufficient for a functional install).
+          [cah190 (Craig Haynal)]
+        
+        3.0b2
+        -----
+        * Added a lines field to the facultystaffdirectory_tool that contains the list of
+          active states.
+          [cah190 (Craig Haynal)]
+        
+        * Inactive users will now fail to authenticate.
+          [cah190 (Craig Haynal)]
+        
+        * Inactive groups will now appear as empty groups.
+          [cah190 (Craig Haynal)]
+        
+        * Fixed author.cpt to work in Plone 4 by adding missing globals.
+          [cah190 (Craig Haynal)]
+        
+        * Replaced direct page template references to facultystaffdirectory_tool with 
+          getToolByName lookups to allow for anonymous viewing of listings.
+          [cah190 (Craig Haynal)]
+        
+        * Added missing icon references to GS type information.
+          [cah190 (Craig Haynal)]
+        
+        * Defined global variables (template_id, normalizeString, member) in skin templates.
+          [lvb5153 (Luke Brannon)]
+        
+        * Removed document_action macros from FSD skin templates.
+          [lvb5153 (Luke Brannon)]
+        
+        * Registered document_actions viewlet to abovecontentbody viewlet manager
+          for FSD types (in configure.zcml, since there is no browser package).
+          [lvb5153 (Luke Brannon)]
+        
+        * Replaced object_title global definition with context/Title in FSD
+          skin templates.
+          [lvb5153 (Luke Brannon)]
+        
+        3.0b1
+        -----
+        * Add Plone 4.0 compatibility.
+          [ems174, cah190, cewing, netropic]
+        
+        2.1.5
+        -----
+        * Italian translation merged
+          (https://weblion.psu.edu/trac/weblion/ticket/1266).
+          [cah190 (Craig Haynal)]
+        
+        * Updated portal_memberdata image generation based on suggestions
+          from michael.lindig and updated tests accordingly
+          (https://weblion.psu.edu/trac/weblion/ticket/1204).
+          [cah190 (Craig Haynal)]
+        
+        * Fixed Classification's getPeople to account for effective/
+          expired, View permissions
+          (https://weblion.psu.edu/trac/weblion/ticket/2036)
+          [par117 (Paul Rentschler)]
+        
+        * Added a termination details field and put it and the effective/
+          expired dates in a new Employment Information schemata
+          [par117 (Paul Rentschler)]
+        
+        * Updated the person_view.pt file to hide all information except
+          the person's name and termination details if they are expired
+          unless the viewer has editing rights.
+          [par117 (Paul Rentschler)]
+        
+        2.1.4
+        -----
+        
+        * Owner role should be able to edit Persons in Hidden state.
+          [ems174 (Eric Steele)]
+        
+        * Portuguese translation merged.
+          [cah190 (Craig Haynal)]
+        
+        * Allow archetypes.schemaextender 2.x (now includes schema caching).
+          [cah190 (Craig Haynal)]
+        
+        2.1.3
+        -----
+        
+        * Fixed the overzealous user search
+          (https://weblion.psu.edu/trac/weblion/ticket/842)
+          [ems174 (Eric Steele)]
+        
+        * Revised workflow for Persons. Visibility and membership behavior can
+          now be controlled independently.
+          [cah190 (Craig Haynal)]
+        
+        * Fixed an umlaut crash
+          (https://weblion.psu.edu/trac/weblion/ticket/1212).
+          [ems174 (Eric Steele)]
+        
+        * Fixed some ReferenceBrowserWidget behavior when running behind a web
+          server (https://weblion.psu.edu/trac/weblion/ticket/1222).
+          [cah190 (Craig Haynal)]
+        
+        * Added Turkish translation
+          (https://weblion.psu.edu/trac/weblion/ticket/1252).
+          [uyar]
+        
+        * Brought translation infrastructure up to date
+          (https://weblion.psu.edu/trac/weblion/ticket/1482).
+          [ewr119 (Erik Rose)]
+        
+        * Corrected the permission needed to manage personnel
+          (https://weblion.psu.edu/trac/weblion/ticket/1464).
+          [netropic]
+        
+        * Described the permissions implementations of the Personal
+          Assistant(s) field (https://weblion.psu.edu/trac/weblion/ticket/1346).
+          [ewr119 (Erik Rose)]
+        
+        * Wrapped example extender in egg packaging and renamed it.
+          [ewr119 (Erik Rose)]
+        
+        * Fixed syntax error in the French translation.
+          [ewr119 (Erik Rose)]
+        
+        * Included compiled (.mo) versions of all translations.
+          [ewr119 (Erik Rose)]
+        
+        * Fix the getClassificationNames index method so that it doesn't
+          throw an error trying to concatenate a function and an int, also
+          make sure the method works in 3.2 and 3.3
+          [cqp5087 (claytron)]
+        
+        * Remove MANIFEST.in and use setuptools svn integration instead
+          [cqp5087 (claytron)]
+        
+        2.1.2
+        -----
+        
+        * Corrected a problem with the reference browser widget popup not
+          displaying available items when used on a site using virtual
+          hosting. [ems174 (Eric Steele)]
+        
+        2.1.1.1
+        -------
+        
+        * Corrected a problem with missing files in the 2.1.1 distribution.
+          [ems174 (Eric Steele)]
+        
+        2.1.1
+        -----
+        
+        * Corrected a problem with person_view.pt that caused errors
+          when anonymous users viewed a person with an assistant
+          assigned. [cewing]
+        
+        * Corrected a problem that prevented versioning of Persons and
+          Committees. [cewing]
+        
+        * Added a dedicated Committees Folder view (similar to the
+          specialies folder view). [ajung]
+        
+        * A Specialty has an extra schemata "Overview" with an image and
+          richtext field. Both fields are used for the
+          speciality_overview view. [ajung]
+        
+        * Added microformats for person_view's address block. [robzonenet]
+        
+        * Added Spanish translation [Gildardo Bautista]
+        
+        * Added French translation [Benjamin Klups]
+        
+        * List department in person_view [Gildardo Bautista]
+        
+        * Corrected a problem with viewing departments located outside
+          of a Directory object. [ems174 (Eric Steele)]
+        
+        2.1
+        ---
+        * Corrected some CSS display issues with Person pictures.
+        
+        * Users with the Personnel Manager role can now add Person
+          objects.
+        
+        * Added a field to the classification gallery view to control
+          the width of the Person images
+        
+        * Multiple FacultyStaffDirectory objects can now exist in the
+          same site
+        
+        * Improved product reinstallation performance
+        
+        * Added an assistant field to confer profile editing delegation
+          on other users
+        
+        * Added a "can manage personnel" field to the sharing tab
+        
+        * Added i18n hooks for all fields and templates
+        
+        * Removed a boatload of unused imports
+        
+        * Removed WebLionLibrary dependency
+        
+        * Eggified product
+        
+        * Configlet icon should now work properly in
+          VirtualHostMonstered sites
+        
+        * vCard should handle unicode characters properly now
+        
+        * vCard images now display
+        
+        * Empty biographies stay empty
+        
+        2.0
+        ---
+        
+        * Added an A-to-Z listing view for Directories and Departments.
+        
+        * Forced Previous/Next display in the Person editor.
+        
+        * Bug fixes
+        
+        2.0a1
+        -----
+        
+        * Integrated with Plone users and groups.
+        
+        * Switched extensibility framework to archetypes.schemaextender.
+          More than one extender works at once now, and all content
+          types are extensible.
+        
+        * Added Department content type.
+        
+        * Sortable Name is now available as a SmartFolder index (mainly
+          for sorting).
+        
+        * Added SmartFolder fields for Departments, Classifications,
+          Committees, Specialties, and People.
+        
+        * Templates are faster.
+        
+        * Non-ASCII characters in Person titles work.
+        
+        * People now have a Middle Name field.
+        
+        * Specialties and other types of person groups can now live
+          outside the Faculty/Staff Directory.
+        
+        * Specialties are now listed in a sane order.
+        
+        * Committees Folders are now addable within Departments.
+        
+        * Added a configlet in Site Setup to allow customization of
+          phone number and user ID validation as well as the ability
+          to disable aspects of membrane integration.
+        
+        * Silenced some deprecation warnings.
+        
+        * Added support for Plone 3's versioning.
+        
+        * Renamed content types to avoid collisions with other products.
+        
+        * Added oodles of new tests.
+        
+        * Ditched ArchGenXML, making our code much cleaner.
+        
+        * Made more use of GenericSetup.
+        
+        1.0.1 -- Minor documentation tweaks
+        -----------------------------------
+        
+        1.0 -- Initial release
+        ----------------------
+        
+Platform: UNKNOWN
+Classifier: Framework :: Plone
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules

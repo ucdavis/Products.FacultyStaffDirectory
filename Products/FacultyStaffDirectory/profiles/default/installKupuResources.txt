@@ -1,0 +1,1 @@
+**The installKupuResources step is run if this file is present in the profile**

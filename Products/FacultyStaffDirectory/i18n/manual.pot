@@ -1,0 +1,129 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-30 18:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#. Default: "Basic Information"
+#: ../Person.py
+msgid "Basic Information"
+msgstr ""
+
+#. Default: "Contact Information"
+#: ../Person.py
+msgid "Contact Information"
+msgstr ""
+
+#. Default: "Professional Information"
+#: ../Person.py
+msgid "Professional Information"
+msgstr ""
+
+#. Default: "Employment Information"
+#: ../Person.py
+msgid "Employment Information"
+msgstr ""
+
+#. Default: "User Settings"
+#: ../Person.py
+msgid "User Settings"
+msgstr ""
+
+#. Default: "categorization"
+#: ../Person.py
+msgid "categorization"
+msgstr ""
+
+#. Default: "ownership"
+#: ../Person.py
+msgid "ownership"
+msgstr ""
+
+#. Default: "settings"
+#: ../Person.py
+msgid "settings"
+msgstr ""
+
+#. Default: "Dates"
+#: ../Person.py
+msgid "Dates"
+msgstr ""
+
+#. Default: "Display"
+#: ../FacultyStaffDirectory.py
+msgid "display"
+msgstr ""
+
+#. Default: "Overview"
+#: ../Specialty.py
+msgid "Overview"
+msgstr ""
+
+#. Default: "Personnel Manager"
+msgid "Personnel Manager"
+msgstr ""
+
+#. Default: "User Preferences Editor"
+msgid "User Preferences Editor"
+msgstr ""
+
+#. Default: "Standard View"
+#: dynamic view name template person_view on type FSDPerson
+msgid "Standard View"
+msgstr ""
+
+#. Default: "A-to-Z Listing"
+#: dynamic view name template fsd_atoz_view on type FacultyStaffDirectory
+msgid "A-to-Z Listing"
+msgstr ""
+
+#. Default: "Base View"
+#: dynamic view name template base_view on type Person
+#: dynamic view name template base_view on type FSDCommitteesFolder
+#: dynamic view name template base_view on type FSDCommittee
+msgid "Base View"
+msgstr ""
+
+#. Default: "Gallery View"
+#: dynamic view name template directory_standard_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_standard_view on type FSDSpecialty
+#: dynamic view name template classification_standard_view on type FSDClassification
+msgid "Gallery View"
+msgstr ""
+
+#. Default: "Committees"
+#: dynamic view name template committeesfolder_view on type FSDCommitteesFolder
+#: dynamic view name template committee_view on type FSDCommittee
+msgid "Committees"
+msgstr ""
+
+#. Default: "Specialites overview"
+#: dynamic view name template specialtiesfolder_overview on type FSDSpecialtiesFolder
+msgid "Specialites overview"
+msgstr ""
+
+#. Default: "Tabular View"
+#: dynamic view name template directory_tabular_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_tabular_view on type FSDSpecialty
+#: dynamic view name template classification_tabular_view on type FSDClassification
+msgid "Tabular View"
+msgstr ""
+
+#. Default: "Textual View"
+#: dynamic view name template department_textual_view on type FacultyStaffDirectory
+msgid "Textual View"
+msgstr ""
+

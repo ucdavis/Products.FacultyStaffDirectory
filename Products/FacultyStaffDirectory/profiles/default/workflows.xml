@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+  <object name="fsd_person_workflow" meta_type="Workflow" />
+  <object name="fsd_persongrouping_workflow" meta_type="Workflow" />
+  <object name="fsd_persongrouping_descriptor_workflow" meta_type="Workflow" />
+  <object name="fsd_tool_workflow" meta_type="Workflow" />  
+  <object name="fsd_directory_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="FSDFacultyStaffDirectory">
+      <bound-workflow workflow_id="fsd_directory_workflow" />
+    </type>
+    <type type_id="FSDPerson">
+      <bound-workflow workflow_id="fsd_person_workflow" />
+    </type>
+    <type type_id="FSDClassification">
+      <bound-workflow workflow_id="fsd_persongrouping_workflow" />
+    </type>
+    <type type_id="FSDDepartment">
+      <bound-workflow workflow_id="fsd_persongrouping_workflow" />
+    </type>
+    <type type_id="FSDCommittee">
+      <bound-workflow workflow_id="fsd_persongrouping_workflow" />
+    </type>
+    <type type_id="FSDFacultyStaffDirectoryTool">
+      <bound-workflow workflow_id="fsd_tool_workflow" />
+    </type>
+    <type type_id="FSDSpecialtyInformation">
+      <bound-workflow workflow_id="fsd_persongrouping_descriptor_workflow"/>
+    </type>
+    <type type_id="FSDDepartmentalMembership">
+      <bound-workflow workflow_id="fsd_persongrouping_descriptor_workflow"/>
+    </type>
+    <type type_id="FSDCommitteeMembership">
+      <bound-workflow workflow_id="fsd_persongrouping_descriptor_workflow"/>
+    </type>
+  </bindings>
+</object>

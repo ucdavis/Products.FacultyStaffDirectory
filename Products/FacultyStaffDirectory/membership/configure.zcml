@@ -1,0 +1,49 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:five="http://namespaces.zope.org/five"
+           xmlns:i18n="http://namespaces.zope.org/i18n"
+           i18n_domain="FacultyStaffDirectory">
+
+  <adapter for="..interfaces.person.IPerson"
+           provides="Products.membrane.interfaces.IMembraneUserObject"
+           factory=".person.UserRelated" />
+  <adapter for="..interfaces.person.IPerson"
+           provides="Products.membrane.interfaces.IUserRoles"
+           factory=".person.UserRoles" />
+  <adapter for="..interfaces.person.IPerson"
+           provides="Products.membrane.interfaces.IMembraneUserManagement"
+           factory=".person.UserManagement" />
+
+  <adapter for="..interfaces.person.IPerson"
+           provides="Products.membrane.interfaces.IUserAuthentication"
+           factory=".person.UserAuthentication" />
+           
+  <adapter for="..interfaces.facultystaffdirectory.IFacultyStaffDirectory"
+           provides="Products.membrane.interfaces.IGroup"
+           factory=".facultystaffdirectory.Group" />
+           
+  <adapter for="..interfaces.committee.ICommittee"
+           provides="Products.membrane.interfaces.IGroup"
+           factory=".committee.Group" />
+           
+  <adapter for="..interfaces.classification.IClassification"
+           provides="Products.membrane.interfaces.IGroup"
+           factory=".classification.Group" />
+           
+  <adapter for="..interfaces.department.IDepartment"
+           provides="Products.membrane.interfaces.IGroup"
+           factory=".department.Group" />
+
+  <!-- Avoid membrane errors when enumerating groupings as users -->
+  <adapter for="..FacultyStaffDirectory.FacultyStaffDirectory"
+           provides="Products.membrane.interfaces.IMembraneUserObject"
+           factory=".not_a_user_object" />
+
+  <adapter for="..Classification.Classification"
+           provides="Products.membrane.interfaces.IMembraneUserObject"
+           factory=".not_a_user_object" />
+
+  <adapter for="..Committee.Committee"
+           provides="Products.membrane.interfaces.IMembraneUserObject"
+           factory=".not_a_user_object" />
+
+</configure>

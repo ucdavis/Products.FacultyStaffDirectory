@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+	  metal:use-macro="here/main_template/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+        <metal:content-core fill-slot="content-core">
+            <metal:content-core define-macro="content-core">
+                <div class="facultyStaffDirectory classification">
+                    <div class="tabularView">
+                        <table class="listing">
+                            <metal:block define-macro="list_people">
+                                <tal:block tal:define="classificationExists nocall:classification | nothing;
+                                                       classificationContext python:classificationExists and context.contextualClassification(classification) or context;
+                                                       people classificationContext/getSortedPeople;"
+                                           tal:condition="people">
+                                    <thead>
+                                        <metal:block define-slot="classification_header" tal:condition="nocall:classificationExists">
+                                            <tr>
+                                                <th colspan="3" class="classification">
+                                                    <metal:block define-macro="classification_header_link">
+                                                        <a tal:define="normalizeString nocall:context/@@plone/normalizeString" tal:attributes="name python:normalizeString(classificationContext.Title()); href python:'%s?classification=%s' % (here.absolute_url(), classification.id)" tal:content="classificationContext/Title"><tal:comment replace="nothing">[classification]</tal:comment></a>
+                                                    </metal:block>
+                                                </th>
+                                            </tr>
+                                        </metal:block>
+                                    </thead>
+                                    <tbody>
+                                        <metal:block define-slot="table_headings">
+                                            <tr>
+                                                <th class="column" i18n:translate="FacultyStaffDirectory_name">
+                                                    Name
+                                                </th>
+                                                <th class="column" i18n:translate="FacultyStaffDirectory_phone">
+                                                    Phone
+                                                </th>
+                                                <th class="column" i18n:translate="FacultyStaffDirectory_email">
+                                                    Email
+                                                </th>
+                                            </tr>
+                                        </metal:block>
+                                        <tal:block tal:repeat="person people">
+                                            <tr tal:define="oddrow repeat/person/odd" tal:attributes="class python:test(oddrow, 'even', 'odd')">
+                                                <metal:block define-slot="table_cells">
+                                                    <td class="personName">
+                                                        <a href="" tal:attributes="href person/absolute_url" tal:content="string:${person/getLastName}, ${person/getFirstName}" />
+                                                    </td>
+                                                    <td tal:content="person/getOfficePhone" class="officePhone" />
+                                                    <td><span tal:condition="person/getEmail" tal:replace="structure python:person.spamProtectFSD(person.getEmail())" class="emailAddress" /></td>
+                                                </metal:block>
+                                            </tr>
+                                        </tal:block>
+                                    </tbody>
+                                </tal:block>
+                            </metal:block>
+                        </table>
+                    </div>
+                </div>
+    		</metal:content-core>
+		</metal:content-core>
+	</body>
+</html>

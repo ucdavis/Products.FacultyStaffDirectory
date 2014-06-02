@@ -1,0 +1,201 @@
+<?xml version="1.0" ?>
+<RelationsLibrary>
+	<RulesetCollection id="FacultyStaffDirectory">
+		<Ruleset id="classifications_people" uid="-64--88-1-108-5b695eb6:1107948e86a:-8000:00000000000015FE">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDClassification
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="people_classifications"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="people_classifications" uid="people_classifications">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDClassification
+				</allowedTargetType>
+			</TypeConstraint>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="-64--88-1-108-5b695eb6:1107948e86a:-8000:00000000000015FE"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="DepartmentalMembership" uid="-84-28--90--11--540cb6d5:114b1e72e80:-8000:0000000000000C4C">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDDepartment
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDDepartmentalMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					1
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="departments_members"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="departments_members" uid="departments_members">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDDepartment
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDDepartmentalMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					0
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="-84-28--90--11--540cb6d5:114b1e72e80:-8000:0000000000000C4C"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="SpecialtyInformation" uid="-84-28--90--4-483061cf:1115b3ad549:-8000:0000000000000B42">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDSpecialty
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDSpecialtyInformation
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					1
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="people_specialties"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="people_specialties" uid="people_specialties">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDSpecialty
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDSpecialtyInformation
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					0
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="-84-28--90--4-483061cf:1115b3ad549:-8000:0000000000000B42"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="CommitteeMembership" uid="-84-28--90--15--1c25f7cd:110dff54157:-8000:0000000000000AF2">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDCommittee
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDCommitteeMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					1
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="members_committees"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="members_committees" uid="members_committees">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDCommittee
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDCommitteeMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					0
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="-84-28--90--15--1c25f7cd:110dff54157:-8000:0000000000000AF2"/>
+			</InverseImplicator>
+		</Ruleset>	
+		<Ruleset id="people_assistants" title="people_assistants" uid="7626004ee22ce6b68718128f207ef733">
+			<TypeConstraint id="type_constraint" title="type_constraint" uid="b26852604fd0b20c5cf235243281e5b6">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<InverseImplicator id="inverse_relation" title="inverse_relation" uid="be3d0a08b77ddd33d457598ffaf27e77">
+				<inverseRuleset uidref="77515d83ec6db01b18a34dba38392b6e"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="assistants_people" title="assistants_people" uid="77515d83ec6db01b18a34dba38392b6e">
+			<TypeConstraint id="type_constraint" title="type_constraint" uid="05c90cc07c8ce99fea366b0a57a47574">
+				<allowedSourceType>
+				    FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+				    FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<InverseImplicator id="inverse_relation" title="inverse_relation" uid="0d6c078121c525c516af56b7d6eb6b8b">
+				<inverseRuleset uidref="7626004ee22ce6b68718128f207ef733"/>
+			</InverseImplicator>
+		</Ruleset>
+	</RulesetCollection>
+</RelationsLibrary>

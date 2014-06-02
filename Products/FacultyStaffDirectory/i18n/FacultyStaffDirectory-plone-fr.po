@@ -1,0 +1,698 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FacultyStaffDirectory\n"
+"POT-Creation-Date: 2010-07-01 18:31+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: Klups Benjamin <benjamin.klups@noveltys.fr>\n"
+"Language-Team: FRENCH <infos@noveltys.fr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: fr\n"
+"Language-Name: French\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+"X-Is-Fallback-For: fr-be fr-ca fr-lu fr-mc fr-ch fr-fr\n"
+
+#. Default: "A FacultyStaffDirectory base class for groups of people."
+#: ../profiles/default/types/FSDPersonGrouping.xml
+msgid "A FacultyStaffDirectory base class for groups of people."
+msgstr ""
+
+#. Default: "A course taught by this person."
+#: ../profiles/default/types/FSDCourse.xml
+msgid "A course taught by this person."
+msgstr ""
+
+#. Default: "A directory of faculty and staff members"
+#: ../profiles/default/types/FSDFacultyStaffDirectory.xml
+msgid "A directory of faculty and staff members"
+msgstr ""
+
+#: ../FacultyStaffDirectory.py:170
+msgid "A group with id '%s' already exists in the portal"
+msgstr ""
+
+#: ../profiles/default/types/FSDClassification.xml
+msgid "A grouping of associated people eg \"Faculty\" or \"Staff\"."
+msgstr ""
+
+#. Default: "A person's listed committees"
+#: ../profiles/default/portal_atct.xml
+msgid "A person's listed committees"
+msgstr ""
+
+#. Default: "A person's listed specialty areas"
+#: ../profiles/default/portal_atct.xml
+msgid "A person's listed specialty areas"
+msgstr ""
+
+#: ../interfaces/configuration.py:63
+msgid "A regular expression that a Person's ID must match. Defaults to the expression Plone uses for user IDs."
+msgstr ""
+
+#: ../interfaces/configuration.py:37
+msgid "A regular expression that a Person's phone number must match. Leave blank to disable phone number validation."
+msgstr ""
+
+#. Default: "A simple page describing a committee or working group with the associated committee members."
+#: ../profiles/default/types/FSDCommittee.xml
+msgid "A simple page describing a committee or working group with the associated committee members."
+msgstr ""
+
+#. Default: "A-to-Z Listing"
+#: dynamic view name template fsd_atoz_view on type FacultyStaffDirectory
+msgid "A-to-Z Listing"
+msgstr ""
+
+#: ../interfaces/configuration.py:57
+msgid "Access Account ID"
+msgstr ""
+
+#. Default: "Accessibility"
+#: ../profiles/uninstall/actions.xml
+msgid "Accessibility"
+msgstr ""
+
+#. Default: "Active"
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "Active"
+msgstr ""
+
+#. Default: "Add to favorites"
+#: ../profiles/uninstall/actions.xml
+msgid "Add to favorites"
+msgstr ""
+
+#. Default: "An academic department."
+#: ../profiles/default/types/FSDDepartment.xml
+msgid "An academic department."
+msgstr ""
+
+#. Default: "An area of academic study."
+#: ../profiles/default/types/FSDSpecialty.xml
+msgid "An area of academic study."
+msgstr ""
+
+#: ../FacultyStaffDirectory.py:166
+msgid "An object with id '%s' already exists in this folder"
+msgstr ""
+
+#. Default: "Base View"
+#: dynamic view name template base_view on type FSDCommittee
+#: dynamic view name template base_view on type FSDCommitteesFolder
+#: dynamic view name template base_view on type Person
+msgid "Base View"
+msgstr ""
+
+#. Default: "Basic Information"
+#: ../Person.py
+msgid "Basic Information"
+msgstr ""
+
+#. Default: "Categorization"
+#: ../Person.py
+msgid "Categorization"
+msgstr ""
+
+#. Default: "Change State"
+#: ../profiles/uninstall/actions.xml
+msgid "Change State"
+msgstr ""
+
+#. Default: "Classification"
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDClassification.xml
+msgid "Classification"
+msgstr ""
+
+#. Default: "Classifications"
+#: ../profiles/default/portal_atct.xml
+msgid "Classifications"
+msgstr ""
+
+#. Default: "Committee"
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDCommittee.xml
+msgid "Committee"
+msgstr ""
+
+#. Default: "Committee Membership Information"
+#: ../profiles/default/types/FSDCommitteeMembership.xml
+msgid "Committee Membership Information"
+msgstr ""
+
+#. Default: "Committees"
+#: ../profiles/default/portal_atct.xml
+msgid "Committees"
+msgstr ""
+
+#. Default: "Committees Folder"
+#: ../profiles/default/types/FSDCommitteesFolder.xml
+msgid "Committees Folder"
+msgstr ""
+
+#. Default: "Contact"
+#: ../profiles/uninstall/actions.xml
+msgid "Contact"
+msgstr ""
+
+#. Default: "Contact Information"
+#: ../Person.py
+msgid "Contact Information"
+msgstr ""
+
+#. Default: "Contains information pertaining to a person's membership in a committee."
+#: ../profiles/default/types/FSDCommitteeMembership.xml
+msgid "Contains information pertaining to a person's membership in a committee."
+msgstr ""
+
+#. Default: "Contains information pertaining to a person's membership in a department."
+#: ../profiles/default/types/FSDDepartmentalMembership.xml
+msgid "Contains information pertaining to a person's membership in a department."
+msgstr ""
+
+#: ../interfaces/configuration.py:76
+msgid "Content types to integrate with Plone's users and groups"
+msgstr ""
+
+#. Default: "Contents"
+#: ../profiles/uninstall/actions.xml
+msgid "Contents"
+msgstr ""
+
+#. Default: "Copy"
+#: ../profiles/uninstall/actions.xml
+msgid "Copy"
+msgstr ""
+
+#. Default: "Course"
+#: ../profiles/default/types/FSDCourse.xml
+msgid "Course"
+msgstr ""
+
+#: ../interfaces/configuration.py:48
+msgid "Custom email obfuscation"
+msgstr ""
+
+#. Default: "Cut"
+#: ../profiles/uninstall/actions.xml
+msgid "Cut"
+msgstr ""
+
+#. Default: "Dates"
+#: ../Person.py
+msgid "Dates"
+msgstr ""
+
+#. Default: "Delete"
+#: ../profiles/uninstall/actions.xml
+msgid "Delete"
+msgstr ""
+
+#. Default: "Department"
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDDepartment.xml
+msgid "Department"
+msgstr ""
+
+#. Default: "Departmental Membership Information"
+#: ../profiles/default/types/FSDDepartmentalMembership.xml
+msgid "Departmental Membership Information"
+msgstr ""
+
+#. Default: "Departments"
+#: ../profiles/default/portal_atct.xml
+msgid "Departments"
+msgstr ""
+
+#: ../interfaces/configuration.py:43
+msgid "Describe the above phone number rule in a human-readable format: for example, (555) 555-5555."
+msgstr ""
+
+#. Default: "Display"
+#: ../FacultyStaffDirectory.py
+msgid "Display"
+msgstr ""
+
+#. Default: "Edit with external application"
+#: ../profiles/uninstall/actions.xml
+msgid "Edit with external application"
+msgstr ""
+
+#. Default: "FSD Settings"
+#: ../profiles/default/actionicons.xml
+msgid "FSD Settings"
+msgstr ""
+
+#. Default: "Faculty/Staff Directory"
+#: ../profiles/default/types/FSDFacultyStaffDirectory.xml
+msgid "Faculty/Staff Directory"
+msgstr ""
+
+#: ../browser/configuration.py:16
+msgid "Faculty/Staff Directory settings"
+msgstr ""
+
+#: ../interfaces/configuration.py:49
+msgid "Format email addresses like 'someone AT here DOT com' rather than using Plone's default spam armoring."
+msgstr ""
+
+#. Default: "Full Name"
+#: ../profiles/default/portal_atct.xml
+msgid "Full Name"
+msgstr ""
+
+#. Default: "Gallery View"
+#: dynamic view name template classification_standard_view on type FSDClassification
+#: dynamic view name template directory_standard_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_standard_view on type FSDSpecialty
+msgid "Gallery View"
+msgstr ""
+
+#. Default: "Holds and displays committees."
+#: ../profiles/default/types/FSDCommitteesFolder.xml
+msgid "Holds and displays committees."
+msgstr ""
+
+#. Default: "Holds and displays specialties."
+#: ../profiles/default/types/FSDSpecialtiesFolder.xml
+msgid "Holds and displays specialties."
+msgstr ""
+
+#. Default: "Holds information about a single person"
+#: ../profiles/default/types/FSDPerson.xml
+msgid "Holds information about a single person"
+msgstr ""
+
+#. Default: "Home"
+#: ../profiles/uninstall/actions.xml
+msgid "Home"
+msgstr ""
+
+#. Default: "Information pertaining to a person's association with a specialty."
+#: ../profiles/default/types/FSDSpecialtyInformation.xml
+msgid "Information pertaining to a person's association with a specialty."
+msgstr ""
+
+#: ../interfaces/configuration.py:71
+msgid "Invalid user id"
+msgstr ""
+
+#. Default: "Log in"
+#: ../profiles/uninstall/actions.xml
+msgid "Log in"
+msgstr ""
+
+#. Default: "Log out"
+#: ../profiles/uninstall/actions.xml
+msgid "Log out"
+msgstr ""
+
+#. Default: "My Folder"
+#: ../profiles/uninstall/actions.xml
+msgid "My Folder"
+msgstr ""
+
+#. Default: "My favorites"
+#: ../profiles/uninstall/actions.xml
+msgid "My favorites"
+msgstr ""
+
+#: ../Specialty.py:42
+msgid "Overview"
+msgstr ""
+
+#. Default: "Ownership"
+#: ../Person.py
+msgid "Ownership"
+msgstr ""
+
+#. Default: "Paste"
+#: ../profiles/uninstall/actions.xml
+msgid "Paste"
+msgstr ""
+
+#. Default: "People"
+#: ../profiles/default/portal_atct.xml
+msgid "People"
+msgstr ""
+
+#. Default: "Person"
+#: ../profiles/default/types/FSDPerson.xml
+msgid "Person"
+msgstr ""
+
+#. Default: "Person Grouping"
+#: ../profiles/default/types/FSDPersonGrouping.xml
+msgid "Person Grouping"
+msgstr ""
+
+#: ../interfaces/configuration.py:62
+msgid "Person ID format"
+msgstr ""
+
+#: ../interfaces/configuration.py:69
+msgid "Person ID format error message"
+msgstr ""
+
+#: ../interfaces/configuration.py:55
+msgid "Person ID label"
+msgstr ""
+
+#: ../interfaces/configuration.py:82
+msgid "Person objects provide user passwords"
+msgstr ""
+
+#. Default: "Personnel Manager"
+msgid "Personnel Manager"
+msgstr ""
+
+#: ../interfaces/configuration.py:42
+msgid "Phone number example"
+msgstr ""
+
+#: ../interfaces/configuration.py:36
+msgid "Phone number format"
+msgstr ""
+
+#. Default: "Preferences"
+#: ../profiles/uninstall/actions.xml
+msgid "Preferences"
+msgstr ""
+
+#. Default: "Print this"
+#: ../profiles/uninstall/actions.xml
+msgid "Print this"
+msgstr ""
+
+#. Default: "Professional Information"
+#: ../Person.py
+msgid "Professional Information"
+msgstr ""
+
+#. Default: "Published"
+#: ../profiles/default/workflows/fsd_persongrouping_descriptor_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#. Default: "RSS feed"
+#: ../profiles/uninstall/actions.xml
+msgid "RSS feed"
+msgstr ""
+
+#. Default: "Register"
+#: ../profiles/uninstall/actions.xml
+msgid "Register"
+msgstr ""
+
+#. Default: "Rename"
+#: ../profiles/uninstall/actions.xml
+msgid "Rename"
+msgstr ""
+
+#. Default: "Research Topics"
+#: ../profiles/default/portal_atct.xml
+msgid "Research Topics"
+msgstr ""
+
+#. Default: "Rules"
+#: ../profiles/uninstall/actions.xml
+msgid "Rules"
+msgstr ""
+
+#. Default: "Send this"
+#: ../profiles/uninstall/actions.xml
+msgid "Send this"
+msgstr ""
+
+#. Default: "Settings"
+#: ../Person.py
+msgid "Settings"
+msgstr ""
+
+#. Default: "Sharing"
+#: ../profiles/uninstall/actions.xml
+msgid "Sharing"
+msgstr ""
+
+#: ../interfaces/configuration.py:83
+msgid "Should user passwords be stored as part of the Person? To have a different PAS plugin handle authorization, turn this off."
+msgstr ""
+
+#. Default: "Site Map"
+#: ../profiles/uninstall/actions.xml
+msgid "Site Map"
+msgstr ""
+
+#. Default: "Site Setup"
+#: ../profiles/uninstall/actions.xml
+msgid "Site Setup"
+msgstr ""
+
+#. Default: "Specialites overview"
+#: dynamic view name template specialtiesfolder_overview on type FSDSpecialtiesFolder
+msgid "Specialites overview"
+msgstr ""
+
+#. Default: "Specialties"
+#: ../profiles/default/portal_atct.xml
+msgid "Specialties"
+msgstr ""
+
+#. Default: "Specialties Folder"
+#: ../profiles/default/types/FSDSpecialtiesFolder.xml
+msgid "Specialties Folder"
+msgstr ""
+
+#. Default: "Specialty"
+#: ../profiles/default/portal_atct.xml
+#: ../profiles/default/types/FSDSpecialty.xml
+msgid "Specialty"
+msgstr ""
+
+#. Default: "Specialty Information"
+#: ../profiles/default/types/FSDSpecialtyInformation.xml
+msgid "Specialty Information"
+msgstr ""
+
+#. Default: "Standard View"
+#: dynamic view name template person_view on type FSDPerson
+msgid "Standard View"
+msgstr ""
+
+#. Default: "Syndication"
+#: ../profiles/uninstall/actions.xml
+msgid "Syndication"
+msgstr ""
+
+#. Default: "Tabular View"
+#: dynamic view name template classification_tabular_view on type FSDClassification
+#: dynamic view name template directory_tabular_view on type FacultyStaffDirectory
+#: dynamic view name template specialty_tabular_view on type FSDSpecialty
+msgid "Tabular View"
+msgstr ""
+
+#. Default: "The classification assigned to a person"
+#: ../profiles/default/portal_atct.xml
+msgid "The classification assigned to a person"
+msgstr ""
+
+#. Default: "The classifications with which the person is associated"
+#: ../profiles/default/portal_atct.xml
+msgid "The classifications with which the person is associated"
+msgstr ""
+
+#. Default: "The committees with which the person is associated"
+#: ../profiles/default/portal_atct.xml
+msgid "The committees with which the person is associated"
+msgstr ""
+
+#. Default: "The departments assigned to a person"
+#: ../profiles/default/portal_atct.xml
+msgid "The departments assigned to a person"
+msgstr ""
+
+#. Default: "The departments with which the person is associated"
+#: ../profiles/default/portal_atct.xml
+msgid "The departments with which the person is associated"
+msgstr ""
+
+#: ../interfaces/configuration.py:70
+msgid "The error message returned when an entered Person ID does not match the above format"
+msgstr ""
+
+#: ../interfaces/configuration.py:56
+msgid "The name of the ID used by your organization"
+msgstr ""
+
+#. Default: "The people assigned to a person grouping (ie committee, department, specialty, classification)"
+#: ../profiles/default/portal_atct.xml
+msgid "The people assigned to a person grouping (ie committee, department, specialty, classification)"
+msgstr ""
+
+#. Default: "The person's name, last name first"
+#: ../profiles/default/portal_atct.xml
+msgid "The person's name, last name first"
+msgstr ""
+
+#. Default: "The research topics with which the person is associated"
+#: ../profiles/default/portal_atct.xml
+msgid "The research topics with which the person is associated"
+msgstr ""
+
+#. Default: "The specialties with which the person is associated"
+#: ../profiles/default/portal_atct.xml
+msgid "The specialties with which the person is associated"
+msgstr ""
+
+#. Default: "Toggle full screen mode"
+#: ../profiles/uninstall/actions.xml
+msgid "Toggle full screen mode"
+msgstr ""
+
+#. Default: "Undo"
+#: ../profiles/uninstall/actions.xml
+msgid "Undo"
+msgstr ""
+
+#: ../events/person.py:34
+msgid "User %s cannot be found."
+msgstr ""
+
+#. Default: "User Preferences Editor"
+msgid "User Preferences Editor"
+msgstr ""
+
+#. Default: "User Settings"
+#: ../Person.py
+msgid "User Settings"
+msgstr ""
+
+#. Default: "[FacultyStaffDirectory] Person Grouping Descriptor workflow"
+#: ../profiles/default/workflows/fsd_persongrouping_descriptor_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person Grouping Descriptor workflow"
+msgstr ""
+
+#. Default: "[FacultyStaffDirectory] Person Grouping workflow"
+#: ../profiles/default/workflows/fsd_persongrouping_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person Grouping workflow"
+msgstr ""
+
+#. Default: "[FacultyStaffDirectory] Person workflow"
+#: ../profiles/default/workflows/fsd_person_workflow/definition.xml
+msgid "[FacultyStaffDirectory] Person workflow"
+msgstr ""
+
+#. Default: "If you want to contact this author, fill in the form below."
+#: ../skins/FacultyStaffDirectory/author.cpt:139
+msgid "description_author_feedback"
+msgstr ""
+
+#. Default: "All content created by ${user}…"
+#: ../skins/FacultyStaffDirectory/author.cpt:264
+msgid "go_to_search_author_content"
+msgstr ""
+
+#. Default: "Latest content created by this user"
+#: ../skins/FacultyStaffDirectory/author.cpt:223
+msgid "heading_author_content"
+msgstr ""
+
+#. Default: "Author's external home page…"
+#: ../skins/FacultyStaffDirectory/author.cpt:119
+msgid "label_author_external_home_page"
+msgstr ""
+
+#. Default: "Author's home page in this site…"
+#: ../skins/FacultyStaffDirectory/author.cpt:114
+msgid "label_author_internal_home_page"
+msgstr ""
+
+#. Default: "Edit"
+#: ../skins/FacultyStaffDirectory/author.cpt:53
+msgid "label_edit"
+msgstr ""
+
+#. Default: "General"
+#: ../browser/configuration.py:8
+msgid "label_fsd_general"
+msgstr ""
+
+#. Default: "Membership"
+#: ../browser/configuration.py:12
+msgid "label_fsd_membership"
+msgstr ""
+
+#. Default: "Log in to send feedback"
+#: ../skins/FacultyStaffDirectory/author.cpt:127
+msgid "label_login_to_send_feedback"
+msgstr ""
+
+#. Default: "Main Language:"
+#: ../skins/FacultyStaffDirectory/author.cpt:94
+msgid "label_main_language"
+msgstr ""
+
+#. Default: "Message"
+#: ../skins/FacultyStaffDirectory/author.cpt:178
+msgid "label_message"
+msgstr ""
+
+#. Default: "(Required)"
+#: ../skins/FacultyStaffDirectory/author.cpt:161
+msgid "label_required"
+msgstr ""
+
+#. Default: "Send"
+#: ../skins/FacultyStaffDirectory/author.cpt:198
+msgid "label_send"
+msgstr ""
+
+#. Default: "Subject"
+#: ../skins/FacultyStaffDirectory/author.cpt:157
+msgid "label_subject"
+msgstr ""
+
+#. Default: "View"
+#: ../skins/FacultyStaffDirectory/author.cpt:48
+msgid "label_view"
+msgstr ""
+
+#. Default: "Feedback for author"
+#: ../skins/FacultyStaffDirectory/author.cpt:152
+msgid "legend_feedback_for_author"
+msgstr ""
+
+#. Default: "Lists content written by an author grouped by content type"
+#: ../skins/FacultyStaffDirectory/author.cpt:228
+msgid "summary_author_content_list"
+msgstr ""
+
+#. Default: "Location: ${location}"
+#: ../skins/FacultyStaffDirectory/author.cpt:85
+msgid "text_location"
+msgstr ""
+
+#. Default: "No user by that name"
+#: ../skins/FacultyStaffDirectory/author.cpt:30
+msgid "text_no_user_by_name"
+msgstr ""
+
+#. Default: "Can manage personnel"
+#: ../sharing.py:14
+msgid "title_can_manage_personnel"
+msgstr ""
+
+#. Default: "Required"
+#: ../skins/FacultyStaffDirectory/author.cpt:161
+msgid "title_required"
+msgstr ""
+
+#. Default: "vCard export"
+#: ../profiles/default/actionicons.xml
+msgid "vCard export"
+msgstr ""
+

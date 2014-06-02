@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<atcttool>
+ <topic_indexes>
+  <index name="getRawClassifications" remove="True" />
+  <index name="getRawCommittees" remove="True" />
+  <index name="getRawDepartments" remove="True" />
+  <index name="getRawPeople" remove="True" />
+  <index name="getRawSpecialties" remove="True" />
+  <index name="getSortableName" remove="True" />
+ </topic_indexes>
+ <topic_metadata>
+  <metadata name="getClassificationNames" remove="True" />
+  <metadata name="getCommitteeNames" remove="True" />
+  <metadata name="getDepartmentNames" remove="True" />
+  <metadata name="getResearchTopics" remove="True" />
+  <metadata name="getSpecialtyNames" remove="True" />
+ </topic_metadata>
+</atcttool>

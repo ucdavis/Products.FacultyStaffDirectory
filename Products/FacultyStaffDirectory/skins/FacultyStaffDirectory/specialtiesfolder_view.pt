@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="FacultyStaffDirectory">
+
+  <head></head>
+
+  <body>
+  
+    <metal:fill fill-slot="main" tal:define="specialties python:context.getFolderContents({'portal_type': 'FSDSpecialty', 'sort_on': 'sortable_title'})">
+  
+        <h1 tal:content="context/Title"></h1>
+        <div class="facultyStaffDirectory specialtiesFolderView">
+            <dl>
+                <tal:block tal:repeat="specialty specialties">
+                    <dt>
+                        <a href="" tal:content="specialty/Title"
+                                   tal:attributes="href specialty/getURL" />
+                    </dt>
+                    <dd tal:content="specialty/Description"></dd>
+                </tal:block>
+            </dl>
+        </div>        
+    </metal:fill>
+  
+  </body>
+</html>

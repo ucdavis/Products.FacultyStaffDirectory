@@ -1,0 +1,41 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="FacultyStaffDirectory">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="FacultyStaffDirectory"
+      directory="profiles/default"
+      description="Provides content types for creating and organizing
+      personnel directories within educational institutions. Integrates with
+      Plone's users and groups infrastructure and supports an extensibility
+      framework for custom requirements."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot"
+      i18n:attributes="title gs_profiles_default_title;
+                       description gs_profiles_default_description;"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="FacultyStaffDirectory Uninstall Profile"
+      directory="profiles/uninstall"
+      description="Removes FacultyStaffDirectory."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      i18n:attributes="title gs_profiles_uninstall_title;
+                       description gs_profiles_uninstall_description;"
+      />
+
+  <genericsetup:registerProfile
+      name="sample-content"
+      title="FacultyStaffDirectory Sample Content Profile"
+      directory="profiles/sample-content"
+      description="Adds sample FacultyStaffDirectory content."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      />
+
+</configure>

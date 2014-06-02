@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="plone">
+
+<metal:block fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1)" />
+
+<body>
+
+<div metal:fill-slot="prefs_configlet_content">
+
+    <script type="text/javascript"
+            tal:condition="exists: context/widgets/js/inandout.js"
+            tal:attributes="src string:$portal_url/widgets/js/inandout.js">
+    </script>
+
+    <div class="documentEditable" id="content">
+        <div class="configlet" tal:define="isTool python:context.portal_type == 'FSDFacultyStaffDirectoryTool'">
+            <div class="documentContent" id="regionContent">
+              <div metal:use-macro="here/global_statusmessage/macros/portal_message">
+                Portal status message
+              </div>
+              
+	                <!-- Iterator
+	                python:modules['Products.Archetypes'].IndexIterator; -->
+	      
+              <tal:toolConfig condition="isTool"
+                define="view context/@@at_base_edit_view | nothing;
+	                lock_info context/@@plone_lock_info|nothing;
+	                isLocked isLocked | lock_info/is_locked_for_current_user | nothing;
+                        dummy python:view and (view.isTemporaryObject() and request.set('disable_border', True)) or nothing;
+                        lifecycle context/@@at_lifecycle_view | nothing;
+                        lock_info context/@@plone_lock_info | nothing;
+                        dummy lifecycle/begin_edit | nothing;
+                        allow_tabbing python:True or not view.isMultiPageSchema();                
+                        errors options/state/getErrors | nothing;
+                        schematas here/Schemata;
+                        fieldsets python:[key for key in schematas.keys() if (key != 'metadata') and (schematas[key].editableFields(here, visible_only=True))];
+                        default_fieldset python:(not schematas or schematas.has_key('default')) and 'default' or fieldsets[0];
+                        fieldset request/fieldset|options/fieldset|default_fieldset;
+                        allow_tabbing python:True;
+                        fields python:schematas[fieldset].editableFields(here);">
+                <h1 i18n:translate="">Faculty/Staff Directory Configuration</h1>
+                <div id="archetypes-schemata-links" 
+                     tal:condition="fieldsets">
+                  <tal:block repeat="set fieldsets">
+                    <tal:current condition="python:set == fieldset and fieldsets != ['default']">
+                      <strong>[<span tal:content="set" i18n:translate="" />]</strong>
+                    </tal:current>
+                    <tal:others condition="python:set != fieldset">
+                      <a href="#" tal:attributes="href string:${here/absolute_url}/${template/getId}?fieldset=${set}">
+                      [<span tal:content="set" i18n:translate="" />]</a>
+                    </tal:others>
+                  </tal:block>
+                </div><br />               
+                <div metal:use-macro="here/edit_macros/macros/body"></div>
+              </tal:toolConfig>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

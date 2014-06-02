@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<object>
+  <resourcetypes>
+    <linkable purge="False">
+      <element value="FSDPerson" />
+      <element value="FSDCourse" />
+      <element value="FSDClassification" />
+      <element value="FSDDepartment" />
+      <element value="FSDCommittee" />
+      <element value="FSDCommitteesFolder" />
+      <element value="FSDSpecialty" />
+      <element value="FSDSpecialtiesFolder" />
+      <element value="FSDFacultyStaffDirectory" />
+    </linkable>
+    <containsobjects purge="False">
+      <element value="FSDPerson" />
+      <element value="FSDDepartment" />
+      <element value="FSDCommitteesFolder" />
+      <element value="FSDCommittee" />
+      <element value="FSDSpecialtiesFolder" />
+      <element value="FSDSpecialty" />
+      <element value="FSDFacultyStaffDirectory" />
+    </containsobjects>
+  </resourcetypes>
+</object>

@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             i18n:domain="plone"
+             workflow_id="fsd_person_workflow"
+             title="[FacultyStaffDirectory] Person workflow"
+             description=""
+             state_variable="review_state"
+             initial_state="active"
+             i18n:attributes="title; description">
+             
+ <permission>Access contents information</permission>
+ <permission>View</permission>
+ <permission>Modify portal content</permission>
+ <permission>Add portal content</permission>
+ <permission>Set own properties</permission>
+ <permission>Set own password</permission>
+ <permission>Review portal content</permission>
+ <permission>FacultyStaffDirectory: Change roles</permission>
+ <permission>FacultyStaffDirectory: Change Person IDs</permission>
+ <permission>FacultyStaffDirectory: Assign Departments to People</permission>
+ <permission>FacultyStaffDirectory: Assign Committees to People</permission>
+ <permission>FacultyStaffDirectory: Assign Classifications to People</permission>
+ <permission>FacultyStaffDirectory: Assign Specialties to People</permission>
+ <permission>Relations: Manage content relations</permission> 
+ 
+ <state state_id="active" title="Visible Member" i18n:attributes="title">
+  <description i18n:translate="">Visible this Member</description>
+  <exit-transition transition_id="deactivate"/>
+  <exit-transition transition_id="hide"/>
+  <permission-map name="Access contents information" acquired="True">
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Editor</permission-role>
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Contributor</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own password" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own properties" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change roles" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change Person IDs" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Departments to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Committees to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Classifications to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>  
+  <permission-map name="FacultyStaffDirectory: Assign Specialties to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Relations: Manage content relations" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+ </state>
+ 
+ <state state_id="inactive" title="Visible Non-member" i18n:attributes="title">
+  <description i18n:translate="">Visible to Non-member</description>
+  <exit-transition transition_id="activate"/>
+  <permission-map name="Access contents information" acquired="True">
+  </permission-map>
+  <permission-map name="View" acquired="True">
+   <permission-role>Anonymous</permission-role>
+   <permission-role>Authenticated</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>  
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own password" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own properties" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change Roles" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change Person IDs" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Departments to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Committees to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Classifications to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>    
+  <permission-map name="FacultyStaffDirectory: Assign Specialties to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Relations: Manage content relations" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>  
+ </state>
+
+ <state state_id="hiddenactive" title="Invisible Member" i18n:attributes="title">
+  <description i18n:translate="">Invisible this Member</description>
+  <exit-transition transition_id="show"/>
+  <permission-map name="Access contents information" acquired="True">
+  </permission-map>
+  <permission-map name="View" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+   <permission-role>Owner</permission-role>
+  </permission-map>
+  <permission-map name="Add portal content" acquired="False">
+   <permission-role>Contributor</permission-role>  
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Modify portal content" acquired="False">
+   <permission-role>Owner</permission-role>
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own password" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="Set own properties" acquired="False">
+   <permission-role>User Preferences Editor</permission-role>
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change Roles" acquired="False">
+   <permission-role>Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Change Person IDs" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Departments to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Committees to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="FacultyStaffDirectory: Assign Classifications to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>    
+  <permission-map name="FacultyStaffDirectory: Assign Specialties to People" acquired="True">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>
+  <permission-map name="Relations: Manage content relations" acquired="False">
+   <permission-role>Manager</permission-role>
+   <permission-role>Personnel Manager</permission-role>
+  </permission-map>  
+ </state>
+
+ <transition transition_id="deactivate"
+             title="Revoke Membership"
+             new_state="inactive" trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <description i18n:translate="">Revoke this Membership</description>
+  <action url="" category="workflow">Revoke Membership</action>
+  <guard>
+   <guard-permission>FacultyStaffDirectory: Change roles</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="activate"
+             title="Restore Membership"
+             new_state="active" trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <description i18n:translate="">Restore this Membership</description>
+  <action url="" category="workflow">Restore Membership</action>
+  <guard>
+   <guard-permission>FacultyStaffDirectory: Change roles</guard-permission>
+  </guard>
+ </transition>
+ 
+ <transition transition_id="show"
+             title="Show"
+             new_state="active" trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <description i18n:translate="">Show this Membership</description>
+  <action url="" category="workflow">Show</action>
+  <guard>
+   <guard-permission>FacultyStaffDirectory: Change roles</guard-permission>
+  </guard>
+ </transition>
+
+ <transition transition_id="hide"
+             title="Hide"
+             new_state="hiddenactive" trigger="USER"
+             before_script=""
+             after_script=""
+             i18n:attributes="title">
+  <description i18n:translate="">Hide this Membership</description>
+  <action url="" category="workflow">Hide</action>
+  <guard>
+   <guard-permission>FacultyStaffDirectory: Change roles</guard-permission>
+  </guard>
+ </transition>
+
+ <worklist worklist_id="reviewer_queue" title="">
+  <description i18n:translate="">Reviewer tasks</description>
+  <action url="%(portal_url)s/search?review_state=pending"
+          category="global">Pending (%(count)d)</action>
+  <guard>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+  <match name="review_state" values="pending"/>
+ </worklist>
+ 
+ <variable variable_id="action" for_catalog="False"
+           for_status="True" update_always="True">
+  <description i18n:translate="">The last transition</description>
+  <default>
+   <expression>transition/getId|nothing</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="actor" for_catalog="False"
+           for_status="True" update_always="True">
+  <description i18n:translate="">The ID of the user who performed the last transition</description>
+  <default>
+   <expression>user/getId</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="comments" for_catalog="False"
+           for_status="True" update_always="True">
+  <description i18n:translate="">Comments about the last transition</description>
+  <default>
+   <expression>python:state_change.kwargs.get('comment', '')</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+ <variable variable_id="review_history" for_catalog="False"
+           for_status="False" update_always="False">
+  <description i18n:translate="">Provides access to workflow history</description>
+  <default>
+   <expression>state_change/getHistory</expression>
+  </default>
+  <guard>
+   <guard-permission>Request review</guard-permission>
+   <guard-permission>Review portal content</guard-permission>
+  </guard>
+ </variable>
+ <variable variable_id="time" for_catalog="False"
+           for_status="True" update_always="True">
+  <description i18n:translate="">Time of the last transition</description>
+  <default>
+   <expression>state_change/getDateTime</expression>
+  </default>
+  <guard>
+  </guard>
+ </variable>
+              
+</dc-workflow>

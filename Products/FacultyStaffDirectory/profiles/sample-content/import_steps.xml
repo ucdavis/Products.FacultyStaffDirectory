@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<import-steps>
+
+  <import-step
+     id="Products.FacultyStaffDirectory--sample-content"
+     version="2012-03-23"
+     title="Products.FacultyStaffDirectory: Add sample content"
+     description="Generates sample FacultyStaffDirectory content."
+     handler="Products.FacultyStaffDirectory.setuphandlers.importSampleContent"
+     />
+
+</import-steps>

@@ -1,0 +1,56 @@
+<metal:block define-macro="master">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+          lang="en"
+          metal:use-macro="here/main_template/macros/master"
+          i18n:domain="FacultyStaffDirectory">
+        <head />
+        <body>
+    <metal:fill fill-slot="main">
+        <div class="facultyStaffDirectory">
+
+            <h1 tal:content="context/Title" class="documentFirstHeading">
+              <tal:comment replace="nothing">Title or id</tal:comment>
+            </h1>
+
+            <p class="documentDescription"
+               tal:content="here/Description"
+               tal:condition="here/Description">
+                Description
+            </p>
+
+            <div tal:content="structure here/getText" />
+
+            <div tal:condition="context/getFolderContents">
+                <h2 i18n:translate="FacultyStaffDirectory_subspecialties">Subspecialties</h2>
+                <dl>
+                    <tal:block tal:repeat="subspecialty python:context.getFolderContents({'portal_type':'FSDSpecialty', 'sort_on':'sortable_title'})">
+                        <dt>
+                            <a tal:attributes="href subspecialty/getURL"
+                               tal:content="subspecialty/Title">
+                            </a>
+                        </dt>
+                        <dd tal:content="subspecialty/Description">
+                        </dd>
+                    </tal:block>
+                </dl>
+            </div>
+            <tal:block tal:condition="context/getPeople">
+                <h2 i18n:translate="FacultyStaffDirectory_specialtyMembers">People specializing in this area</h2>
+                <metal:block define-slot="listing_section">
+                    <metal:block define-macro="list_classifications"
+                                 tal:define="directory context/getDirectoryRoot;
+                                             allClassifications python:[c.getObject() for c in directory.getClassifications()];
+                                             classificationsInRequest request/classification|nothing;
+                                             classifications python:classificationsInRequest and [directory[c] for c in isinstance(classificationsInRequest, basestring) and [classificationsInRequest] or classificationsInRequest] or allClassifications;
+                                            ">
+                        <tal:block tal:define="classificationBrains context/getClassifications" tal:repeat="classification classifications">
+                            <metal:block define-slot="single_classification" />
+                        </tal:block>
+                    </metal:block>
+                </metal:block>
+            </tal:block>
+      </div>
+    </metal:fill>
+    </body>
+    </html>
+</metal:block>

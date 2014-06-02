@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+	  metal:use-macro="here/specialty_view/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+		<metal:block fill-slot="listing_section">
+			<div class="tabularView">
+                <table class="listing">
+                    <tbody>        
+                        <metal:block use-macro="here/specialty_view/macros/list_classifications">
+                            <metal:block fill-slot="single_classification">
+                                <tal:block metal:use-macro="classification/classification_tabular_view/macros/list_people">
+                                    <tal:block metal:fill-slot="table_headings">
+                                        <tr>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_name">
+                                                Name
+                                            </th>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_phone">
+                                                Phone
+                                            </th>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_email">
+                                                Email
+                                            </th>
+                                            <th i18n:translate="FacultyStaffDirectory_researchTopic">
+                                                Research Topic
+                                            </th>
+                                        </tr>
+                                    </tal:block>
+                                    <tal:block metal:fill-slot="table_cells">
+                                        <td class="personName">
+                                            <a href="" tal:attributes="href person/absolute_url" tal:content="string:${person/getLastName}, ${person/getFirstName}" />
+                                        </td>
+                                        <td tal:content="person/getOfficePhone" class="officePhone" />
+                                        <td><span tal:condition="person/getEmail" tal:replace="structure python:person.spamProtectFSD(person.getEmail())" class="emailAddress" /></td>
+                                        <td tal:define="personSpecialtyData python:context.getSpecialtyInformation(person);">
+                                            <tal:block tal:condition="personSpecialtyData/getResearchTopic" 
+                                                       tal:replace="structure personSpecialtyData/getResearchTopic">               
+                                            </tal:block>
+                                            <span tal:condition="python:checkPermission('Modify portal content', person)"
+                                                  class="discreet">[
+                                                <a tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
+                                                   <tal:block tal:condition="personSpecialtyData/getResearchTopic" i18n:translate="FacultyStaffDirectory_editResearchTopic">Edit research topic</tal:block>
+                                                   <tal:block tal:condition="not:personSpecialtyData/getResearchTopic" i18n:translate="FacultyStaffDirectory_assignResearchTopic">Assign a research topic</tal:block>
+                                                </a>
+                                            ]</span>                        
+                                        </td>
+                                   </tal:block>
+                                </tal:block>
+                            </metal:block>
+                        </metal:block>
+                    </tbody>
+                 </table>
+			</div>
+		</metal:block>
+	</body>
+</html>

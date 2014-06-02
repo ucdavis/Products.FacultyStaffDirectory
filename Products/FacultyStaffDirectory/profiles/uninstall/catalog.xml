@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object name="portal_catalog" meta_type="Plone Catalog Tool">
+  <index name="getSortableName" remove="True" />
+  <index name="getRawClassifications" remove="True" />
+  <index name="getRawSpecialties" remove="True" />
+  <index name="getRawCommittees" remove="True" />
+  <index name="getRawDepartments" remove="True" />
+  <index name="getRawPeople" remove="True" />
+  <column value="getCommitteeNames" remove="True" />
+  <column value="getDepartmentNames" remove="True" />
+  <column value="getSpecialtyNames" remove="True" />
+  <column value="getClassificationNames" remove="True" />
+  <column value="getResearchTopics" remove="True" />
+</object>

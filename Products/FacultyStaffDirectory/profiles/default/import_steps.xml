@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="FacultyStaffDirectory-installKupuResources"
+               version="20110303-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.installKupuResources"
+               title="Add FacultyStaffDirectory types to Kupu's resource libraries">
+    <dependency step="typeinfo" />
+  </import-step>
+
+  <import-step id="FacultyStaffDirectory-installVersionedTypes"
+               version="20110303-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.installVersionedTypes"
+               title="Set up versioning for FacultyStaffDirectory types">
+       <dependency step="typeinfo" />
+  </import-step>
+
+  <import-step id="FacultyStaffDirectory-installRelationsRules"
+               version="20110303-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.installRelationsRules"
+               title="Install the ruleset for Relations">
+  </import-step>
+
+  <import-step id="FacultyStaffDirectory-unindexFSDTool"
+               version="20110303-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.unindexFSDTool"
+               title="Prevent the FacultyStaffDirectory Tool from appearing in folder listings">
+    <dependency step="typeinfo" />
+  </import-step>
+
+  <import-step id="FacultyStaffDirectory-hideMemberPrefs"
+               version="20110303-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.hideMemberPrefs"
+               title="Use the FacultyStaffDirectory version of the Member Preferences action.">
+  </import-step>
+  
+  <import-step id="FacultyStaffDirectory-reindexFSDObjects"
+               version="20110308-01"
+               handler="Products.FacultyStaffDirectory.setuphandlers.reindexFSDObjects"
+               title="Index existing FSD objects">
+    <dependency step="catalog" />
+  </import-step>
+</import-steps>
+

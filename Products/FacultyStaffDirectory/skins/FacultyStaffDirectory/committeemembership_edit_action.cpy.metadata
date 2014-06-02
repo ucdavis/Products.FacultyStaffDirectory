@@ -1,0 +1,10 @@
+[default]
+title = Edit content
+
+[validators]
+validators = validate_base
+
+[actions]
+#Redirect to the Committee view on success. We don't need to do any sort of conflict check since this object already exists.
+action.success = redirect_to:string:../../../
+action.failure = traverse_to_action:string:edit
