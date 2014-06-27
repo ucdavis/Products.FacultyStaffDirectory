@@ -19,5 +19,20 @@
     <utility name="Personnel Manager" factory=".sharing.PersonnelManagerRole" />
 
     <utility factory=".utility.FSDNonInstallable" name="FacultyStaffDirectory" />
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocab.department_vocab"
+        name="Department Names"
+        />
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocab.classification_vocab"
+        name="Classification Names"
+        />
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocab.specialty_vocab"
+        name="Specialty Names"
+        />
 
 </configure>
