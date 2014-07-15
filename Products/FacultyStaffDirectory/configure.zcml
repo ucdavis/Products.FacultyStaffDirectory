@@ -34,6 +34,10 @@
         component=".vocab.specialty_vocab"
         name="Specialty Names"
         />
-    
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocab.committee_vocab"
+        name="Committee Names"
+        />
 
 </configure>
