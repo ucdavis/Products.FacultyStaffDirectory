@@ -28,6 +28,7 @@ Products/FacultyStaffDirectory/SubSiteDepartment.py
 Products/FacultyStaffDirectory/__init__.py
 Products/FacultyStaffDirectory/config.py
 Products/FacultyStaffDirectory/extenderInstallation.py
+Products/FacultyStaffDirectory/indexes.py
 Products/FacultyStaffDirectory/migrations.py
 Products/FacultyStaffDirectory/permissions.py
 Products/FacultyStaffDirectory/setuphandlers.py
@@ -38,6 +39,7 @@ Products/FacultyStaffDirectory/vocab.py
 Products/FacultyStaffDirectory/Extensions/Install.py
 Products/FacultyStaffDirectory/Extensions/__init__.py
 Products/FacultyStaffDirectory/Extensions/addReviewerRole.py
+Products/FacultyStaffDirectory/Extensions/rmbylogins.py
 Products/FacultyStaffDirectory/events/__init__.py
 Products/FacultyStaffDirectory/events/events.py
 Products/FacultyStaffDirectory/events/facultystaffdirectorytool.py

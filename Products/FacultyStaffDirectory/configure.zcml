@@ -34,5 +34,6 @@
         component=".vocab.specialty_vocab"
         name="Specialty Names"
         />
+    
 
 </configure>
