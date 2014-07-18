@@ -28,7 +28,6 @@ Products/FacultyStaffDirectory/SubSiteDepartment.py
 Products/FacultyStaffDirectory/__init__.py
 Products/FacultyStaffDirectory/config.py
 Products/FacultyStaffDirectory/extenderInstallation.py
-Products/FacultyStaffDirectory/indexes.py
 Products/FacultyStaffDirectory/migrations.py
 Products/FacultyStaffDirectory/permissions.py
 Products/FacultyStaffDirectory/setuphandlers.py

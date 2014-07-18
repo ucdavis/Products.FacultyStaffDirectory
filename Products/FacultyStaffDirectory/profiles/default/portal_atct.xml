@@ -59,5 +59,6 @@
      description="The specialties with which the person is associated"
      enabled="True" friendlyName="Specialties"
      i18n:attributes="description; friendlyName"/>
+
  </topic_metadata>
 </atcttool>

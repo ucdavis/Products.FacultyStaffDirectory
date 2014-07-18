@@ -114,7 +114,7 @@ schema = ATContentTypeSchema.copy() + Schema((
     StringField(
         name='officeAddress',
         widget=TextAreaWidget(
-            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Room and Building (ex: 175 Young or 267 Cousteau Pl., Room 12)"),
+            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information",
