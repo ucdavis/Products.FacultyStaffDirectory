@@ -179,7 +179,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         name='biography',
         allowable_content_types=ALLOWABLE_CONTENT_TYPES,
         widget=RichWidget(
-            label=_(u"FacultyStaffDirectory_label_biography", default=u"Biography"),
+            label=_(u"FacultyStaffDirectory_label_biography", default=u"About"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -188,7 +188,42 @@ schema = ATContentTypeSchema.copy() + Schema((
         default_output_type='text/x-html-safe',
         user_property='description'
     ),
-    
+    TextField(
+        name='research',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_research", default=u"Research Focus"),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        searchable=True,
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+        
+    ),
+    TextField(
+        name='publications',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_publications", default=u"Selected Publications"),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        searchable=True,
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+        
+    ),
+    TextField(
+        name='awards',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_awards", default=u"Awards"),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        searchable=True,
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+
+    ),
     LinesField(
         name='education',
         widget=LinesField._properties['widget'](

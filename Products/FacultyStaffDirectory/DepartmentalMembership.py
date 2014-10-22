@@ -28,6 +28,28 @@ schema = Schema((
             visible={'edit': 'invisible', 'view': 'invisible' },
         )
     ),
+    
+    StringField(
+        name='officeAddress',
+        widget=TextAreaWidget(
+            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
+            i18n_domain='FacultyStaffDirectory',
+            visible={'edit': 'invisible', 'view': 'invisible' },
+        ),
+        searchable=True
+        )
+    ),
+    StringField(
+        name='officePhone',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),
+            description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+            visible={'edit': 'invisible', 'view': 'invisible' },
+        ),
+        searchable=True,
+        )
+    ),
 ),
 )
 
