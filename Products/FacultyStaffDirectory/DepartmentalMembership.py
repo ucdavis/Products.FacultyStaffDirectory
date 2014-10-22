@@ -35,8 +35,8 @@ schema = Schema((
             label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
             visible={'edit': 'invisible', 'view': 'invisible' },
-        ),
-        searchable=True
+            searchable=True,
+        
         )
     ),
     StringField(
@@ -46,10 +46,10 @@ schema = Schema((
             description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
             i18n_domain='FacultyStaffDirectory',
             visible={'edit': 'invisible', 'view': 'invisible' },
-        ),
-        searchable=True,
+            searchable=True,
         )
     ),
+    
 ),
 )
 
