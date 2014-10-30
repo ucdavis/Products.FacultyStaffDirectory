@@ -19,6 +19,12 @@
      i18n:attributes="description; friendlyName">
    <criteria>ATReferenceCriterion</criteria>
   </index>
+  <index name="getRawLabs"
+     description="The labs assigned to a person" enabled="True"
+     friendlyName="Lab"
+     i18n:attributes="description; friendlyName">
+   <criteria>ATReferenceCriterion</criteria>
+  </index>
   <index name="getRawPeople"
      description="The people assigned to a person grouping (ie committee, department, specialty, classification)"
      enabled="True" friendlyName="People"
@@ -50,6 +56,10 @@
   <metadata name="getDepartmentNames"
      description="The departments with which the person is associated"
      enabled="True" friendlyName="Departments"
+     i18n:attributes="description; friendlyName"/>
+  <metadata name="getLabNames"
+     description="The Labs with which the person is associated"
+     enabled="True" friendlyName="Labs"
      i18n:attributes="description; friendlyName"/>
   <metadata name="getResearchTopics"
      description="The research topics with which the person is associated"

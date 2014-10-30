@@ -16,6 +16,9 @@
   <membrane-type name="FSDDepartment">
     <active-workflow-state name="active" />
   </membrane-type>
+  <membrane-type name="FSDLab">
+	<active-workflow-state name="active" />
+  </membrane-type>
   <query_index_map>
       <index name="fullname">Title</index>
       <index name="email">getEmail</index>

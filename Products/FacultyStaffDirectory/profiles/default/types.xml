@@ -9,6 +9,8 @@
  <object name="FSDCommitteeMembership" meta_type="Factory-based Type Information with dynamic views"/>
  <object name="FSDDepartment" meta_type="Factory-based Type Information with dynamic views"/>
  <object name="FSDDepartmentalMembership" meta_type="Factory-based Type Information with dynamic views"/> 
+ <object name="FSDLab" meta_type="Factory-based Type Information with dynamic views"/>
+ <object name="FSDLabMembership" meta_type="Factory-based Type Information with dynamic views"/> 
  <object name="FSDSpecialtiesFolder" meta_type="Factory-based Type Information with dynamic views"/> 
  <object name="FSDSpecialty" meta_type="Factory-based Type Information with dynamic views"/>
  <object name="FSDSpecialtyInformation" meta_type="Factory-based Type Information with dynamic views"/> 

@@ -8,6 +8,8 @@
         <type portal_type="FSDCourse"/>
         <type portal_type="FSDDepartment"/>
         <type portal_type="FSDDepartmentalMembership"/>
+		<type portal_type="FSDLab" />
+		<type portal_type="FSDLabMembership" />
         <type portal_type="FSDFacultyStaffDirectory"/>
         <type portal_type="FSDPerson"/>
         <type portal_type="FSDPersonGrouping"/>

@@ -5,6 +5,6 @@ __docformat__ = 'plaintext'
 
 from facultystaffdirectory import IFacultyStaffDirectoryContent
 
-class ILab(IFacultyStaffDirectoryContent):
+class IDepartment(IFacultyStaffDirectoryContent):
     """a department
     """
