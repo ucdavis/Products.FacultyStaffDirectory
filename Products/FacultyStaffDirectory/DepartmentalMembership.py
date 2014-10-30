@@ -32,7 +32,7 @@ schema = Schema((
     StringField(
         name='dept_officeAddress',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
+            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office location, Building and Room"),
             i18n_domain='FacultyStaffDirectory',
             searchable=True,
         
