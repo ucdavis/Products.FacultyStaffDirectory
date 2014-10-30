@@ -32,7 +32,7 @@ schema = Schema((
     StringField(
         name='dept_officeAddress',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office location, Building and Room"),
+            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Location Building and Room"),
             i18n_domain='FacultyStaffDirectory',
             searchable=True,
         
@@ -47,6 +47,17 @@ schema = Schema((
             searchable=True,
         )
     ),
+    TextField(
+        name='summarybio',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_summarybio", default=u"Summary Bio"),
+            description=_(u"FacultyStaffDirectory_description_summarybio", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+            searchable=True,
+            validators=('isTidyHtmlWithCleanup',),
+            default_output_type='text/x-html-safe',
+        )
+    ),    
     
 )
 )

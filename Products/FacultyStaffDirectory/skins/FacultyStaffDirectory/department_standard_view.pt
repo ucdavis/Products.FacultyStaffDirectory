@@ -46,6 +46,16 @@
                                            <tal:block tal:condition="not:personMembershipInformation/getDept_officePhone" i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign Office Phone</tal:block>
                                         </a>
                                     ]</span>
+                                    <tal:block tal:condition="personMembershipInformation/getSummarybio" 
+                                               tal:replace="structure personMembershipInformation/summarybio">               
+                                    </tal:block>
+                                    <span tal:condition="python:checkPermission('Modify portal content', person)"
+                                          class="discreet">[
+                                        <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+                                           <tal:block tal:condition="personMembershipInformation/summarybio" i18n:translate="FacultyStaffDirectory_editSummarybio">Edit Summary Bio</tal:block>
+                                           <tal:block tal:condition="not:personMembershipInformation/getSummarybio" i18n:translate="FacultyStaffDirectory_assignSummarybio">Assign Summary Bio</tal:block>
+                                        </a>
+                                    ]</span>
 									                                        
                                 </div>
 
