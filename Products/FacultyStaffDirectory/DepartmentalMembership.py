@@ -30,27 +30,25 @@ schema = Schema((
     ),
     
     StringField(
-        name='officeAddress',
-        widget=TextAreaWidget(
+        name='dept_officeAddress',
+        widget=StringWidget(
             label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
-            visible={'edit': 'invisible', 'view': 'invisible' },
             searchable=True,
         
         )
     ),
     StringField(
-        name='officePhone',
+        name='dept_officePhone',
         widget=StringWidget(
             label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),
             description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
             i18n_domain='FacultyStaffDirectory',
-            visible={'edit': 'invisible', 'view': 'invisible' },
             searchable=True,
         )
     ),
     
-),
+)
 )
 
 DepartmentalMembership_schema = BaseSchema.copy() + schema.copy()
