@@ -33,7 +33,7 @@ schema = Schema((
         write_permission=ASSIGN_DEPARTMENTS_TO_PEOPLE,
         allowed_types=('FSDPerson',),
         multiValued=1,
-        relationship='labs_members'
+        relationship='lab_members'
     ),
 ),
 )
@@ -51,10 +51,10 @@ class Lab(PersonGrouping):
     # Methods
     security.declareProtected(View, 'getMembershipInformation')
     def getMembershipInformation(self, person):
-        """ Get the labal membership information for a specific person
+        """ Get the lab membership information for a specific person
         """
         refCatalog = getToolByName(self, 'reference_catalog')
-        refs = refCatalog.getReferences(self, 'labs_members', person)
+        refs = refCatalog.getReferences(self, 'lab_members', person)
 
         if not refs:
             return None

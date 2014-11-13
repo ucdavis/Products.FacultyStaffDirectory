@@ -5,7 +5,7 @@
 
  <property name="title" i18n:translate="">Lab Membership Information</property>
  <property name="description" i18n:translate="">Contains information pertaining to a person's membership in a lab.</property>
- <property name="content_icon">document_icon.png</property>
+ <property name="content_icon">beaker.png</property>
  <property name="content_meta_type">FSDLabMembership</property>
  <property name="product">FacultyStaffDirectory</property>
  <property name="factory">addLabMembership</property>

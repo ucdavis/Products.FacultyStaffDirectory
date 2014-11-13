@@ -18,6 +18,7 @@
   <element value="FSDCommitteesFolder"/>
   <element value="FSDSpecialtiesFolder"/>
   <element value="FSDDepartment"/>
+  <element vlaue="FSDLab"/>
   <element value="Document"/>
   <element value="Topic"/>
  </property>

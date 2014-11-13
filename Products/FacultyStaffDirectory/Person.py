@@ -35,7 +35,7 @@ from Products.FacultyStaffDirectory.config import *
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
 from Products.FacultyStaffDirectory.interfaces.person import IPersonModifiedEvent
 from Products.FacultyStaffDirectory.interfaces.facultystaffdirectory import IFacultyStaffDirectory
-from Products.FacultyStaffDirectory.permissions import ASSIGN_CLASSIFICATIONS_TO_PEOPLE, ASSIGN_DEPARTMENTS_TO_PEOPLE, ASSIGN_COMMITTIES_TO_PEOPLE, ASSIGN_SPECIALTIES_TO_PEOPLE, CHANGE_PERSON_IDS
+from Products.FacultyStaffDirectory.permissions import ASSIGN_CLASSIFICATIONS_TO_PEOPLE, ASSIGN_DEPARTMENTS_TO_PEOPLE, ASSIGN_LABS_TO_PEOPLE,ASSIGN_COMMITTIES_TO_PEOPLE, ASSIGN_SPECIALTIES_TO_PEOPLE, CHANGE_PERSON_IDS
 from Products.FacultyStaffDirectory.validators import SequenceValidator
 
 from Products.FacultyStaffDirectory import FSDMessageFactory as _
@@ -301,6 +301,23 @@ schema = ATContentTypeSchema.copy() + Schema((
         allowed_types=('FSDDepartment'),
         multiValued=True,
         relationship='DepartmentalMembership'
+    ),
+    RelationField(
+        name='labs',
+        widget=ReferenceBrowserWidget(
+            label=_(u"FacultyStaffDirectory_label_labs", default=u"Labs"),
+            i18n_domain='FacultyStaffDirectory',
+            base_query="_search_labs_in_this_fsd",
+            allow_browse=0,
+            allow_search=1,
+            show_results_without_query=1,
+            startup_directory_method="_get_parent_fsd_path",
+        ),
+        write_permission=ASSIGN_LABS_TO_PEOPLE,
+        schemata="Basic Information",
+        allowed_types=('FSDLab'),
+        multiValued=True,
+        relationship='LabMembership'
     ),
     
     RelationField(
@@ -743,6 +760,17 @@ class Person(OrderedBaseFolder, ATCTContent):
         dList = [d.Title() for d in self.getDepartments()]
         dList.sort()
         return dList
+        
+    security.declareProtected(View, 'getLabNames')
+    def getLabNames(self):
+        """ Returns a list of the titles of the Labs attached to this person.
+            Mainly used for pretty-looking metadata in SmartFolder tables. Returns an
+            alphabetically-sorted list since Labs can be located anywhere within the site,
+            which makes using any other sort order somewhat problematic.
+        """
+        dList = [d.Title() for d in self.getLabs()]
+        dList.sort()
+        return dList
     
     security.declareProtected(View, 'getCommitteeNames')
     def getCommitteeNames(self):
@@ -930,6 +958,12 @@ class Person(OrderedBaseFolder, ATCTContent):
         """ search only parent FSD for only departments
         """
         return self._limit_rbw_search_params(portal_type="FSDDepartment")
+        
+    security.declareProtected(ModifyPortalContent, '_search_labs_in_this_fsd')
+    def _search_labs_in_this_fsd(self):
+        """ search only parent FSD for only Labs
+        """
+        return self._limit_rbw_search_params(portal_type="FSDLab")
 
     security.declareProtected(ModifyPortalContent, '_search_committees_in_this_fsd')
     def _search_committees_in_this_fsd(self):

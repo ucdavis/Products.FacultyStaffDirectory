@@ -128,6 +128,13 @@ class FacultyStaffDirectory(OrderedBaseFolder, ATCTContent):
         portal_catalog = getToolByName(self, 'portal_catalog')
         results = portal_catalog(portal_type='FSDDepartment')
         return [brain.getObject() for brain in results]
+        
+    security.declareProtected(View, 'getLabs')
+    def getLabs(self):
+        """Return a list of FSDlabs contained within this site."""
+        portal_catalog = getToolByName(self, 'portal_catalog')
+        results = portal_catalog(portal_type='FSDLab')
+        return [brain.getObject() for brain in results]
 
     security.declareProtected(View, 'getAddableInterfaceSubscribers')
     def getAddableInterfaceSubscribers():

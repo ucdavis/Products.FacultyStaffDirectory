@@ -39,6 +39,8 @@ def initialize(context):
     import SpecialtiesFolder
     import PersonGrouping
     import Department
+    import Lab
+    import LabMembership
     import CommitteeMembership
     import SpecialtyInformation
     import DepartmentalMembership

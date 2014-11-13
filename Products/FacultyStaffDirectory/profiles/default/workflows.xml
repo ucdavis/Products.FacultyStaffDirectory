@@ -18,6 +18,9 @@
     <type type_id="FSDDepartment">
       <bound-workflow workflow_id="fsd_persongrouping_workflow" />
     </type>
+    <type type_id="FSDLab">
+      <bound-workflow workflow_id="fsd_persongrouping_workflow" />
+    </type>
     <type type_id="FSDCommittee">
       <bound-workflow workflow_id="fsd_persongrouping_workflow" />
     </type>

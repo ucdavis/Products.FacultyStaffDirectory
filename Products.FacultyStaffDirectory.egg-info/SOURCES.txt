@@ -19,6 +19,8 @@ Products/FacultyStaffDirectory/Course.py
 Products/FacultyStaffDirectory/Department.py
 Products/FacultyStaffDirectory/DepartmentalMembership.py
 Products/FacultyStaffDirectory/FacultyStaffDirectory.py
+Products/FacultyStaffDirectory/Lab.py
+Products/FacultyStaffDirectory/LabMembership.py
 Products/FacultyStaffDirectory/Person.py
 Products/FacultyStaffDirectory/PersonGrouping.py
 Products/FacultyStaffDirectory/SpecialtiesFolder.py
@@ -53,6 +55,8 @@ Products/FacultyStaffDirectory/interfaces/department.py
 Products/FacultyStaffDirectory/interfaces/departmentalmembership.py
 Products/FacultyStaffDirectory/interfaces/facultystaffdirectory.py
 Products/FacultyStaffDirectory/interfaces/facultystaffdirectorytool.py
+Products/FacultyStaffDirectory/interfaces/lab.py
+Products/FacultyStaffDirectory/interfaces/labmembership.py
 Products/FacultyStaffDirectory/interfaces/person.py
 Products/FacultyStaffDirectory/interfaces/specialtiesfolder.py
 Products/FacultyStaffDirectory/interfaces/specialty.py
@@ -62,6 +66,7 @@ Products/FacultyStaffDirectory/membership/classification.py
 Products/FacultyStaffDirectory/membership/committee.py
 Products/FacultyStaffDirectory/membership/department.py
 Products/FacultyStaffDirectory/membership/facultystaffdirectory.py
+Products/FacultyStaffDirectory/membership/lab.py
 Products/FacultyStaffDirectory/membership/person.py
 Products/FacultyStaffDirectory/tests/__init__.py
 Products/FacultyStaffDirectory/tests/testClassification.py

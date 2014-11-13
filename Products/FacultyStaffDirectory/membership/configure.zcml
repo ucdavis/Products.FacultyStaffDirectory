@@ -32,6 +32,10 @@
   <adapter for="..interfaces.department.IDepartment"
            provides="Products.membrane.interfaces.IGroup"
            factory=".department.Group" />
+		   
+  <adapter for="..interfaces.lab.ILab"
+           provides="Products.membrane.interfaces.IGroup"
+           factory=".lab.Group" />
 
   <!-- Avoid membrane errors when enumerating groupings as users -->
   <adapter for="..FacultyStaffDirectory.FacultyStaffDirectory"

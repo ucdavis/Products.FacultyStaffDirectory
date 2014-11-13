@@ -5,7 +5,7 @@
 
  <property name="title" i18n:translate="">Lab</property>
  <property name="description" i18n:translate="">An academic lab.</property>
- <property name="content_icon">folder_icon.png</property>
+ <property name="content_icon">beaker.png</property>
  <property name="content_meta_type">FSDLab</property>
  <property name="product">FacultyStaffDirectory</property>
  <property name="factory">addLab</property>

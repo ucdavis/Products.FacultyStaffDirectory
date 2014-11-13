@@ -7,7 +7,7 @@ from Products.CMFPlone.utils import _createObjectByType
 from Products.FacultyStaffDirectory.config import product_globals as GLOBALS
 from Products.membrane.config import TOOLNAME as MEMBRANE_TOOL
 
-linkableKupuTypes = ['FSDPerson', 'FSDCourse', 'FSDClassification', 'FSDDepartment', 'FSDCommittee', 'FSDCommitteesFolder', 'FSDSpecialty', 'FSDSpecialtiesFolder']
+linkableKupuTypes = ['FSDPerson', 'FSDCourse', 'FSDClassification', 'FSDDepartment', 'FSDLab','FSDCommittee', 'FSDCommitteesFolder', 'FSDSpecialty', 'FSDSpecialtiesFolder']
 mediaKupuTypes = ['FSDPerson']
 collectionKupuTypes = ['FSDFacultyStaffDirectory']
 logger = logging.getLogger("Products.FacultyStaffDirectory")
@@ -160,7 +160,7 @@ def reindexFSDObjects(context):
 
     INDEX_LIST = ['getSortableName', 'getRawClassifications',
                   'getRawSpecialties', 'getRawCommittees',
-                  'getRawDepartments', 'getRawPeople']
+                  'getRawDepartments', 'getRawPeople', 'getRawLabs']
     for index in INDEX_LIST:
         catalog.reindexIndex(index, None)
     membrane = getToolByName(portal, MEMBRANE_TOOL)
@@ -233,6 +233,20 @@ def addSampleContent(portal):
             )
         # Capture departments for later use with people.
         departments[department_id] = department
+        
+    # Add labs.
+    labs = {}
+    lab_ids = ('biological-research', 'mechanical-engineering',
+                      'human-resources', 'information-technology-services',
+                      )
+    for lab_id in lab_ids:
+        lab = _getOrCreateObjectByType(
+            lab_id,
+            'FSDLab', directory,
+            title=id_to_title(lab_id),
+            )
+        # Capture departments for later use with people.
+        labs[lab_id] = lab
 
     # Add a committees container.
     committees_container_id = 'committees'
@@ -286,6 +300,9 @@ def addSampleContent(portal):
         # Departments
         departments = dict([(dept.getId(), dept) for dept in person.getDepartments()])
         departments['biological-research'].getMembershipInformation(person).setPosition('Schmoozer')
+        #Labs
+        labs = dict([(lab.getId(), lab) for lab in person.getlabs()])
+        labs['biological-research'].getMembershipInformation(person).setPosition('Schmoozer')
         # Committees
         committees = dict([(c.getId(), c) for c in person.getCommittees()])
         committees['climate-and-diversity'].getMembershipInformation(person).setPosition('Big Cheese')        
@@ -307,6 +324,7 @@ def addSampleContent(portal):
               classifications=(classifications['faculty'].UID(),),
               committees=(committees['climate-and-diversity'].UID(),),
               departments=(departments['biological-research'].UID(),),
+              labs=(labs['biological-research'].UID(),),
               specialties=(specialties['home-brewer'].UID(),
                            specialties['snobbery'].UID(),
                            ),
@@ -347,7 +365,8 @@ def addSampleContent(portal):
                                classifications['staff'].UID(),
                                ),
               committees=[c.UID() for c in committees.values()],
-              departments=(departments['human-resources'].UID(),),
+              departments=(departments['human-resources'].UID()),
+              labs=(labs['human-dna'].UID(),),
               ),
          lambda p: None,
          ),

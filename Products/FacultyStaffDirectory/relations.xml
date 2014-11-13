@@ -75,6 +75,54 @@
 				<inverseRuleset uidref="-84-28--90--11--540cb6d5:114b1e72e80:-8000:0000000000000C4C"/>
 			</InverseImplicator>
 		</Ruleset>
+		<Ruleset id="LabMembership" uid="b0ec282408944253b83c31eb78edccd5">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDPerson
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDLab
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDLabMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					1
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="lab_members"/>
+			</InverseImplicator>
+		</Ruleset>
+		<Ruleset id="lab_members" uid="lab_members">
+			<TypeConstraint id="type_constraint">
+				<allowedSourceType>
+					FSDLab
+				</allowedSourceType>
+				<allowedTargetType>
+					FSDPerson
+				</allowedTargetType>
+			</TypeConstraint>
+			<ContentReference id="content_reference">
+				<portalType>
+					FSDLabMembership
+				</portalType>
+				<shareWithInverse>
+					1
+				</shareWithInverse>
+				<primary>
+					0
+				</primary>
+			</ContentReference>
+			<InverseImplicator id="inverse_relation">
+				<inverseRuleset uidref="b0ec282408944253b83c31eb78edccd5"/>
+			</InverseImplicator>
+		</Ruleset>
 		<Ruleset id="SpecialtyInformation" uid="-84-28--90--4-483061cf:1115b3ad549:-8000:0000000000000B42">
 			<TypeConstraint id="type_constraint">
 				<allowedSourceType>

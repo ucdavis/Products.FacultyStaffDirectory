@@ -1,0 +1,43 @@
+<metal:block define-macro="master">
+    <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+          lang="en"
+          metal:use-macro="here/main_template/macros/master"
+          i18n:domain="FacultyStaffDirectory">
+        <head />
+        <body>
+    <metal:fill fill-slot="main"
+                tal:define="fsdtool python:modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool');
+                            directory fsdtool/getDirectoryRoot;
+                            allClassifications python:[c.getObject() for c in directory.getClassifications()];
+                            classificationsInRequest request/classification|nothing;
+                            classifications python:classificationsInRequest and [directory[c] for c in isinstance(classificationsInRequest, basestring) and [classificationsInRequest] or classificationsInRequest] or allClassifications;
+                           ">
+        <div class="facultyStaffDirectory">
+
+            <h1 tal:content="context/Title" class="documentFirstHeading">
+              <tal:comment replace="nothing">Title or id</tal:comment>
+            </h1>
+
+            <p class="documentDescription"
+               tal:content="here/Description"
+               tal:condition="python:context.Description() and not classificationsInRequest">
+                Description
+            </p>
+
+            <div tal:content="structure here/getText"
+                 tal:condition="not:classificationsInRequest" />
+
+            <tal:block tal:condition="context/getPeople">
+                <metal:block define-slot="listing_section">
+                    <metal:block define-macro="list_classifications">
+                        <tal:block tal:define="classificationBrains context/getClassifications" tal:repeat="classification classifications">
+                            <metal:block define-slot="single_classification" />
+                        </tal:block>
+                    </metal:block>
+                </metal:block>
+            </tal:block>
+      </div>
+    </metal:fill>
+    </body>
+    </html>
+</metal:block>

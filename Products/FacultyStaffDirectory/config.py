@@ -38,8 +38,8 @@ PASSWORD_KEY = 'fsd.employee.password'
 # what is the name of the tool for this product?
 TOOLNAME = 'facultystaffdirectory_tool' 
 # what content types are available for membrane functionality?
-MEMBRANE_ABLE_TYPES_VOCAB = [('FSDPerson','People'),('FSDDepartment','Departments'),('FSDClassification','Classifications'),('FSDCommittee','Committees'),]
-MEMBRANE_ABLE_TYPES = ('FSDPerson','FSDDepartment','FSDClassification','FSDCommittee')
+MEMBRANE_ABLE_TYPES_VOCAB = [('FSDPerson','People'),('FSDDepartment','Departments'),('FSDClassification','Classifications'),('FSDCommittee','Committees'),('FSDLab','Labs')]
+MEMBRANE_ABLE_TYPES = ('FSDPerson','FSDDepartment','FSDClassification','FSDCommittee', 'FSDLab')
 MEMBRANE_ACTIVE_STATES = ('published','active','hiddenactive',)
 
 # content-types

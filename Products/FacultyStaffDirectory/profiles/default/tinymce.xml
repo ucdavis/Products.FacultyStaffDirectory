@@ -7,6 +7,7 @@
       <element value="FSDClassification" />
       <element value="FSDDepartment" />
       <element value="FSDCommittee" />
+	  <element value="FSDLab" />
       <element value="FSDCommitteesFolder" />
       <element value="FSDSpecialty" />
       <element value="FSDSpecialtiesFolder" />
@@ -18,6 +19,7 @@
       <element value="FSDCommitteesFolder" />
       <element value="FSDCommittee" />
       <element value="FSDSpecialtiesFolder" />
+	  <element value="FSDLab" />
       <element value="FSDSpecialty" />
       <element value="FSDFacultyStaffDirectory" />
     </containsobjects>
