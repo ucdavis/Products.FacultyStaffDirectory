@@ -111,6 +111,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         searchable=True
     ),
     
+ 
     StringField(
         name='officeAddress',
         widget=TextAreaWidget(
@@ -476,7 +477,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         name='terminationDetails',
         allowable_content_types=ALLOWABLE_CONTENT_TYPES,
         widget=RichWidget(
-            label=_(u"FacultyStaffDirectory_label_termination_details", default=u"Termination details"),
+            label=_(u"FacultyStaffDirectory_label_termination_details", default=u"Forwarding or Contact Information"),
             description=_(u"FacultyStaffDirectory_description_termination_details", default=u"Message displayed to site visitors when the person's termination date has passed. Can be used to provide forwarding information or a link to someone who has taken over their responsibilities."),
             i18n_domain='FacultyStaffDirectory',
         ),
