@@ -40,6 +40,7 @@ Products/FacultyStaffDirectory/vocab.py
 Products/FacultyStaffDirectory/Extensions/Install.py
 Products/FacultyStaffDirectory/Extensions/__init__.py
 Products/FacultyStaffDirectory/Extensions/addReviewerRole.py
+Products/FacultyStaffDirectory/Extensions/importfromcsv.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py
 Products/FacultyStaffDirectory/events/__init__.py
 Products/FacultyStaffDirectory/events/events.py

@@ -161,18 +161,37 @@
                     </a>
                   </dt>
                   <dd tal:define="personMembershipInformation python:eachDepartment.getMembershipInformation(context);">
-                    <tal:block tal:condition="personMembershipInformation/getPosition"
+                    <li tal:condition="personMembershipInformation/getPosition"
                                tal:replace="structure personMembershipInformation/getPosition">
-                    </tal:block>
-                    <span tal:condition="python:checkPermission('Modify portal content', context)"
-                          class="discreet">[
+                    </li>
+				<li tal:condition="personMembershipInformation/getDept_officeAddress"
+                               tal:replace="structure personMembershipInformation/getDept_officeAddress">
+                    </li>
+				<li tal:condition="personMembershipInformation/getDept_officePhone"
+                               tal:replace="structure personMembershipInformation/getDept_officePhone">
+                    </li>
+				<li tal:condition="personMembershipInformation/getSummarybio"
+                               tal:replace="structure personMembershipInformation/getSummarybio">
+                    </li>
+                    <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
                       <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
-                       <tal:block tal:condition="personMembershipInformation/getPosition"
-                                  i18n:translate="FacultyStaffDirectory_editPosition">Edit position</tal:block>
-                       <tal:block tal:condition="not:personMembershipInformation/getPosition"
-                                  i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</tal:block>
+                    
+                       <li  tal:condition="not:personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+         
+                       <li tal:condition="not:personMembershipInformation/getDept_officeAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Assign an office address</li>
+                       
+                       <li tal:condition="not:personMembershipInformation/getDept_officePhone"
+                                  i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign a phone number</li>
+                       <li tal:condition="not:personMembershipInformation/getSummarybio"
+                                  i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
+                       
+				   <li tal:condition="personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+                       
                       </a>
-                    ]</span>
+                    </span>
                   </dd>
                 </tal:block>
               </dl>
