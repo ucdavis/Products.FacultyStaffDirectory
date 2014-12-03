@@ -90,6 +90,7 @@
               <div class="vcard">
                   <a tal:attributes="href string:${context/absolute_url}/vCard" title="Download as vCard">Download as vCard</a>
               </div>
+				  
           
           
             </div>
@@ -104,6 +105,10 @@
                 </li>
               </ol>
             </div>
+			<div id="cv file" tal:define="cv nocall:context/getCv"
+			     tal:condition="nocall:cv">
+			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/@@download/cv">CV</a>
+			</div>
 
             <div tal:condition="python: showExpired and context.getBiography()" class="biography">
               <h3 i18n:translate="FacultyStaffDirectory_label_biography_heading">Biography:</h3>
