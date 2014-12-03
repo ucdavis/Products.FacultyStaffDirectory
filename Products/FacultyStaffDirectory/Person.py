@@ -175,6 +175,30 @@ schema = ATContentTypeSchema.copy() + Schema((
         default_output_type='image/jpeg',
         allowable_content_types=('image/gif','image/jpeg','image/png'),
     ),
+    FileField(
+        name='cv',
+        widget=FileWidget(
+            label=_(u"FacultyStaffDirectory_label_cv", default=u"Curriculum Vitae"),
+            description=_(u"Upload your CV Here or link your CV below"),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        storage=AttributeStorage(),
+        allowable_content_types=('application/pdf'),
+        searchable=True,
+        show_content_type=True,
+    ),
+    StringField(
+         name="cvlink",
+         widget=StringWidget(
+              label=_(u"FacultyStaffDirectory_label_cv", default=u"Curriculum Vitae Link"),
+              description=_(u"link your CV Here"),
+              i18n_domain='FacultyStaffDirectory',
+              ),
+         schemata="Professional Information",
+         validators=('isURL'),
+          
+    ),
     
     TextField(
         name='biography',
@@ -189,6 +213,8 @@ schema = ATContentTypeSchema.copy() + Schema((
         default_output_type='text/x-html-safe',
         user_property='description'
     ),
+    
+        
     TextField(
         name='research',
         widget=RichWidget(
