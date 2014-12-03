@@ -240,6 +240,18 @@ schema = ATContentTypeSchema.copy() + Schema((
         
     ),
     TextField(
+        name='teaching',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_teaching", default=u"Teaching"),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        searchable=True,
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+
+    ),
+    TextField(
         name='awards',
         widget=RichWidget(
             label=_(u"FacultyStaffDirectory_label_awards", default=u"Awards"),
