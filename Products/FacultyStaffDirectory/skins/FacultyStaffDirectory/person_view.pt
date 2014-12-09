@@ -126,9 +126,9 @@
                 </li>
               </ol>
             </div>
-			<div id="cv file" tal:define="cv nocall:context/getCv"
-			     tal:condition="nocall:cv">
-			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/@@download/cv">CV</a>
+			<div id="cv file" tal:define="cv context/getCv"
+			     tal:condition="cv|nothing">
+			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
 			</div>
 
             <div tal:condition="python: showExpired and context.getBiography()" class="biography">

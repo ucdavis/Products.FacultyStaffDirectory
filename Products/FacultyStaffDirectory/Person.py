@@ -184,9 +184,10 @@ schema = ATContentTypeSchema.copy() + Schema((
         ),
         schemata="Professional Information",
         storage=AttributeStorage(),
-        allowable_content_types=('application/pdf'),
+        allowable_content_types=('text/plain','application/pdf'),
         searchable=True,
         show_content_type=True,
+        required=False,
     ),
     StringField(
          name="cvlink",
