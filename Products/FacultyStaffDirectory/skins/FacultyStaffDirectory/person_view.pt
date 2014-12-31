@@ -12,7 +12,7 @@
   <body>
 
   <metal:title fill-slot="content-title">                              
-      <h1 class="fn n documentFirstHeading">
+      <h1 class="content-title">
         <span class="given-name" tal:content="context/getFirstName"><tal:comment replace="nothing">[First Name]</tal:comment></span>
         <span class="additional-name" tal:content="context/getMiddleName | nothing"><tal:comment replace="nothing">[Middle Name]</tal:comment></span>
         <span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
@@ -27,8 +27,8 @@
                tal:define="isExpired python:context.contentExpired();
                            isEditor python:checkPermission('Modify portal content', context);
                            showExpired python: not isExpired or (isExpired and isEditor)" >
-
-            <div class="row">
+            
+            <div class="inviso">
               <dl class="portalMessage info"
                   tal:condition="python: isExpired and isEditor">
                 <dt i18n:translate="FacultyStaffDirectory_expired_notice_editor_label">Note</dt>
@@ -38,28 +38,40 @@
                   regular site visitors will only see the person's name.
                 </dd>
               </dl>
+			<div id="summary" class="clearfix">
+			<div id="jumplinks" class="left hidden-xs hidden-sm">
 			  
-			  <ul class="menu">
-				<li class="get from css" tal:condition="context/getBiography">
+			  <ul class="jumplinks-anchors">
+				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getBiography">
 					<a href="#jumplinks-anchor-1">About</a>
 				</li>
-				<li class="get from css" tal:condition="context/getResearch">
+				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getResearch">
 					<a href="#jumplinks-anchor-2">Research Focus</a>
 				</li>
-				<li class="get from css" tal:condition="context/getPublications">
+				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getPublications">
 					<a href="#jumplinks-anchor-3">Selected Publications</a>
 				</li>
-				<li class="get from css" tal:condition="context/getTeaching">
+				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getTeaching">
 					<a href="#jumplinks-anchor-4">Teaching</a>
 				</li>
 				
-				<li class="get from css" tal:condition="context/getAwards">
+				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getAwards">
 					<a href="#jumplinks-anchor-5">Awards</a>
 				</li>
 				
 				
 				  
                </ul>
+		   </div>
+               <div id="education" tal:condition="python: showExpired and context.getEducation()" >
+                 <h4 class="uc" i18n:translate="FacultyStaffDirectory_label_education_heading">Education</h4>
+                 <ul class="content-items education-items">
+                   <li tal:repeat="degree context/getEducation">
+                     <span tal:content="degree" />
+                   </li>
+                 </ul>
+               </div>
+		   </div>
               <tal:block tal:condition="showExpired">
                 <div class="headshot cell width-4 position-12"
                      tal:condition="context/image_normal|nothing">
@@ -127,7 +139,7 @@
               </ol>
             </div>
 			<div id="cv file" tal:define="cv context/getCv"
-			     tal:condition="cv|nothing">
+			     tal:condition="cv">
 			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
 			</div>
 

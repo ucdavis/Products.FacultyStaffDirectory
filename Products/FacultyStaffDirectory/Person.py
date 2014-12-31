@@ -177,6 +177,7 @@ schema = ATContentTypeSchema.copy() + Schema((
     ),
     FileField(
         name='cv',
+        default=0,
         widget=FileWidget(
             label=_(u"FacultyStaffDirectory_label_cv", default=u"Curriculum Vitae"),
             description=_(u"Upload your CV Here or link your CV below"),
@@ -185,7 +186,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         schemata="Professional Information",
         storage=AttributeStorage(),
         allowable_content_types=('text/plain','application/pdf'),
-        searchable=True,
+        searchable=False,
         show_content_type=True,
         required=False,
     ),
