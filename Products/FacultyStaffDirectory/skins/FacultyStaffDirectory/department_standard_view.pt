@@ -26,6 +26,17 @@
                                            <tal:block tal:condition="not:personMembershipInformation/getPosition" i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</tal:block>
                                         </a>
                                     ]</span>
+                                    
+	                                       <tal:block tal:condition="personMembershipInformation/getPrimary_department" 
+	                                                  tal:replace="structure personMembershipInformation/primary_department">               
+	                                       </tal:block>
+	                                       <span tal:condition="python:checkPermission('Modify portal content', person)"
+	                                             class="discreet">[
+	                                           <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+	                                              <tal:block tal:condition="personMembershipInformation/primary_department" i18n:translate="FacultyStaffDirectory_editPrimary_department">Edit Primary Department Designation</tal:block>
+	                                              <tal:block tal:condition="not:personMembershipInformation/getPrimary_department" i18n:translate="FacultyStaffDirectory_assignPrimary_department">Assign Primary Department</tal:block>
+	                                      </a>
+	                                       ]</span>
                                     <tal:block tal:condition="personMembershipInformation/getDept_officeAddress" 
                                                tal:replace="structure personMembershipInformation/dept_officeAddress">               
                                     </tal:block>

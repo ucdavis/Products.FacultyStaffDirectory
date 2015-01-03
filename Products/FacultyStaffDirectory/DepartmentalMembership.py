@@ -28,6 +28,15 @@ schema = Schema((
             visible={'edit': 'invisible', 'view': 'invisible' },
         )
     ),
+    BooleanField(
+        name='primary_department',
+        widget=BooleanWidget(
+            label=_(u"FacultyStaffDirectory_label_primary_deparment", default=u"Primary Department"),
+            description=_(u"FacultyStaffDirectory_description_primary_departmentdescription", default=u"Check if primary/home department."),
+                    i18n_domain='FacultyStaffDirectory',
+                ),
+                default=False,
+            ),
     
     StringField(
         name='dept_officeAddress',
@@ -79,5 +88,6 @@ class DepartmentalMembership(BaseContent):
         'index.html' : '(dynamic view)',
         'edit' : 'departmentalmembership_edit',
     }
+    
 
 registerType(DepartmentalMembership, PROJECTNAME)

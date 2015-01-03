@@ -802,6 +802,14 @@ class Person(OrderedBaseFolder, ATCTContent):
         dList.sort()
         return dList
         
+    security.declareProtected(View, 'getPrimaryDepartment')
+    def getPrimaryDepartment(self):
+        """ grabs the primary department so that it can be listed first
+        """	
+        for dept in self.getDepartments(): 	
+             if dept.getMembershipInformation(self).getPrimary_department() == True: 	
+                  return dept.Title()
+        
     security.declareProtected(View, 'getLabNames')
     def getLabNames(self):
         """ Returns a list of the titles of the Labs attached to this person.
