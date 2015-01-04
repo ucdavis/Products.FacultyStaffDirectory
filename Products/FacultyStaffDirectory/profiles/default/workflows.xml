@@ -36,5 +36,8 @@
     <type type_id="FSDCommitteeMembership">
       <bound-workflow workflow_id="fsd_persongrouping_descriptor_workflow"/>
     </type>
+    <type type_id="FSDLabMembership">
+      <bound-workflow workflow_id="fsd_persongrouping_descriptor_workflow"/>
+    </type>
   </bindings>
 </object>

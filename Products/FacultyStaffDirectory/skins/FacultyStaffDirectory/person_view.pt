@@ -247,6 +247,7 @@
                 </tal:block>
               </dl>
             </div>
+            
             <div class="labs"
                  tal:define="labsList context/getLabs"
                  tal:condition="python: showExpired and labsList">
@@ -294,6 +295,7 @@
                 </tal:block>
               </dl>
             </div>
+			
 			
 
             <div class="courselisting"

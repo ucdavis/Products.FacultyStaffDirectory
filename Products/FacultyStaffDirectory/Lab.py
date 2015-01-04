@@ -14,7 +14,7 @@ from Products.FacultyStaffDirectory.config import *
 from Products.CMFCore.utils import getToolByName
 from Products.FacultyStaffDirectory.interfaces.lab import ILab
 from zope.interface import implements
-from Products.FacultyStaffDirectory.permissions import ASSIGN_DEPARTMENTS_TO_PEOPLE
+from Products.FacultyStaffDirectory.permissions import ASSIGN_LABS_TO_PEOPLE
 from Products.FacultyStaffDirectory import FSDMessageFactory as _
 
 schema = Schema((
@@ -30,7 +30,7 @@ schema = Schema((
             base_query="_search_people_in_this_fsd",
             startup_directory_method="_get_parent_fsd_path",  
         ),
-        write_permission=ASSIGN_DEPARTMENTS_TO_PEOPLE,
+        write_permission=ASSIGN_LABS_TO_PEOPLE,
         allowed_types=('FSDPerson',),
         multiValued=1,
         relationship='lab_members'
