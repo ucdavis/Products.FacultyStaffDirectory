@@ -26,24 +26,24 @@
                                            <tal:block tal:condition="not:personMembershipInformation/getPosition" i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</tal:block>
                                         </a>
                                     ]</span>
-                                    <tal:block tal:condition="personMembershipInformation/getDept_officeAddress" 
-                                               tal:replace="structure personMembershipInformation/dept_officeAddress">               
+                                    <tal:block tal:condition="personMembershipInformation/getLab_officeAddress" 
+                                               tal:replace="structure personMembershipInformation/Lab_officeAddress">               
                                     </tal:block>
                                     <span tal:condition="python:checkPermission('Modify portal content', person)"
                                           class="discreet">[
                                         <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
-                                           <tal:block tal:condition="personMembershipInformation/dept_officeAddress" i18n:translate="FacultyStaffDirectory_editDept_officeAddress">Edit Office Address</tal:block>
-                                           <tal:block tal:condition="not:personMembershipInformation/getDept_officeAddress" i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Assign Office Address</tal:block>
+                                           <tal:block tal:condition="personMembershipInformation/lab_officeAddress" i18n:translate="FacultyStaffDirectory_editLab_officeAddress">Edit Lab Address</tal:block>
+                                           <tal:block tal:condition="not:personMembershipInformation/getLab_officeAddress" i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign Lab Address</tal:block>
                                         </a>
                                     ]</span>
-                                    <tal:block tal:condition="personMembershipInformation/getDept_officePhone" 
-                                               tal:replace="structure personMembershipInformation/dept_officePhone">               
+                                    <tal:block tal:condition="personMembershipInformation/getLab_officePhone" 
+                                               tal:replace="structure personMembershipInformation/lab_officePhone">               
                                     </tal:block>
                                     <span tal:condition="python:checkPermission('Modify portal content', person)"
                                           class="discreet">[
                                         <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
-                                           <tal:block tal:condition="personMembershipInformation/dept_officePhone" i18n:translate="FacultyStaffDirectory_editDept_officePhone">Edit Office Phone</tal:block>
-                                           <tal:block tal:condition="not:personMembershipInformation/getDept_officePhone" i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign Office Phone</tal:block>
+                                           <tal:block tal:condition="personMembershipInformation/lab_officePhone" i18n:translate="FacultyStaffDirectory_editLab_officePhone">Edit Lab Phone</tal:block>
+                                           <tal:block tal:condition="not:personMembershipInformation/getLab_officePhone" i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign Lab Phone</tal:block>
                                         </a>
                                     ]</span>
                                     <tal:block tal:condition="personMembershipInformation/getSummarybio" 
