@@ -247,6 +247,54 @@
                 </tal:block>
               </dl>
             </div>
+            <div class="labs"
+                 tal:define="labsList context/getLabs"
+                 tal:condition="python: showExpired and labsList">
+              <h3 i18n:translate="FacultyStaffDirectory_label_labs_heading">Labs:</h3>
+              <dl>
+                <tal:block tal:repeat="eachLab labsList">
+                  <dt>
+                    <a tal:attributes="href python:eachLab.absolute_url()">
+                      <span tal:content="eachLab/Title" />:
+                    </a>
+                  </dt>
+                  <dd tal:define="personMembershipInformation python:eachLab.getMembershipInformation(context);">
+                    <li tal:condition="personMembershipInformation/getPosition"
+                               tal:replace="structure personMembershipInformation/getPosition">
+                    </li>
+				<li tal:condition="personMembershipInformation/getLab_officeAddress"
+                               tal:replace="structure personMembershipInformation/getLab_officeAddress">
+                    </li>
+				<li tal:condition="personMembershipInformation/getLab_officePhone"
+                               tal:replace="structure personMembershipInformation/getLab_officePhone">
+                    </li>
+				<li tal:condition="personMembershipInformation/getSummarybio"
+                               tal:replace="structure personMembershipInformation/getSummarybio">
+                    </li>
+                    <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                      <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+            
+                       <li  tal:condition="not:personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+ 
+                       <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an lab address</li>
+               
+                       <li tal:condition="not:personMembershipInformation/getLab_officePhone"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign a phone number</li>
+                       <li tal:condition="not:personMembershipInformation/getSummarybio"
+                                  i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Lab Short Bio</li>
+               
+				   <li tal:condition="personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+               
+                      </a>
+                    </span>
+                  </dd>
+                </tal:block>
+              </dl>
+            </div>
+			
 
             <div class="courselisting"
                  tal:define="courses context/getCourses"
