@@ -39,6 +39,17 @@ schema = Schema((
         )
     ),
     StringField(
+        name='lab_streetAddress',
+        default='1 Shields Avenue',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_streetAddress", default=u"Street Address"),
+            
+            description=_(u"FacultyStaffDirectory_description_streetAddress", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+            searchable=True,
+        )
+    ),
+    StringField(
         name='lab_officePhone',
         widget=StringWidget(
             label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),
@@ -47,6 +58,7 @@ schema = Schema((
             searchable=True,
         )
     ),
+    
     TextField(
         name='summarybio',
         widget=RichWidget(

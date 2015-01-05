@@ -218,6 +218,7 @@
 				<li tal:condition="personMembershipInformation/getDept_officeAddress"
                                tal:replace="structure personMembershipInformation/getDept_officeAddress">
                     </li>
+				
 				<li tal:condition="personMembershipInformation/getDept_officePhone"
                                tal:replace="structure personMembershipInformation/getDept_officePhone">
                     </li>
@@ -232,6 +233,8 @@
          
                        <li tal:condition="not:personMembershipInformation/getDept_officeAddress"
                                   i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Assign an office address</li>
+                     
+					 
                        
                        <li tal:condition="not:personMembershipInformation/getDept_officePhone"
                                   i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign a phone number</li>
@@ -279,7 +282,9 @@
                                   i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
  
                        <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
-                                  i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an lab address</li>
+                                  i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an Lab Address</li>
+                       <li tal:condition="not:personMembershipInformation/getLab_streetAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_streetAddress">Assign an street address</li>
                
                        <li tal:condition="not:personMembershipInformation/getLab_officePhone"
                                   i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign a phone number</li>

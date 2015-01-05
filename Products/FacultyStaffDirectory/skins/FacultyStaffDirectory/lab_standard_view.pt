@@ -36,6 +36,16 @@
                                            <tal:block tal:condition="not:personMembershipInformation/getLab_officeAddress" i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign Lab Address</tal:block>
                                         </a>
                                     ]</span>
+                                    <tal:block tal:condition="personMembershipInformation/getLab_streetAddress" 
+                                               tal:replace="structure personMembershipInformation/getLab_streetAddress">               
+                                    </tal:block>
+                                    <span tal:condition="python:checkPermission('Modify portal content', person)"
+                                          class="discreet">[
+                                        <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+                                           <tal:block tal:condition="personMembershipInformation/lab_streetAddress" i18n:translate="FacultyStaffDirectory_editLab_streetAddress">Edit Lab Street Address</tal:block>
+                                           <tal:block tal:condition="not:personMembershipInformation/getLab_streetAddress" i18n:translate="FacultyStaffDirectory_assignLab_streetAddress">Assign Lab Street Address</tal:block>
+                                        </a>
+                                    ]</span>
                                     <tal:block tal:condition="personMembershipInformation/getLab_officePhone" 
                                                tal:replace="structure personMembershipInformation/lab_officePhone">               
                                     </tal:block>
