@@ -139,7 +139,7 @@
               </ol>
             </div>
 			<div id="cv file" tal:define="cv context/getCv"
-			     tal:condition="cv">
+			     tal:condition="python: cv.get_size() > 0"> 
 			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
 			</div>
 

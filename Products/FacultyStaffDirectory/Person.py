@@ -30,6 +30,7 @@ from Products.CMFPlone.utils import safe_unicode
 from Products.membrane.at.interfaces import IUserAuthProvider, IPropertiesProvider, IGroupsProvider, IGroupAwareRolesProvider, IUserChanger
 from Products.Relations.field import RelationField
 from Products.validation import validation
+from Products.validation import V_REQUIRED
 
 from Products.FacultyStaffDirectory.config import *
 from Products.FacultyStaffDirectory.interfaces.person import IPerson
@@ -177,7 +178,9 @@ schema = ATContentTypeSchema.copy() + Schema((
     ),
     FileField(
         name='cv',
-        default=0,
+        required=False,
+        validators=('isNonEmpty',V_REQUIRED),
+        
         widget=FileWidget(
             label=_(u"FacultyStaffDirectory_label_cv", default=u"Curriculum Vitae"),
             description=_(u"Upload your CV Here or link your CV below"),
@@ -185,10 +188,10 @@ schema = ATContentTypeSchema.copy() + Schema((
         ),
         schemata="Professional Information",
         storage=AttributeStorage(),
-        allowable_content_types=('text/plain','application/pdf'),
+        allowable_content_types=('text/plain','application/pdf','application/octet',),
         searchable=False,
         show_content_type=True,
-        required=False,
+        
     ),
     StringField(
          name="cvlink",
