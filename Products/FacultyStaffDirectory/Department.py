@@ -18,6 +18,28 @@ from Products.FacultyStaffDirectory.permissions import ASSIGN_DEPARTMENTS_TO_PEO
 from Products.FacultyStaffDirectory import FSDMessageFactory as _
 
 schema = Schema((
+   
+    StringField(
+        name="dept_short_name",
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_deptshort", default=u"Department Short Name"),
+            description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+            ),
+            required=False,
+            allow_search=1,
+            
+        ),
+    StringField(
+        name='dept_url',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_deptUrl", default=u"Primary Department URL"),
+            description=_(u"FacultyStaffDirectory_description_depturl", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        validators = ('isURL')
+     
+    ),
 
     RelationField(
         name='members',

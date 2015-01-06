@@ -18,6 +18,27 @@ from Products.FacultyStaffDirectory.permissions import ASSIGN_LABS_TO_PEOPLE
 from Products.FacultyStaffDirectory import FSDMessageFactory as _
 
 schema = Schema((
+    StringField(
+        name="lab_short_name",
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_labshort", default=u"Lab Short Name"),
+            description=_(u"FacultyStaffDirectory_description_labshort", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+            ),
+            required=False,
+            allow_search=1,
+            
+        ),
+    StringField(
+        name='dept_url',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_labUrl", default=u"Primary Lab URL"),
+            description=_(u"FacultyStaffDirectory_description_laburl", default=u""),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        validators = ('isURL')
+     
+    ),
 
     RelationField(
         name='members',
