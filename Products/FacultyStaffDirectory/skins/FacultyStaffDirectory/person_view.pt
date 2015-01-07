@@ -23,6 +23,7 @@
 
   <metal:content-core fill-slot="content-core">
       <metal:content-core define-macro="content-core">
+	 
           <div id="hcard" class="vcard facultyStaffDirectory personView"
                tal:define="isExpired python:context.contentExpired();
                            isEditor python:checkPermission('Modify portal content', context);
@@ -38,10 +39,11 @@
                   regular site visitors will only see the person's name.
                 </dd>
               </dl>
+	    </div> <!--inviso-->
 			<div id="summary" class="clearfix">
-			<div id="jumplinks" class="left hidden-xs hidden-sm">
+			   <div id="jumplinks" class="left hidden-xs hidden-sm">
 			  
-			  <ul class="jumplinks-anchors">
+			  <ul id="jumplinks-anchors">
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getBiography">
 					<a href="#jumplinks-anchor-1">About</a>
 				</li>
@@ -62,7 +64,8 @@
 				
 				  
                </ul>
-		   </div>
+		   </div> <!--jumplinks -->
+	        
                <div id="education" tal:condition="python: showExpired and context.getEducation()" >
                  <h4 class="uc" i18n:translate="FacultyStaffDirectory_label_education_heading">Education</h4>
                  <ul class="content-items education-items">
@@ -70,67 +73,14 @@
                      <span tal:content="degree" />
                    </li>
                  </ul>
-               </div>
+               </div><!--education -->
 		   </div>
-              <tal:block tal:condition="showExpired">
-                <div class="headshot cell width-4 position-12"
-                     tal:condition="context/image_normal|nothing">
-                  <img src="" alt=""
-                       tal:replace="structure python:context.getWrappedField('image').tag(context, scale='normal',  css_class='photo')" />
-                </div>
-              </tal:block>
-
-          
-              <p tal:condition="python: showExpired and context.getJobTitles()"
-                 class="title"
-                 tal:repeat="jobTitle context/getJobTitles"
-                 tal:content="jobTitle"><tal:comment replace="nothing">[job title]</tal:comment>
-              </p>
-              <p tal:condition="python:not showExpired"
-                 i18n:translate="FacultyStaffDirectory_expired_notice">
-                This person is no longer associated with the organization.
-              </p>
-
-              <div tal:condition="showExpired"
-                    class="adr">
-                <span class="street-address" tal:content="structure python:context.getOfficeAddress().replace('\n', '<br />')" /><br />
-                <span class="locality" tal:content="context/getOfficeCity" ><tal:comment replace="nothing">[office city]</tal:comment></span>
-                <tal:block tal:condition="context/getOfficeState">, </tal:block>
-                <span class="region" tal:content="context/getOfficeState"><tal:comment replace="nothing">[office state]</tal:comment></span>
-                <span class="postal-code" tal:content="context/getOfficePostalCode"><tal:comment replace="nothing">[postal zip code]</tal:comment></span>
-              </div>
-              <div tal:condition="python: showExpired and context.getEmail()">
-                <span i18n:translate="FacultyStaffDirectory_label_email">Email</span>:
-                <span tal:attributes="class string:email" tal:content="structure python:context.spamProtectFSD(context.getEmail())" />
-              </div>
-              <span tal:condition="python: showExpired and context.getOfficePhone()"
-                    class="tel officePhone">
-                <span class="type" i18n:translate="FacultyStaffDirectory_label_officePhone">Office Phone</span>:
-                <span class="value" tal:content="context/getOfficePhone"><tal:comment replace="nothing">[office phone number]</tal:comment></span>
-              </span>
-
-              <div tal:condition="python: showExpired and context.getWebsites()"
-                   class="websites">
-                <h3 i18n:translate="FacultyStaffDirectory_label_websites_heading">Websites:</h3>
-                <ul>
-                  <li tal:repeat="website context/getWebsites">
-                    <a class='url' href=""
-                       tal:attributes="href website"
-                       tal:content="website" />
-                  </li>
-                </ul>
-              </div>
-              <div class="vcard">
-                  <a tal:attributes="href string:${context/absolute_url}/vCard" title="Download as vCard">Download as vCard</a>
-              </div>
-				  
+              
           
           
-            </div>
-
             <div class="visualClear"><!-- --></div>
 
-            <div tal:condition="python: showExpired and context.getEducation()" class="education">
+            <!--div tal:condition="python: showExpired and context.getEducation()" class="education">
               <h3 i18n:translate="FacultyStaffDirectory_label_education_heading">Education:</h3>
               <ol>
                 <li tal:repeat="degree context/getEducation">
@@ -141,24 +91,37 @@
 			<div id="cv file" tal:define="cv context/getCv"
 			     tal:condition="python: cv.get_size() > 0"> 
 			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
-			</div>
-
-            <div tal:condition="python: showExpired and context.getBiography()" class="biography">
-              <h3 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h3>
-              <span tal:content="structure context/getBiography" />
-            </div>
-            <div tal:condition="python: showExpired and context.getResearch()" class="biography">
-              <h3 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h3>
-              <span tal:content="structure context/getResearch" />
-            </div>
-            <div tal:condition="python: showExpired and context.getTeaching()" class="biography">
-              <h3 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h3>
-              <span tal:content="structure context/getTeaching" />
-            </div>
-            <div tal:condition="python: showExpired and context.getAwards()" class="biography">
-              <h3 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h3>
-              <span tal:content="structure context/getAwards" />
-            </div>
+			</div-->
+            <div id="cm-section">
+            <section tal:condition="python: showExpired and context.getBiography()">
+              <h2 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h2>
+              <div id="inline-content" tal:content="structure context/getBiography"> </div>
+            </section>
+            <section tal:condition="python: showExpired and context.getOptionalImage()" >
+              <div class="picture">
+              	<figure class="picture-processsed"> 
+				<span class="img-responsive" tal:content="structure context/getOptionalImage" />
+				
+			</figure> 
+              </div>
+            </section>
+            <section tal:condition="python: showExpired and context.getResearch()">
+              <h2 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h2>
+              <div class="inline-content" tal:content="structure context/getResearch"></div>
+            </section>
+		  <section tal:condition="python: showExpired and context.getPublications()">
+		      <h2 i18n:translate="FacultyStaffDirectory_label_publications_heading">Selected Publications</h2>
+		       <div class="inline-content" tal:content="structure context/getPublications"></div>
+		   </section>
+            <section tal:condition="python: showExpired and context.getTeaching()" >
+              <h2 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h2>
+              <div class="inline-content" tal:content="structure context/getTeaching" ></div>
+            </section>
+            <section tal:condition="python: showExpired and context.getAwards()" >
+              <h2 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h2>
+              <div class="inline-content" tal:content="structure context/getAwards"></div>
+            </section>
+            
             
             <div tal:condition="python: not showExpired and context.getTerminationDetails()" class="biography">
               <span tal:content="structure context/getTerminationDetails" />
@@ -167,7 +130,7 @@
               <h3 i18n:translate="FacultyStaffDirectory_label_termination_details_heading">Termination details:</h3>
               <span tal:content="structure context/getTerminationDetails" />
             </div>
-
+        </div>
             <div class="specialties"
                  tal:define="specialtyTuples context/getSpecialties"
                  tal:condition="python: showExpired and specialtyTuples">
@@ -352,7 +315,8 @@
               </ul>
             </div>
 
-          </div>
+        </div>
+  
       </metal:content-core>
   </metal:content-core>
 

@@ -233,6 +233,18 @@ schema = ATContentTypeSchema.copy() + Schema((
         
     ),
     TextField(
+        name='optionalImage',
+        widget=RichWidget(
+            label=_(u"FacultyStaffDirectory_label_optionalimage", default=u"insert image or video for your bio page here. "),
+            i18n_domain='FacultyStaffDirectory',
+        ),
+        schemata="Professional Information",
+        searchable=True,
+        validators=('isTidyHtmlWithCleanup',),
+        default_output_type='text/x-html-safe',
+        
+    ),
+    TextField(
         name='publications',
         widget=RichWidget(
             label=_(u"FacultyStaffDirectory_label_publications", default=u"Selected Publications"),
