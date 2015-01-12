@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_catalog" meta_type="Plone Catalog Tool">
   <index name="getSortableName" remove="True" />
+   <index name="getLastName" remove="True" />
   <index name="getRawClassifications" remove="True" />
   <index name="getRawSpecialties" remove="True" />
   <index name="getRawCommittees" remove="True" />

@@ -648,7 +648,9 @@ class Person(OrderedBaseFolder, ATCTContent):
         """
         return (self.lastName.lower(), self.firstName.lower())
     
+    
     security.declareProtected(View, 'Title')
+    
     def Title(self):
         """Return the Title as firstName middleName(when available) lastName, suffix(when available)"""
         try:

@@ -42,7 +42,9 @@
      friendlyName="Full Name"
      i18n:attributes="description; friendlyName">
    <criteria>ATListCriterion</criteria>
-  </index>
+   </index>
+   
+ 
  </topic_indexes>
  <topic_metadata>
   <metadata name="getClassificationNames"
@@ -69,6 +71,11 @@
      description="The specialties with which the person is associated"
      enabled="True" friendlyName="Specialties"
      i18n:attributes="description; friendlyName"/>
+  <metadata name="getLastName"
+     description="The specialties with which the person is associated"
+     enabled="True" friendlyName="LastName"
+     i18n:attributes="description; friendlyName"/>
+
 
  </topic_metadata>
 </atcttool>
