@@ -27,5 +27,5 @@
   <column value="getSpecialtyNames" />
   <column value="getClassificationNames" />
   <column value="getResearchTopics" />
-  <column value="getLastNameForAlpha" />
+  <column value="getLastName" />
 </object>
