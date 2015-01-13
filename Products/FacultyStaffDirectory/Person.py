@@ -647,6 +647,13 @@ class Person(OrderedBaseFolder, ATCTContent):
         Return them as lowercase so that names like 'von Whatever' sort properly
         """
         return (self.lastName.lower(), self.firstName.lower())
+        
+    security.declareProtected(View, 'getLastNameForAlpha')
+    def getLastNameForAlpha(self):
+        """
+        Return the person's last name. for regisration with the eea.facetednavigation alpha widget
+        """
+        return (self.lastName)
     
     
     security.declareProtected(View, 'Title')

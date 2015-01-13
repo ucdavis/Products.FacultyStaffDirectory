@@ -15,5 +15,6 @@
   <metadata name="getDepartmentNames" remove="True" />
   <metadata name="getResearchTopics" remove="True" />
   <metadata name="getSpecialtyNames" remove="True" />
+  <metadata name="getLastName" remove="True" />
  </topic_metadata>
 </atcttool>

@@ -71,8 +71,8 @@
      description="The specialties with which the person is associated"
      enabled="True" friendlyName="Specialties"
      i18n:attributes="description; friendlyName"/>
-  <metadata name="getLastName"
-     description="The specialties with which the person is associated"
+  <metadata name="getLastNameForAlpha"
+     description="LastName for eea alpha widget"
      enabled="True" friendlyName="LastName"
      i18n:attributes="description; friendlyName"/>
 
