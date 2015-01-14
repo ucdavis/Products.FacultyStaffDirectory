@@ -832,7 +832,7 @@ class Person(OrderedBaseFolder, ATCTContent):
         """	
         for dept in self.getDepartments(): 	
              if dept.getMembershipInformation(self).getPrimary_department() == True: 	
-                  return dept.Title()
+                  return dept
         
     security.declareProtected(View, 'getLabNames')
     def getLabNames(self):
