@@ -45,20 +45,20 @@
 			  
 			  <ul id="jumplinks-anchors">
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getBiography">
-					<a href="#jumplinks-anchor-1">About</a>
+					<a class="anchor-link" href="#about">About</a>
 				</li>
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getResearch">
-					<a href="#jumplinks-anchor-2">Research Focus</a>
+					<a class="anchor-link" href="#research">Research Focus</a>
 				</li>
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getPublications">
-					<a href="#jumplinks-anchor-3">Selected Publications</a>
+					<a href="#pubs">Selected Publications</a>
 				</li>
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getTeaching">
-					<a href="#jumplinks-anchor-4">Teaching</a>
+					<a href="#teaching">Teaching</a>
 				</li>
 				
 				<li class="leaf hidden-sm hidden-xs" tal:condition="context/getAwards">
-					<a href="#jumplinks-anchor-5">Awards</a>
+					<a href="#awards">Awards</a>
 				</li>
 				
 				
@@ -93,9 +93,12 @@
 			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
 			</div-->
             <div id="cm-section">
+			
             <section tal:condition="python: showExpired and context.getBiography()">
-              <h2 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h2>
+			 <a name=about>
+              <h2 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h2> </a>
               <div id="inline-content" tal:content="structure context/getBiography"> </div>
+			 
             </section>
             <section tal:condition="python: showExpired and context.getOptionalImage()" >
               <div class="picture">
@@ -106,20 +109,27 @@
               </div>
             </section>
             <section tal:condition="python: showExpired and context.getResearch()">
-              <h2 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h2>
-              <div class="inline-content" tal:content="structure context/getResearch"></div>
+			 <a name=research>
+              <h2 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h2></a>
+              <div class="inline-content" title="research" tal:content="structure context/getResearch"></div> 
             </section>
 		  <section tal:condition="python: showExpired and context.getPublications()">
-		      <h2 i18n:translate="FacultyStaffDirectory_label_publications_heading">Selected Publications</h2>
+			  <a name="pubs">
+		      <h2 i18n:translate="FacultyStaffDirectory_label_publications_heading">Selected Publications</h2></a>
 		       <div class="inline-content" tal:content="structure context/getPublications"></div>
+		   
 		   </section>
             <section tal:condition="python: showExpired and context.getTeaching()" >
-              <h2 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h2>
+				<a name="teaching">
+              <h2 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h2></a>
               <div class="inline-content" tal:content="structure context/getTeaching" ></div>
+		 
             </section>
             <section tal:condition="python: showExpired and context.getAwards()" >
-              <h2 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h2>
+				<a name="awards">
+              <h2 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h2> </a>
               <div class="inline-content" tal:content="structure context/getAwards"></div>
+		 
             </section>
             
             

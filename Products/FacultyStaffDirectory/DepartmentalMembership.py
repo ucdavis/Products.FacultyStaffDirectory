@@ -100,5 +100,6 @@ class DepartmentalMembership(BaseContent):
         'edit' : 'departmentalmembership_edit',
     }
     
+    
 
 registerType(DepartmentalMembership, PROJECTNAME)
