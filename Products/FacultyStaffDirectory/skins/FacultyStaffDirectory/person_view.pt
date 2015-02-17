@@ -132,7 +132,7 @@
 		 
             </section>
             
-            
+            <!-- hide it all>
             <div tal:condition="python: not showExpired and context.getTerminationDetails()" class="biography">
               <span tal:content="structure context/getTerminationDetails" />
             </div>
@@ -271,10 +271,10 @@
                     </span>
                   </dd>
                 </tal:block>
-              </dl>
+              </dl-->
             </div>
 			
-			
+		
 
             <div class="courselisting"
                  tal:define="courses context/getCourses"
