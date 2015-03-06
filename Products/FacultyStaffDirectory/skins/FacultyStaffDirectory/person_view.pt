@@ -132,7 +132,8 @@
 		 
             </section>
             
-            <!-- hide it all>
+            <!--require editor--></div>
+		<div id="extra_information" tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
             <div tal:condition="python: not showExpired and context.getTerminationDetails()" class="biography">
               <span tal:content="structure context/getTerminationDetails" />
             </div>
@@ -140,7 +141,7 @@
               <h3 i18n:translate="FacultyStaffDirectory_label_termination_details_heading">Termination details:</h3>
               <span tal:content="structure context/getTerminationDetails" />
             </div>
-        </div>
+       
             <div class="specialties"
                  tal:define="specialtyTuples context/getSpecialties"
                  tal:condition="python: showExpired and specialtyTuples">
@@ -170,7 +171,9 @@
                     </dd>
                   </tal:block>
                 </tal:block>
+				
               </dl>
+			  
             </div>
 
             <div class="departments"
@@ -271,7 +274,8 @@
                     </span>
                   </dd>
                 </tal:block>
-              </dl-->
+              </dl>
+			  </div> <!--end logged in-->
             </div>
 			
 		
