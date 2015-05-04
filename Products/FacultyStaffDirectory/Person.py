@@ -825,7 +825,7 @@ class Person(OrderedBaseFolder, ATCTContent):
         dList = [d.Title() for d in self.getDepartments()]
         dList.sort()
         return dList
-        
+           
     security.declareProtected(View, 'getPrimaryDepartment')
     def getPrimaryDepartment(self):
         """ grabs the primary department so that it can be listed first
