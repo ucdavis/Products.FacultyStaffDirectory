@@ -58,6 +58,25 @@ schema = Schema((
             searchable=True,
         )
     ),
+     StringField(
+          name='quarter',
+          widget=StringWidget(
+                 label=_(u"FacultyStaffDirectory_label_Quarter", default=u"Quarter"),
+                 description=_(u"FacultyStaffDirectory_description_Quarter", default=u"Quarter and year, aka Fall 2012"),
+                 i18n_domain='FacultyStaffDirectory',
+              ),
+              ),
+              
+     LinesField('officeHours',
+          required=False,
+          searchable=True,
+          widget=LinesWidget(
+                   label=_(u"FacultyStaffDirectory", default=u"Office Hours"),
+                   description=_(u"FacultyStaffDirectory", default=u"One entry per line, aka Tuesday 8:00am - 10:00 am"),
+                   i18n_domain='FacultyStaffDirectory',
+        )    
+    
+    ),
     
     TextField(
         name='summarybio',
