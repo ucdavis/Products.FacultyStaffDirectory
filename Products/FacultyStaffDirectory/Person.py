@@ -105,7 +105,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         name='jobTitles',
         widget=LinesField._properties['widget'](
             label=_(u"FacultyStaffDirectory_label_jobTitles", default=u"Job Titles"),
-            description=_(u"FacultyStaffDirectory_description_jobTitles", default=u"One per line"),
+            description=_(u"FacultyStaffDirectory_description_jobTitles", default=u"Only used for titles that are NOT tied to a department"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -119,7 +119,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information",
+        schemata="not used",
         searchable=True
     ),
     
@@ -129,7 +129,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officeCity", default=u"Office City"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information",
+        schemata="not used",
         searchable=True
     ),
     
@@ -139,7 +139,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officeState", default=u"Office State"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information"
+        schemata="not used"
     ),
     
     StringField(
@@ -148,7 +148,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officePostalCode", default=u"Office Postal Code"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information"
+        schemata="not used"
     ),
     
     StringField(
@@ -158,7 +158,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information",
+        schemata="not used",
         searchable=True,
     ),
     
@@ -407,7 +407,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             startup_directory_method="_get_parent_fsd_path"
         ),
         write_permission=ASSIGN_SPECIALTIES_TO_PEOPLE,
-        schemata="Professional Information",
+        schemata="Basic Information",
         multiValued=True,
         relationship='people_specialties',
         allowed_types=('FSDSpecialty')
@@ -536,7 +536,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             description=_(u"FacultyStaffDirectory_description_termination_details", default=u"Message displayed to site visitors when the person's termination date has passed. Can be used to provide forwarding information or a link to someone who has taken over their responsibilities."),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Employment Information",
+        schemata="not used",
         searchable=False,
         validators=('isTidyHtmlWithCleanup',),
         default_output_type='text/x-html-safe',
@@ -581,10 +581,10 @@ class Person(OrderedBaseFolder, ATCTContent):
     
     # reorder the fields to move the dates into the employment information schemata along with the 
     # terminiation details field and rename the effective and expiration dates.
-    Person_schema['effectiveDate'].schemata = 'Employment Information'
+    Person_schema['effectiveDate'].schemata = 'not used'
     Person_schema['effectiveDate'].widget.label = _(u"label_edit_hire_date", default=u"Hire Date")
     Person_schema['effectiveDate'].widget.description = _(u"description_edit_hire_date", default=u"The date when the person will be hired. If no date is selected the person will be considered hired immediately.")
-    Person_schema['expirationDate'].schemata = 'Employment Information'
+    Person_schema['expirationDate'].schemata = 'not used'
     Person_schema['expirationDate'].widget.label = _(u"label_edit_termination_date", default=u"Termination Date")
     Person_schema['expirationDate'].widget.description = _(u"description_edit_termination_date", default=u"The date when the person leaves the organization. This will automatically make the person invisible for others at the given date.")
     Person_schema.moveField('effectiveDate', after='specialties')
