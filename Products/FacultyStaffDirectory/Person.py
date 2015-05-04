@@ -119,7 +119,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="not used",
+        schemata="Contact Information",
         searchable=True
     ),
     
@@ -129,7 +129,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_officeCity", default=u"Office City"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="not used",
+        schemata="Contact Information",
         searchable=True
     ),
     
@@ -158,7 +158,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="not used",
+        schemata="Contact Information",
         searchable=True,
     ),
     
