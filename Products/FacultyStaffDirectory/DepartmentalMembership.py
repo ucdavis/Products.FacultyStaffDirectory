@@ -59,6 +59,39 @@ schema = Schema((
         )
     ),
     StringField(
+        name='dept_city',
+        default='Davis',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_city", default=u"City"),
+            i18n_domain='FacultyStaffDirectory',
+            
+            searchable=True,
+        
+        )
+    ),
+    StringField(
+        name='dept_state',
+        default='CA',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_State", default=u"State"),
+            i18n_domain='FacultyStaffDirectory',
+            
+            searchable=True,
+        
+        )
+    ),
+    StringField(
+        name='dept_zip',
+        default='95616',
+        widget=StringWidget(
+            label=_(u"FacultyStaffDirectory_label_zip", default=u"Zip Code"),
+            i18n_domain='FacultyStaffDirectory',
+            
+            searchable=True,
+        
+        )
+    ),
+    StringField(
         name='dept_officePhone',
         widget=StringWidget(
             label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),

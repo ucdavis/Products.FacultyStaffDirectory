@@ -5,6 +5,7 @@ import facultystaffdirectory
 import committee
 import classification
 import department
+import lab
 
 
 def not_a_user_object(obj):
@@ -14,3 +15,4 @@ def not_a_user_object(obj):
     Register this as a more specific adapter on affected classes.
     """
     return None
+ 

@@ -205,6 +205,7 @@ schema = ATContentTypeSchema.copy() + Schema((
           
     ),
     
+    
     TextField(
         name='biography',
         allowable_content_types=ALLOWABLE_CONTENT_TYPES,
