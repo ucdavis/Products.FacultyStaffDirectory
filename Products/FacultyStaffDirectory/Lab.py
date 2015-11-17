@@ -39,6 +39,19 @@ schema = Schema((
         validators = ('isURL')
      
     ),
+    ImageField(
+        name='image',
+        widget=ImageWidget(
+            label=_(u"FacultyStaffDirectory_label_image", default=u"Image"),
+            i18n_domain='FacultyStaffDirectory',
+            default_content_type='image/gif',
+        ),
+        storage=AttributeStorage(),
+        original_size=(400, 500),
+        sizes={'thumb': (100, 125), 'normal': (200, 250)},
+        default_output_type='image/jpeg',
+        allowable_content_types=('image/gif','image/jpeg','image/png'),
+    ),
 
     RelationField(
         name='members',

@@ -32,7 +32,7 @@ schema = Schema((
     StringField(
         name='lab_officeAddress',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Location Building and Room"),
+            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Lab Location Building and Room"),
             i18n_domain='FacultyStaffDirectory',
             searchable=True,
         
@@ -85,7 +85,7 @@ schema = Schema((
     StringField(
         name='lab_officePhone',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),
+            label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Lab Phone"),
             description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
             i18n_domain='FacultyStaffDirectory',
             searchable=True,
