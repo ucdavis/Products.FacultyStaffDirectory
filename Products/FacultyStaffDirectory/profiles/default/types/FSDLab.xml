@@ -20,6 +20,7 @@
   <element value="Topic"/>
   <element value="News Item"/>
   <element value="Event"/>
+  <element value="Link" />
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">lab_standard_view</property>
