@@ -52,6 +52,22 @@ schema = Schema((
         default_output_type='image/jpeg',
         allowable_content_types=('image/gif','image/jpeg','image/png'),
     ),
+    RelationField(
+            name='pi',
+            widget=ReferenceBrowserWidget(
+                label=_(u"FacultyStaffDirectory_label_pi", default=u"Principal Investigator"),
+                i18n_domain='FacultyStaffDirectory',
+                allow_browse=0,
+                allow_search=1,
+                show_results_without_query=1,
+                base_query="_search_people_in_this_fsd",
+                startup_directory_method="_get_parent_fsd_path",  
+            ),
+            write_permission=ASSIGN_LABS_TO_PEOPLE,
+            allowed_types=('FSDPerson',),
+            multiValued=0,
+            relationship='lab_pi'
+        ),
 
     RelationField(
         name='members',
@@ -69,7 +85,8 @@ schema = Schema((
         multiValued=1,
         relationship='lab_members'
     ),
-),
+ ),
+
 )
 
 Lab_schema = getattr(PersonGrouping, 'schema', Schema(())).copy() + schema.copy()
