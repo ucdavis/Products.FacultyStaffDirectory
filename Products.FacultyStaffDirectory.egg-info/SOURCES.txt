@@ -37,12 +37,14 @@ Products/FacultyStaffDirectory/sharing.py
 Products/FacultyStaffDirectory/utility.py
 Products/FacultyStaffDirectory/validators.py
 Products/FacultyStaffDirectory/vocab.py
+Products/FacultyStaffDirectory/Extensions/FixTitle.py
 Products/FacultyStaffDirectory/Extensions/Install.py
 Products/FacultyStaffDirectory/Extensions/OfficeRmFromCSV.py
 Products/FacultyStaffDirectory/Extensions/__init__.py
 Products/FacultyStaffDirectory/Extensions/addReviewerRole.py
 Products/FacultyStaffDirectory/Extensions/importfromcsv.py
-Products/FacultyStaffDirectory/Extensions/rmJobTitles.py
+Products/FacultyStaffDirectory/Extensions/officeHoursFromCsv.py
+Products/FacultyStaffDirectory/Extensions/officeHoursFromCsv1.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py
 Products/FacultyStaffDirectory/events/__init__.py
 Products/FacultyStaffDirectory/events/events.py
