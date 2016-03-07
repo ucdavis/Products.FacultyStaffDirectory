@@ -113,7 +113,7 @@ class Lab(PersonGrouping):
             return refs[0].getContentObject()
             
     security.declareProtected(View, 'getPiInformation')
-    def getMembershipInformation(self, person):
+    def getPiInformation(self, person):
         """ Get the lab Principal Investigator information for a specific person
         """
         refCatalog = getToolByName(self, 'reference_catalog')
