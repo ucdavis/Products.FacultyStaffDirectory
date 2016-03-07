@@ -111,6 +111,18 @@ class Lab(PersonGrouping):
             return None
         else:
             return refs[0].getContentObject()
+            
+    security.declareProtected(View, 'getPiInformation')
+    def getMembershipInformation(self, person):
+        """ Get the lab Principal Investigator information for a specific person
+        """
+        refCatalog = getToolByName(self, 'reference_catalog')
+        refs = refCatalog.getReferences(self, 'lab_pi', person)
+
+        if not refs:
+            return None
+        else:
+            return refs[0].getContentObject()
 
     security.declareProtected(View, 'getPeople')
     def getPeople(self):
@@ -118,6 +130,13 @@ class Lab(PersonGrouping):
             Mainly for context-sensitive classifications
         """
         return self.getMembers()
+        
+    security.declareProtected(View, 'getPrincipalInvestigator')
+    def getPrincipalInvestigator(self):
+        """ Return the people in this lab.
+            Mainly for context-sensitive classifications
+        """
+        return self.getPi()
         
     security.declareProtected(View, 'getRawPeople')
     def getRawPeople(self):
