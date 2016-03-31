@@ -93,15 +93,18 @@ schema = ATContentTypeSchema.copy() + Schema((
         schemata="photo",
         widget=ImageWidget(
             label=_(u"FacultyStaffDirectory_label_image", default=u"Image"),
+            description=_(u"FacultyStaffDirectory_description_image", default=u"Image size 200dpi X 200 dpi (square) and resolution of 100dpi. IMPORTANT: If you change your image the change may not show right away. Refresh your browser and if that doesn't work, check back in 30 minutes."),
             i18n_domain='FacultyStaffDirectory',
             default_content_type='image/gif',
         ),
         storage=AttributeStorage(),
-        original_size=(400, 500),
-        sizes={'thumb': (100, 125), 'normal': (200, 250)},
+        original_size=(400, 400),
+        sizes={'thumb': (100, 100), 'normal': (200, 200)},
         default_output_type='image/jpeg',
         allowable_content_types=('image/gif','image/jpeg','image/png'),
     ),
+    
+    
     
     StringField(
         name='email',
