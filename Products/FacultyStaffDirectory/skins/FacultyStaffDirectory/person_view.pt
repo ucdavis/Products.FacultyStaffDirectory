@@ -65,6 +65,14 @@
 				  
                </ul>
 		   </div> <!--jumplinks -->
+            <span tal:condition="python:checkPermission('Modify portal content', context)"
+                  class="edit_person">
+              <a tal:attributes="href python:'base_edit?fieldset=Professional%20Information'">
+                <tal:block 
+                           i18n:translate="FacultyStaffDirectory_editProfessionalInformation">Edit This Page</tal:block>
+                
+              </a>
+            </span>
 	        
                <div id="education" tal:condition="python: showExpired and context.getEducation()" >
                  <h4 class="uc" i18n:translate="FacultyStaffDirectory_label_education_heading">Education</h4>
