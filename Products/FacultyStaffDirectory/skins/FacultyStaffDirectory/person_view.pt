@@ -183,7 +183,7 @@
               </dl>
 			  
             </div>
-
+          
             <div class="departments"
                  tal:define="departmentsList context/getDepartments"
                  tal:condition="python: showExpired and departmentsList">

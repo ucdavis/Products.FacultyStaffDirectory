@@ -252,7 +252,7 @@ schema = ATContentTypeSchema.copy() + Schema((
     TextField(
         name='publications',
         widget=RichWidget(
-            label=_(u"FacultyStaffDirectory_label_publications", default=u"Selected Publications"),
+            label=_(u"FacultyStaffDirectory_label_publications", default=u"Selected Publications - please limit to 5."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
