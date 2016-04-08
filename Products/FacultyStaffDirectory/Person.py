@@ -309,9 +309,9 @@ schema = ATContentTypeSchema.copy() + Schema((
     StringField(
         name='id',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_id", default=u"Access Account ID"),
+            label=_(u"FacultyStaffDirectory_label_id", default=u"UCDavis Login ID"),
             i18n_domain='FacultyStaffDirectory',
-            description=_(u"FacultyStaffDirectory_description_id", default=u"Example: abc123"),
+            description=_(u"FacultyStaffDirectory_description_id", default=u"Not sure what this is? Go to http://email.ucdavis.edu and enter the person's email address and click check login ID"),
         ),
         required=True,
         user_property=True,
