@@ -69,7 +69,7 @@
                   >
               <a class="person-edit" tal:attributes="href python:'base_edit?fieldset=Professional%20Information'">
                 <tal:block 
-                           i18n:translate="FacultyStaffDirectory_editProfessionalInformation">Edit This Page</tal:block>
+                           i18n:translate="FacultyStaffDirectory_editProfessionalInformation">Click to Edit This Page</tal:block>
                 
               </a>
             </span>
