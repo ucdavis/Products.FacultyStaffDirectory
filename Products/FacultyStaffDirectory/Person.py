@@ -653,12 +653,12 @@ class Person(OrderedBaseFolder, ATCTContent):
         """
         return (self.lastName.lower(), self.firstName.lower())
         
-    security.declareProtected(View, 'getLastName')
-    def getLastName(self):
+    #security.declareProtected(View, 'getLastName')
+    #def getLastName(self):
         """
         Return the person's last name. for regisration with the eea.facetednavigation alpha widget
         """
-        return (self.lastName)
+    #    return (self.lastName)
     
     
     security.declareProtected(View, 'Title')
@@ -669,8 +669,8 @@ class Person(OrderedBaseFolder, ATCTContent):
             # Get the fields using the accessors, so they're properly Unicode encoded.
             # We also can't use the %s method of string concatentation for the same reason.
             # Is there another way to manage this?
-            fn = self.getFirstName()
-            ln = self.getLastName()
+            fn = self.getFirstName() 
+            ln = self.getLastName() 
         except AttributeError:
             return u"new person" # YTF doesn't this display on the New Person page?  # Couldn't call superclass's Title() for some unknown reason
         
