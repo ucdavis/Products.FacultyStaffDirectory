@@ -65,7 +65,7 @@ schema = Schema((
             ),
             write_permission=ASSIGN_LABS_TO_PEOPLE,
             allowed_types=('FSDPerson',),
-            multiValued=0,
+            multiValued=1,
             relationship='lab_pi'
         ),
 
@@ -143,6 +143,12 @@ class Lab(PersonGrouping):
         """ Return the people associations associated with this lab
         """
         return self.getRawMembers()
+        
+    security.declareProtected(View, 'getRawPi')
+    def getRawPrinipalInvestigator(self):
+       """ Return the people associations associated with this lab
+       """
+       return self.getRawPi()
     
     #
     # Validators
