@@ -64,8 +64,9 @@ schema = Schema((
                 startup_directory_method="_get_parent_fsd_path",  
             ),
             write_permission=ASSIGN_LABS_TO_PEOPLE,
-            allowed_types=('FSDPerson,'),
-            multiValued=0,
+
+            allowed_types=('FSDPerson',),
+            multiValued=1,
             relationship='lab_pi'
         ),
 
@@ -111,6 +112,18 @@ class Lab(PersonGrouping):
             return None
         else:
             return refs[0].getContentObject()
+            
+    security.declareProtected(View, 'getPiInformation')
+    def getPiInformation(self, person):
+        """ Get the lab Principal Investigator information for a specific person
+        """
+        refCatalog = getToolByName(self, 'reference_catalog')
+        refs = refCatalog.getReferences(self, 'lab_pi', person)
+
+        if not refs:
+            return None
+        else:
+            return refs[0].getContentObject()
 
     security.declareProtected(View, 'getPeople')
     def getPeople(self):
@@ -119,13 +132,26 @@ class Lab(PersonGrouping):
         """
         return self.getMembers()
         
-   
-           
+
+    security.declareProtected(View, 'getPrincipalInvestigator')
+    def getPrincipalInvestigator(self):
+        """ Return the people in this lab.
+            Mainly for context-sensitive classifications
+        """
+        return self.getPi()
+        
+
     security.declareProtected(View, 'getRawPeople')
     def getRawPeople(self):
         """ Return the people associations associated with this lab
         """
         return self.getRawMembers()
+        
+    security.declareProtected(View, 'getRawPi')
+    def getRawPrinipalInvestigator(self):
+       """ Return the people associations associated with this lab
+       """
+       return self.getRawPi()
     
     #
     # Validators
