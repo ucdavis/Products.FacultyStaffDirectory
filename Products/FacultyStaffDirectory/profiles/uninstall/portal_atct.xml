@@ -8,7 +8,7 @@
   <index name="getRawSpecialties" remove="True" />
   <index name="getSortableName" remove="True" />
   <index name="getLastName" remove="True" />
-  <index name="getRawPincipalInvestigators" remove="True" />
+  <index name="getRawPrincipalInvestigators" remove="True" />
  </topic_indexes>
  <topic_metadata>
   <metadata name="getClassificationNames" remove="True" />

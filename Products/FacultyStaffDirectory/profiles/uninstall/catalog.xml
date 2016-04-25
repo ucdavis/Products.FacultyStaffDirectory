@@ -6,7 +6,7 @@
   <index name="getRawCommittees" remove="True" />
   <index name="getRawDepartments" remove="True" />
   <index name="getRawPeople" remove="True" />
-  <index name="getRawPincipalInvestigators" remove="True" />
+  <index name="getRawPrincipalInvestigators" remove="True" />
   <column value="getCommitteeNames" remove="True" />
   <column value="getDepartmentNames" remove="True" />
   <column value="getSpecialtyNames" remove="True" />

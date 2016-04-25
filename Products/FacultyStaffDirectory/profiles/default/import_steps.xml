@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <import-steps>
-  <import-step id="FacultyStaffDirectory-installKupuResources"
+  <!--import-step id="FacultyStaffDirectory-installKupuResources"
                version="20110303-01"
                handler="Products.FacultyStaffDirectory.setuphandlers.installKupuResources"
                title="Add FacultyStaffDirectory types to Kupu's resource libraries">
     <dependency step="typeinfo" />
-  </import-step>
+  </import-step-->
 
   <import-step id="FacultyStaffDirectory-installVersionedTypes"
                version="20110303-01"

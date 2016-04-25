@@ -21,8 +21,8 @@
   <index name="getRawPeople" meta_type="KeywordIndex">
     <indexed_attr value="getRawPeople" />
   </index>
-  <index name="getRawPincipalInvestigators" meta_type="KeywordIndex">
-     <indexed_attr value="getRawPincipalInvestigators" />
+  <index name="getRawPrincipalInvestigators" meta_type="KeywordIndex">
+     <indexed_attr value="getRawPrincipalInvestigators" />
    </index>
   <index name="getLastName" meta_type="KeywordIndex">
     <indexed_attr value="getLastName" />
