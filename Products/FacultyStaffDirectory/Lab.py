@@ -133,8 +133,8 @@ class Lab(PersonGrouping):
         return self.getMembers()
         
 
-    security.declareProtected(View, 'getPrincipalInvestigator')
-    def getPrincipalInvestigator(self):
+    security.declareProtected(View, 'getPrincipalInvestigators')
+    def getPrincipalInvestigators(self):
         """ Return the people in this lab.
             Mainly for context-sensitive classifications
         """
@@ -147,8 +147,8 @@ class Lab(PersonGrouping):
         """
         return self.getRawMembers()
         
-    security.declareProtected(View, 'getRawPi')
-    def getRawPrinipalInvestigator(self):
+    security.declareProtected(View, 'getRawPrinipalInvestigators')
+    def getRawPrinipalInvestigators(self):
        """ Return the people associations associated with this lab
        """
        return self.getRawPi()

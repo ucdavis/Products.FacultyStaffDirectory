@@ -43,6 +43,12 @@
      i18n:attributes="description; friendlyName">
    <criteria>ATListCriterion</criteria>
    </index>
+   <index name="getRawPincipalInvestigators"
+      description="Lab Pis" enabled="True"
+      friendlyName="Principal Investigator"
+      i18n:attributes="description; Principal Investigator">
+    <criteria>ATListCriterion</criteria>
+    </index>
    
  
  </topic_indexes>

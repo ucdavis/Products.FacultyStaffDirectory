@@ -160,7 +160,7 @@ def reindexFSDObjects(context):
 
     INDEX_LIST = ['getSortableName', 'getRawClassifications',
                   'getRawSpecialties', 'getRawCommittees',
-                  'getRawDepartments', 'getRawPeople', 'getRawLabs']
+                  'getRawDepartments', 'getRawPeople', 'getRawLabs', 'getRawPrincipalInvestigators']
     for index in INDEX_LIST:
         catalog.reindexIndex(index, None)
     membrane = getToolByName(portal, MEMBRANE_TOOL)

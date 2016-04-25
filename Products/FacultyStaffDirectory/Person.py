@@ -653,12 +653,12 @@ class Person(OrderedBaseFolder, ATCTContent):
         """
         return (self.lastName.lower(), self.firstName.lower())
         
-    #security.declareProtected(View, 'getLastName')
-    #def getLastName(self):
+    security.declareProtected(View, 'getLastName')
+    def getLastName(self):
         """
         Return the person's last name. for regisration with the eea.facetednavigation alpha widget
         """
-    #    return (self.lastName)
+        return (self.lastName.lower())
     
     
     security.declareProtected(View, 'Title')
