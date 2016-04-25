@@ -147,8 +147,8 @@ class Lab(PersonGrouping):
         """
         return self.getRawMembers()
         
-    security.declareProtected(View, 'getRawPrinipalInvestigators')
-    def getRawPrinipalInvestigators(self):
+    security.declareProtected(View, 'getRawPrincipalInvestigators')
+    def getRawPrincipalInvestigators(self):
        """ Return the people associations associated with this lab
        """
        return self.getRawPi()
