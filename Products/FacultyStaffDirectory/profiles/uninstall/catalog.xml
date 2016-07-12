@@ -12,5 +12,6 @@
   <column value="getSpecialtyNames" remove="True" />
   <column value="getClassificationNames" remove="True" />
   <column value="getResearchTopics" remove="True" />
-  <column value="getLastName" remove="True" />
+  <column value="getLastNameLower" remove="True" />
+
 </object>

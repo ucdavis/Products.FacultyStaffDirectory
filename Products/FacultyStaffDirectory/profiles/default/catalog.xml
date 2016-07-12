@@ -24,8 +24,8 @@
   <index name="getRawPrincipalInvestigators" meta_type="KeywordIndex">
      <indexed_attr value="getRawPrincipalInvestigators" />
    </index>
-  <index name="getLastName" meta_type="KeywordIndex">
-    <indexed_attr value="getLastName" />
+  <index name="getLastNameLower" meta_type="KeywordIndex">
+    <indexed_attr value="getLastNameLower" />
   </index>
   <column value="getCommitteeNames" />
   <column value="getDepartmentNames" />
@@ -33,5 +33,5 @@
   <column value="getSpecialtyNames" />
   <column value="getClassificationNames" />
   <column value="getResearchTopics" />
-  <column value="getLastName" />
+  <column value="getLastNameLower" />
 </object>

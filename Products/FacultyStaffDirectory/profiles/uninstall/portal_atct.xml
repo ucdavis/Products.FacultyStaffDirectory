@@ -7,7 +7,8 @@
   <index name="getRawPeople" remove="True" />
   <index name="getRawSpecialties" remove="True" />
   <index name="getSortableName" remove="True" />
-  <index name="getLastName" remove="True" />
+  <index name="getLastNameLower" remove="True" />
+  
   <index name="getRawPrincipalInvestigators" remove="True" />
  </topic_indexes>
  <topic_metadata>
@@ -16,6 +17,7 @@
   <metadata name="getDepartmentNames" remove="True" />
   <metadata name="getResearchTopics" remove="True" />
   <metadata name="getSpecialtyNames" remove="True" />
-  <metadata name="getLastName" remove="True" />
+  <metadata name="getLastNameLower" remove="True" />
+
  </topic_metadata>
 </atcttool>

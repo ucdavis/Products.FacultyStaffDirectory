@@ -77,10 +77,10 @@
      description="The specialties with which the person is associated"
      enabled="True" friendlyName="Specialties"
      i18n:attributes="description; friendlyName"/>
-  <metadata name="getLastName"
+  <metadata name="getLastNameLower"
      description="LastName for eea alpha widget"
      enabled="True" friendlyName="LastName"
-     i18n:attributes="description; friendlyName"/>
+     i18n:attributes="description; LastnameName"/>
 
 
  </topic_metadata>
