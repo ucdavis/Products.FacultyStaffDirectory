@@ -113,7 +113,7 @@ schema = ATContentTypeSchema.copy() + Schema((
             label=_(u"FacultyStaffDirectory_label_email", default=u"Email"),
             i18n_domain='FacultyStaffDirectory',
         ),
-        schemata="Contact Information",
+        schemata="Basic Information",
         searchable=True,
         validators=('isEmail',)
     ),
