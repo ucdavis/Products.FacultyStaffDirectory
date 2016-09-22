@@ -1,59 +1,58 @@
 <?xml version="1.0"?>
 <registry>
   <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.FSDDepartment">
+           prefix="plone.app.querystring.field.getRawDepartments">
     <value key="title">Department</value>
     <value key="description">A custom department index</value>
     <value key="enabled">True</value>
     <value key="sortable">False</value>
     <value key="operations">
         <element>plone.app.querystring.operation.string.is</element>
-    </value>
+	  </value>
+        <value key="vocabulary">Department Names</value>
+		  
     <value key="group">Metadata</value>
   </records>
+  <records condition="installed plone.app.collection"
+          interface="plone.app.querystring.interfaces.IQueryField"
+          prefix="plone.app.querystring.field.getRawClassifications">
+        <value key="title" >Classification</value>
+        <value key="description" >Classification Index</value>
+        <value key="enabled">True</value>
+        <value key="sortable">True</value>
+        <value key="operations">
+          <element>plone.app.querystring.operation.selection.is</element>
+        </value>
+        <value key="vocabulary">Classification Names</value>
+		  <value key="group">Metadata</value>
+        
+      </records>
   <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.FSDLab">
+           prefix="plone.app.querystring.field.getRawLabs">
     <value key="title">Lab</value>
     <value key="description">A custom lab index</value>
     <value key="enabled">True</value>
     <value key="sortable">False</value>
     <value key="operations">
         <element>plone.app.querystring.operation.string.is</element>
-    </value>
-    <value key="group">Metadata</value>
+  </value>
+        <value key="vocabulary">Lab Names</value>
+		  <value key="group">Metadata</value>
   </records>
-      <records interface="plone.app.querystring.interfaces.IQueryField"
-             prefix="plone.app.querystring.field.getRawClassifications">
-      <value key="title">Classification</value>
-      <value key="description">A custom classification index</value>
-      <value key="enabled">True</value>
-      <value key="sortable">False</value>
-      <value key="operations">
-          <element>plone.app.querystring.operation.string.is</element>
-      </value>
-      <value key="group">Metadata</value>
-    </records>
+      
     <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.getRawSpecialty">
+           prefix="plone.app.querystring.field.getRawSpecialties">
     <value key="title">Specialty</value>
     <value key="description">A custom specialty index</value>
     <value key="enabled">True</value>
     <value key="sortable">False</value>
     <value key="operations">
         <element>plone.app.querystring.operation.string.is</element>
-    </value>
-    <value key="group">Metadata</value>
-    <records interface="plone.app.querystring.interfaces.IQueryField"
-           prefix="plone.app.querystring.field.getRawPeople">
-    <value key="title">Specialty</value>
-    <value key="description">A custom specialty index</value>
-    <value key="enabled">True</value>
-    <value key="sortable">False</value>
-    <value key="operations">
-        <element>plone.app.querystring.operation.string.is</element>
-    </value>
-    <value key="group">Metadata</value>
-  </records>
-  
+	  </value>
+        <value key="vocabulary">Specialty Names</value>
+		  <value key="group">Metadata</value>
+	  </records>
+   
+   
   
 </registry>
