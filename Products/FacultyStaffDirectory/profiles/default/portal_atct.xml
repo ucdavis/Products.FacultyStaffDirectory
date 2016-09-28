@@ -80,7 +80,7 @@
   <metadata name="getLastNameLower"
      description="LastName for eea alpha widget"
      enabled="True" friendlyName="LastName"
-     i18n:attributes="description; LastnameName"/>
+     i18n:attributes="description; friendlyName"/>
 
 
  </topic_metadata>

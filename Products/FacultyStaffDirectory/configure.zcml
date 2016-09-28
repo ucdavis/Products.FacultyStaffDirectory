@@ -44,6 +44,11 @@
        component=".vocab.people_vocab"
        name="People Names"
        />
+    <utility
+        provides="zope.schema.interfaces.IVocabularyFactory"
+        component=".vocab.lab_vocab"
+        name="Lab Names"
+        />
      
 
 </configure>

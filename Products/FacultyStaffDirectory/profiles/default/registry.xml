@@ -9,7 +9,7 @@
     <value key="operations">
         <element>plone.app.querystring.operation.selection.is</element>
 	  </value>
-        <value key="vocabulary">department_vocab</value>
+        <value key="vocabulary">Department Names</value>
 		  
     <value key="group">Metadata</value>
   </records>
@@ -23,7 +23,7 @@
         <value key="operations">
           <element>plone.app.querystring.operation.selection.is</element>
         </value>
-        <value key="vocabulary">getClassificationNames</value>
+        <value key="vocabulary">Classification Names</value>
 		  <value key="group">Metadata</value>
         
       </records>
@@ -36,7 +36,7 @@
     <value key="operations">
         <element>plone.app.querystring.operation.selection.is</element>
   </value>
-        <value key="vocabulary">getLabNames</value>
+        <value key="vocabulary">Lab Names</value>
 		  <value key="group">Metadata</value>
   </records>
       
@@ -49,7 +49,7 @@
     <value key="operations">
         <element>plone.app.querystring.operation.selection.is</element>
 	  </value>
-        <value key="vocabulary">getSpecialtNames</value>
+        <value key="vocabulary">Specialty Names</value>
 		  <value key="group">Metadata</value>
 	  </records>
      <records interface="plone.app.querystring.interfaces.IQueryField"
@@ -61,7 +61,7 @@
      <value key="operations">
          <element>plone.app.querystring.operation.selection.is</element>
  	  </value>
-         <value key="vocabulary">getSortableName</value>
+         <value key="vocabulary">People Names</value>
  		  <value key="group">Metadata</value>
  	  </records>
    
