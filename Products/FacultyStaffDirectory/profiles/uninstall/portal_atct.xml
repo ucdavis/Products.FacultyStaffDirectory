@@ -4,6 +4,7 @@
   <index name="getRawClassifications" remove="True" />
   <index name="getRawCommittees" remove="True" />
   <index name="getRawDepartments" remove="True" />
+  <index name="getRawLabs" remove="True" />
   <index name="getRawPeople" remove="True" />
   <index name="getRawSpecialties" remove="True" />
   <index name="getSortableName" remove="True" />
@@ -15,6 +16,7 @@
   <metadata name="getClassificationNames" remove="True" />
   <metadata name="getCommitteeNames" remove="True" />
   <metadata name="getDepartmentNames" remove="True" />
+  <metadata name="getLabNames" remove="True" />
   <metadata name="getResearchTopics" remove="True" />
   <metadata name="getSpecialtyNames" remove="True" />
   <metadata name="getLastNameLower" remove="True" />

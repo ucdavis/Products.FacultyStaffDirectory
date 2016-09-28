@@ -39,6 +39,11 @@
         component=".vocab.committee_vocab"
         name="Committee Names"
         />
+   <utility
+       provides="zope.schema.interfaces.IVocabularyFactory"
+       component=".vocab.people_vocab"
+       name="People Names"
+       />
      
 
 </configure>

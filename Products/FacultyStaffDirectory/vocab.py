@@ -107,6 +107,26 @@ def committee_vocab(context):
      terms = make_terms(result)
      
      return SimpleVocabulary(terms)
+     
+def people_vocab(context):
+     # Get site root from any content item using portal_url tool thru acquisition
+     root = context.portal_url.getPortalObject()
+
+     # Acquire portal catalog
+     portal_catalog = root.portal_catalog
+
+     #portal catalog query
+     
+     brains = portal_catalog.searchResults({'portal_type':'FSDPerson', 'review_state':'active'})
+
+     # Create a list of tuples (UID, Title) of results
+     result = [ (brain["UID"], brain["Title"]) for brain in brains ]
+
+     # Convert tuples to SimpleTerm objects
+     terms = make_terms(result)
+     
+     return SimpleVocabulary(terms)
+
 
      
      
