@@ -1,11 +1,6 @@
 # External Method for importing FSD People from a CSV file
 #
-# Written by: Paul Rentschler / Eric Steele
-# Creation Date: 13 October 2009
-#
-# Revision 9222 works with Plone 2.5
-# Newer revisions designed for Plone 3.3.1+
-#
+# instructions: CSV expects titles on first line. Use classification short name (typically has dashes)
 
 
 from Products.CMFCore.utils import getToolByName
