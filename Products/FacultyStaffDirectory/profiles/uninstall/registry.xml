@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<registry>
+<records interface="plone.app.querystring.interfaces.IQueryField"
+field="Department"
+remove="True"/>
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+field="Classification"
+remove="True"/>
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+field="Lab"
+remove="True"/>
+
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+field="Specialty"
+remove="True"/>
+
+<records interface="plone.app.querystring.interfaces.IQueryField"
+  field="classification"
+  remove="True"/>
+
+  <records interface="plone.app.querystring.interfaces.IQueryField"
+	  field="People"
+	  remove="True"/>
+	  <records interface="plone.app.querystring.interfaces.IQueryField"
+		  field="FSDDepartment"
+		  remove="True"/>
+		  <records interface="plone.app.querystring.interfaces.IQueryField"
+			  field="FSDLab"
+			  remove="True"/>
+			  <records interface="plone.app.querystring.interfaces.IQueryField"
+				  field="classification"
+				  remove="True"/>
+				  <records interface="plone.app.querystring.interfaces.IQueryField"
+					  field="getRawSpecialties"
+					  remove="True"/>
+					  <records interface="plone.app.querystring.interfaces.IQueryField"
+						  field="getRawSpecialty"
+						  remove="True"/>
+						  <records interface="plone.app.querystring.interfaces.IQueryField"
+							  field="getRawClassifications"
+							  remove="True"/>
+						  <records interface="plone.app.querystring.interfaces.IQueryField"
+							  field="getClassification"
+							  remove="True"/>
+							  <records interface="plone.app.querystring.interfaces.IQueryField"
+								  field="getRawPeople"
+								  remove="True"/>
+					  
+					  <records interface="plone.app.querystring.interfaces.IQueryField"
+						  field="getRawDepartments"
+						  remove="True"/>
+						  <records interface="plone.app.querystring.interfaces.IQueryField"
+							  field="getDepartmentNames"
+							  remove="True"/>
+							  <records interface="plone.app.querystring.interfaces.IQueryField"
+								  field="getDepartments"
+								  remove="True"/>
+												  
+												  
+												 
+										
+								  
+								  
+						
+</registry>
+   

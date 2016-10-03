@@ -17,7 +17,7 @@
           interface="plone.app.querystring.interfaces.IQueryField"
           prefix="plone.app.querystring.field.getRawClassifications">
         <value key="title" >Classifications</value>
-        <value key="description" >Classification Index</value>
+        <value key="description" >custom classification Index</value>
         <value key="enabled">True</value>
         <value key="sortable">True</value>
         <value key="operations">
@@ -55,7 +55,7 @@
      <records interface="plone.app.querystring.interfaces.IQueryField"
             prefix="plone.app.querystring.field.getRawSpecialties">
      <value key="title">People</value>
-     <value key="description">A custom specialty index</value>
+     <value key="description">custom people index</value>
      <value key="enabled">True</value>
      <value key="sortable">False</value>
      <value key="operations">

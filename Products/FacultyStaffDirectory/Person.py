@@ -338,7 +338,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         widget=ReferenceWidget
         (
             label=_(u"FacultyStaffDirectory_label_classifications", default=u"Classifications"),
-            i18n_domain='FacultyStaffDirectory',
+            i18n_domain='FacultyStaffDirectory', checkbox_bound=40,
         ),
         write_permission=ASSIGN_CLASSIFICATIONS_TO_PEOPLE,
         schemata="Basic Information",
