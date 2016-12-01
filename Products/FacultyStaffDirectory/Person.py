@@ -621,14 +621,17 @@ class Person(OrderedBaseFolder, ATCTContent):
         RESPONSE.setHeader('Content-Type', 'text/x-vcard')
         RESPONSE.setHeader('Content-Disposition', 'attachment; filename="%s.vcf"' % self.getId())
         out = StringIO()
+        vdept = self.getDepartments()[0]
+        vmember_details = vdept.getMembershipInformation(self)
         
         # Get the fields using the accessors, so they're properly Unicode encoded.
         out.write("BEGIN:VCARD\nVERSION:3.0\n")
         out.write("FN:%s\n" % self.Title())
         out.write("N:%s;%s\n" % (self.getLastName(), self.getFirstName()))
-        out.write(foldLine("TITLE:%s\n" % '\\n'.join(self.getJobTitles())))
-        out.write(foldLine("ADR;TYPE=dom,postal,parcel,work:;;%s;%s;%s;%s\n" % (self.getOfficeAddress().replace('\r\n','\\n'), self.getOfficeCity(), self.getOfficeState(), self.getOfficePostalCode())))
-        out.write("TEL;WORK:%s\n" % self.getOfficePhone())
+        out.write("ORG:%s, UC Davis\n" % (vdept.title))
+        out.write(foldLine("TITLE:%s\n" % vmember_details.getPosition()))
+        out.write(foldLine("ADR;TYPE=dom,postal,parcel,work:;;%s;%s;%s;%s\n" % (vmember_details.getOfficeAddress().replace('\r\n','\\n'), vmember_details.getOfficeCity(), vmember_details.getOfficeState(), vmember_details.getOfficePostalCode())))
+        out.write("TEL;WORK:%s\n" % vmember_details.getOfficePhone())
         out.write("EMAIL;TYPE=internet:%s\n" % self.getEmail())
         
         #Add the Person page to the list of URLs
