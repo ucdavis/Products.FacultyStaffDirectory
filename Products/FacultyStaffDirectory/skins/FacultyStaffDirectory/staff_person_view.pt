@@ -118,7 +118,7 @@
               </dl>
 			  
             </div>
-          
+          <div id="extra_information" tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
             <div class="departments"
                  tal:define="departmentsList context/getDepartments"
                  tal:condition="python: showExpired and departmentsList">
@@ -220,6 +220,7 @@
               </dl>
 			  </div> <!--end logged in-->
             </div>
+			</div>
 			
 		
 
