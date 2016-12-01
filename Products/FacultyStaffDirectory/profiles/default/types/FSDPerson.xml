@@ -22,6 +22,7 @@
  <property name="default_view">person_view</property>
  <property name="view_methods">
   <element value="person_view"/>
+  <element value="staff_person_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <alias from="(Default)" to="person_view"/>

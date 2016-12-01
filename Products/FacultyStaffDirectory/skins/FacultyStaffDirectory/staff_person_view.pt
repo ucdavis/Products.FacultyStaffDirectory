@@ -1,0 +1,233 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="FacultyStaffDirectory">
+
+  <head></head>
+
+  <body>
+
+  <metal:title fill-slot="content-title">                              
+      <h1 class="content-title">
+        <span class="given-name" tal:content="context/getFirstName"><tal:comment replace="nothing">[First Name]</tal:comment></span>
+        <span class="additional-name" tal:content="context/getMiddleName | nothing"><tal:comment replace="nothing">[Middle Name]</tal:comment></span>
+        <span class="family-name" tal:content="context/getLastName"><tal:comment replace="nothing">[Last Name]</tal:comment></span>
+        <span class="honorific-suffix" tal:content="context/getSuffix"><tal:comment replace="nothing">[ suffix i.e. Dr]</tal:comment></span>
+      </h1>
+  </metal:title>
+
+
+  <metal:content-core fill-slot="content-core">
+      <metal:content-core define-macro="content-core">
+	 
+          <div id="hcard" class="vcard facultyStaffDirectory personView"
+               tal:define="isExpired python:context.contentExpired();
+                           isEditor python:checkPermission('Modify portal content', context);
+                           showExpired python: not isExpired or (isExpired and isEditor)" >
+            
+            
+       <div class="main-edit" tal:condition="python:checkPermission('Modify portal content', context)"
+             >
+         <a class="person-edit" tal:attributes="href python:'base_edit?fieldset=Professional%20Information'">
+           <tal:block 
+                      i18n:translate="FacultyStaffDirectory_editProfessionalInformation">Edit This Page</tal:block>
+           
+         </a>
+       </div>
+		
+            
+	        
+               <div id="education" tal:condition="python: showExpired and context.getEducation()" >
+                 <h4 class="uc" i18n:translate="FacultyStaffDirectory_label_education_heading">Education</h4>
+                 <ul class="content-items education-items">
+                   <li tal:repeat="degree context/getEducation">
+                     <span tal:content="degree" />
+                   </li>
+                 </ul>
+               </div><!--education -->
+		    
+              
+          
+          
+            <div class="visualClear"><!-- --></div>
+
+            <!--div tal:condition="python: showExpired and context.getEducation()" class="education">
+              <h3 i18n:translate="FacultyStaffDirectory_label_education_heading">Education:</h3>
+              <ol>
+                <li tal:repeat="degree context/getEducation">
+                  <span tal:content="degree" />
+                </li>
+              </ol>
+            </div>
+			<div id="cv file" tal:define="cv context/getCv"
+			     tal:condition="python: cv.get_size() > 0"> 
+			    <a class="item-label" tal:attributes="href string:${context/absolute_url}/cv">CV</a>
+			</div-->
+            <div id="cm-section">
+			
+            <section tal:condition="python: showExpired and context.getBiography()">
+			 <a name=about>
+              <h2 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h2> </a>
+              <div id="inline-content" tal:content="structure context/getBiography"> </div>
+			 
+            </section>
+            <section tal:condition="python: showExpired and context.getOptionalImage()" >
+              <div class="picture">
+              	<figure class="picture-processsed"> 
+				<span class="img-responsive" tal:content="structure context/getOptionalImage" />
+				
+			</figure> 
+              </div>
+            </section>
+           
+       
+            <div class="specialties"
+                 tal:define="specialtyTuples context/getSpecialties"
+                 tal:condition="python: showExpired and specialtyTuples">
+              <h3 i18n:translate="FacultyStaffDirectory_label_researchInterests">Specialty Areas:</h3>
+              <dl>
+                <tal:block tal:repeat="eachSpecialtyTuple specialtyTuples">
+                  <tal:block tal:define="specialtyBrain python:eachSpecialtyTuple[0];
+                                         personSpecialtyData python:eachSpecialtyTuple[1].getContentObject();">
+                    <dt>
+                      <a tal:attributes="href specialtyBrain/getURL">
+                        <span tal:content="specialtyBrain/Title" />:
+                      </a>
+                    </dt>
+                    <dd tal:define="researchTopic personSpecialtyData/getResearchTopic">
+                      <tal:block tal:condition="researchTopic"
+                                 tal:replace="structure researchTopic">
+                      </tal:block>
+                      <span tal:condition="python:checkPermission('Modify portal content', context)"
+                            class="discreet">[
+                        <a tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
+                          <tal:block tal:condition="researchTopic"
+                                     i18n:translate="FacultyStaffDirectory_editResearchTopic">Edit specialty</tal:block>
+                          <tal:block tal:condition="not:researchTopic"
+                                     i18n:translate="FacultyStaffDirectory_assignResearchTopic">Assign a specialty</tal:block>
+                        </a>
+                      ]</span>
+                    </dd>
+                  </tal:block>
+                </tal:block>
+				
+              </dl>
+			  
+            </div>
+          
+            <div class="departments"
+                 tal:define="departmentsList context/getDepartments"
+                 tal:condition="python: showExpired and departmentsList">
+              <h3 i18n:translate="FacultyStaffDirectory_label_departments_heading">Departments:</h3>
+              <dl>
+                <tal:block tal:repeat="eachDepartment departmentsList">
+                  <dt>
+                    <a tal:attributes="href python:eachDepartment.absolute_url()">
+                      <span tal:content="eachDepartment/Title" />:
+                    </a>
+                  </dt>
+                  <dd tal:define="personMembershipInformation python:eachDepartment.getMembershipInformation(context);">
+                    <li tal:condition="personMembershipInformation/getPosition"
+                               tal:replace="structure personMembershipInformation/getPosition">
+                    </li>
+				<li tal:condition="personMembershipInformation/getDept_officeAddress"
+                               tal:replace="structure personMembershipInformation/getDept_officeAddress">
+                    </li>
+				
+				<li tal:condition="personMembershipInformation/getDept_officePhone"
+                               tal:replace="structure personMembershipInformation/getDept_officePhone">
+                    </li>
+				<li tal:condition="personMembershipInformation/getSummarybio"
+                               tal:replace="structure personMembershipInformation/getSummarybio">
+                    </li>
+                    <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                      <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+                    
+                       <li  tal:condition="not:personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+         
+                       <li tal:condition="not:personMembershipInformation/getDept_officeAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignDept_officeAddress">Assign an office address</li>
+                     
+					 
+                       
+                       <li tal:condition="not:personMembershipInformation/getDept_officePhone"
+                                  i18n:translate="FacultyStaffDirectory_assignDept_officePhone">Assign a phone number</li>
+                       <li tal:condition="not:personMembershipInformation/getSummarybio"
+                                  i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Department Short Bio</li>
+                       
+				   <li tal:condition="personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+                       
+                      </a>
+                    </span>
+                  </dd>
+                </tal:block>
+              </dl>
+            </div>
+            
+            <div class="labs"
+                 tal:define="labsList context/getLabs"
+                 tal:condition="python: showExpired and labsList">
+              <h3 i18n:translate="FacultyStaffDirectory_label_labs_heading">Labs:</h3>
+              <dl>
+                <tal:block tal:repeat="eachLab labsList">
+                  <dt>
+                    <a tal:attributes="href python:eachLab.absolute_url()">
+                      <span tal:content="eachLab/Title" />:
+                    </a>
+                  </dt>
+                  <dd tal:define="personMembershipInformation python:eachLab.getMembershipInformation(context);">
+                    <li tal:condition="personMembershipInformation/getPosition"
+                               tal:replace="structure personMembershipInformation/getPosition">
+                    </li>
+				<li tal:condition="personMembershipInformation/getLab_officeAddress"
+                               tal:replace="structure personMembershipInformation/getLab_officeAddress">
+                    </li>
+				<li tal:condition="personMembershipInformation/getLab_officePhone"
+                               tal:replace="structure personMembershipInformation/getLab_officePhone">
+                    </li>
+				<li tal:condition="personMembershipInformation/getSummarybio"
+                               tal:replace="structure personMembershipInformation/getSummarybio">
+                    </li>
+                    <span tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
+                      <a tal:attributes="href python:'%s/edit' % personMembershipInformation.absolute_url()">
+            
+                       <li  tal:condition="not:personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_assignPosition">Assign a position</li>
+ 
+                       <li tal:condition="not:personMembershipInformation/getLab_officeAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_officeAddress">Assign an Lab Address</li>
+                       <li tal:condition="not:personMembershipInformation/getLab_streetAddress"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_streetAddress">Assign an street address</li>
+               
+                       <li tal:condition="not:personMembershipInformation/getLab_officePhone"
+                                  i18n:translate="FacultyStaffDirectory_assignLab_officePhone">Assign a phone number</li>
+                       <li tal:condition="not:personMembershipInformation/getSummarybio"
+                                  i18n:translate="FacultyStaffDirectory_assignSummarybio">Add a Lab Short Bio</li>
+               
+				   <li tal:condition="personMembershipInformation/getPosition"
+                                  i18n:translate="FacultyStaffDirectory_editPosition">Edit any of the above information</li>
+               
+                      </a>
+                    </span>
+                  </dd>
+                </tal:block>
+              </dl>
+			  </div> <!--end logged in-->
+            </div>
+			
+		
+
+    </div>
+      
+  
+      </metal:content-core>
+  </metal:content-core>
+
+  </body>
+</html>
