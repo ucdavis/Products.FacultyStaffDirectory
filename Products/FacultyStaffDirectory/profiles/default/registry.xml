@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <registry>
-  <records interface="plone.app.querystring.interfaces.IQueryField"
+  <records condition="installed plone.app.collection"
+	        interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.getRawDepartments">
     <value key="title">Departments</value>
     <value key="description">A custom department index</value>
@@ -27,7 +28,8 @@
 		  <value key="group">Metadata</value>
         
       </records>
-  <records interface="plone.app.querystring.interfaces.IQueryField"
+  <records condition="installed plone.app.collection"
+	        interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.getRawLabs">
     <value key="title">Labs</value>
     <value key="description">A custom lab index</value>
@@ -40,7 +42,8 @@
 		  <value key="group">Metadata</value>
   </records>
       
-    <records interface="plone.app.querystring.interfaces.IQueryField"
+    <records condition="installed plone.app.collection"
+		     interface="plone.app.querystring.interfaces.IQueryField"
            prefix="plone.app.querystring.field.getRawSpecialties">
     <value key="title">Specialties</value>
     <value key="description">A custom specialty index</value>
@@ -52,7 +55,8 @@
         <value key="vocabulary">Specialty Names</value>
 		  <value key="group">Metadata</value>
 	  </records>
-     <records interface="plone.app.querystring.interfaces.IQueryField"
+     <records condition="installed plone.app.collection"
+		      interface="plone.app.querystring.interfaces.IQueryField"
             prefix="plone.app.querystring.field.getRawSpecialties">
      <value key="title">People</value>
      <value key="description">custom people index</value>

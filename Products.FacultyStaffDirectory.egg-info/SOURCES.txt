@@ -40,9 +40,14 @@ Products/FacultyStaffDirectory/vocab.py
 Products/FacultyStaffDirectory/Extensions/Install.py
 Products/FacultyStaffDirectory/Extensions/__init__.py
 Products/FacultyStaffDirectory/Extensions/addReviewerRole.py
+Products/FacultyStaffDirectory/Extensions/adddepttitles.py
 Products/FacultyStaffDirectory/Extensions/clearJobTitles.py
 Products/FacultyStaffDirectory/Extensions/importfromcsv.py
+Products/FacultyStaffDirectory/Extensions/newpic.py
+Products/FacultyStaffDirectory/Extensions/nginx.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py
+Products/FacultyStaffDirectory/Extensions/weehaa.py
+Products/FacultyStaffDirectory/Extensions/weehaa2.py
 Products/FacultyStaffDirectory/events/__init__.py
 Products/FacultyStaffDirectory/events/events.py
 Products/FacultyStaffDirectory/events/facultystaffdirectorytool.py

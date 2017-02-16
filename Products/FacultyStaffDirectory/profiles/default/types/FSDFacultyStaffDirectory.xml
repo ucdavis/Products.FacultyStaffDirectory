@@ -21,6 +21,7 @@
   <element value="FSDLab"/>
   <element value="Document"/>
   <element value="Topic"/>
+  <element value="Collection"/>
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">directory_standard_view</property>
