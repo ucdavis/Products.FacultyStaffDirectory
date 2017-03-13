@@ -630,8 +630,8 @@ class Person(OrderedBaseFolder, ATCTContent):
         out.write("N:%s;%s\n" % (self.getLastName(), self.getFirstName()))
         out.write("ORG:%s, UC Davis\n" % (vdept.title))
         out.write(foldLine("TITLE:%s\n" % vmember_details.getPosition()))
-        out.write(foldLine("ADR;TYPE=dom,postal,parcel,work:;;%s;%s;%s;%s\n" % (vmember_details.getOfficeAddress().replace('\r\n','\\n'), vmember_details.getOfficeCity(), vmember_details.getOfficeState(), vmember_details.getOfficePostalCode())))
-        out.write("TEL;WORK:%s\n" % vmember_details.getOfficePhone())
+        out.write(foldLine("ADR;TYPE=dom,postal,parcel,work:;;%s;%s;%s;%s\n" % (vmember_details.getDept_officeAddress().replace('\r\n','\\n'), vmember_details.getDept_city(), vmember_details.getDept_state(), vmember_details.getDept_zip())))
+        out.write("TEL;WORK:%s\n" % vmember_details.getDept_officePhone())
         out.write("EMAIL;TYPE=internet:%s\n" % self.getEmail())
         
         #Add the Person page to the list of URLs
