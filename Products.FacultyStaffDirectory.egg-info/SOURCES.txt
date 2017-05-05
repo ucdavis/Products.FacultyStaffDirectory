@@ -43,6 +43,7 @@ Products/FacultyStaffDirectory/Extensions/addReviewerRole.py
 Products/FacultyStaffDirectory/Extensions/adddepttitles.py
 Products/FacultyStaffDirectory/Extensions/clearJobTitles.py
 Products/FacultyStaffDirectory/Extensions/importfromcsv.py
+Products/FacultyStaffDirectory/Extensions/importmesafac.py
 Products/FacultyStaffDirectory/Extensions/newpic.py
 Products/FacultyStaffDirectory/Extensions/nginx.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py

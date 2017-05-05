@@ -57,7 +57,7 @@
 	  </records>
      <records condition="installed plone.app.collection"
 		      interface="plone.app.querystring.interfaces.IQueryField"
-            prefix="plone.app.querystring.field.getRawSpecialties">
+            prefix="plone.app.querystring.field.getRawPeople">
      <value key="title">People</value>
      <value key="description">custom people index</value>
      <value key="enabled">True</value>

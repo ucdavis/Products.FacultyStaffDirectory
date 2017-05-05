@@ -661,7 +661,7 @@ class Person(OrderedBaseFolder, ATCTContent):
         """
         Return the person's last name. for regisration with the eea.facetednavigation alpha widget
         """
-        return (self.lastName.lower())
+        return safe_unicode(self.lastName.lower())
     
     
     security.declareProtected(View, 'Title')
@@ -685,8 +685,11 @@ class Person(OrderedBaseFolder, ATCTContent):
         t = fn + mn + ln
         if self.getSuffix():
             t = t + ", " + self.getSuffix()
+            
+            
+        return t.encode('utf-8')
+
         
-        return t
     
     security.declarePrivate('_classificationReferences')
     def _classificationReferences(self):

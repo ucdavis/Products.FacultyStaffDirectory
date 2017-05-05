@@ -58,12 +58,4 @@ remove="True"/>
 							  <records interface="plone.app.querystring.interfaces.IQueryField"
 								  field="getDepartments"
 								  remove="True"/>
-												  
-												  
-												 
-										
-								  
-								  
-						
-</registry>
-   
+							  </registry>
