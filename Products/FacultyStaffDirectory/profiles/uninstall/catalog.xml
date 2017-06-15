@@ -9,12 +9,12 @@
   <index name="getRawLabs" remove="True" />
   <index name="geLastNameLower" remove="True" />
   <index name="getRawPrincipalInvestigators" remove="True" />
-  <column value="getCommitteeNames" />
-  <column value="getDepartmentNames" />
-  <column value="getLabNames" />
-  <column value="getSpecialtyNames" />
-  <column value="getClassificationNames" />
-  <column value="getResearchTopics" />
-  <column value="getLastNameLower" />
+  <column value="getCommitteeNames" remove="True" />
+  <column value="getDepartmentNames" remove="True" />
+  <column value="getLabNames" remove="True" />
+  <column value="getSpecialtyNames" remove="True"  />
+  <column value="getClassificationNames" remove="True"  />
+  <column value="getResearchTopics" remove="True" />
+  <column value="getLastNameLower" remove="True"  />
 
 </object>

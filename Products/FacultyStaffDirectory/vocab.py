@@ -14,6 +14,7 @@ def make_terms(items):
     """ Create zope.schema terms for vocab from tuples """
     terms = [ SimpleTerm(value=pair[0], token=pair[0], title=pair[1]) for pair in items ]
     return terms
+    
 
 @grok.provider(IContextSourceBinder)
 def department_vocab(context):
@@ -107,6 +108,8 @@ def specialty_vocab(context):
      terms = make_terms(result)
      
      return SimpleVocabulary(terms)
+         
+
 
 def committee_vocab(context):
      # Get site root from any content item using portal_url tool thru acquisition
