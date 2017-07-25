@@ -24,8 +24,6 @@
     <value key="operations">
         <element>plone.app.querystring.operation.selection.is</element>
 	  </value>
-        <value key="vocabulary">Sortable Names</value>
-		  
     <value key="group">Metadata</value>
   </records>
   <records condition="installed plone.app.collection"
