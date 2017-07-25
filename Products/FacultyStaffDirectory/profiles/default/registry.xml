@@ -15,6 +15,20 @@
     <value key="group">Metadata</value>
   </records>
   <records condition="installed plone.app.collection"
+	        interface="plone.app.querystring.interfaces.IQueryField"
+           prefix="plone.app.querystring.field.getSortableName">
+    <value key="title">Sortable Name</value>
+    <value key="description">A custom fullname index</value>
+    <value key="enabled">True</value>
+    <value key="sortable">True</value>
+    <value key="operations">
+        <element>plone.app.querystring.operation.selection.is</element>
+	  </value>
+        <value key="vocabulary">Sortable Names</value>
+		  
+    <value key="group">Metadata</value>
+  </records>
+  <records condition="installed plone.app.collection"
           interface="plone.app.querystring.interfaces.IQueryField"
           prefix="plone.app.querystring.field.getRawClassifications">
         <value key="title" >Classifications</value>
