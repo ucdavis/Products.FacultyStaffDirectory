@@ -122,7 +122,7 @@ schema = ATContentTypeSchema.copy() + Schema((
         name='jobTitles',
         widget=LinesField._properties['widget'](
             label=_(u"FacultyStaffDirectory_label_jobTitles", default=u"Job Titles"),
-            description=_(u"FacultyStaffDirectory_description_jobTitles", default=u"Only used for titles or other inforamtion that is NOT tied to a department. Will show on your profile under your department titles"),
+            description=_(u"FacultyStaffDirectory_description_jobTitles", default=u"Only used for titles or other information that is NOT tied to a department. Will show on your profile under your department titles"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
