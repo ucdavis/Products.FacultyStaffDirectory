@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+	  lang="en"
+	  metal:use-macro="here/department_view/macros/master"
+	  i18n:domain="FacultyStaffDirectory">
+	<body>
+		<metal:block fill-slot="listing_section">
+			<div class="tabularView">
+                <table class="fancy-listing">
+                    <tbody>        
+                        <metal:block use-macro="here/department_view/macros/list_classifications">
+                            <metal:block fill-slot="single_classification">
+                                <tal:block metal:use-macro="classification/classification_tabular_view/macros/list_people">
+                                    <tal:block metal:fill-slot="table_headings" >
+                                        <tr>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_name">
+                                                Name
+                                            </th>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_position">
+                                                Position
+                                            </th>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_phone">
+                                                Phone
+                                            </th>
+                                            <th class="column" 18n:translate="FacultyStaffDirectory_office">
+                                                Office
+                                            </th>
+
+                                          <th class="column" 18n:translate="FacultyStaffDirectory_email">
+                                                Email
+                                            </th>
+                                            <th class="column" i18n:translate="FacultyStaffDirectory_officeHours">
+                                                Office Hours 
+                                             </th>
+                                        </tr>
+                                    </tal:block>
+                                    <tal:block metal:fill-slot="table_cells" tal:define="personMembershipInformation python:context.getMembershipInformation(person);">
+                                        <td class="personName">
+                                            <a href="" tal:attributes="href person/absolute_url" tal:content="string:${person/getLastName}, ${person/getFirstName}" />
+                                        </td>
+                                        <td tal:content="personMembershipInformation/getPosition" >          
+                                    </td>
+                                        <td tal:content="personMembershipInformation/getDept_officePhone"> 
+                                            </td> 
+                                        <td tal:content="personMembershipInformation/getDept_officeAddress"></td>
+                                         
+                                               
+                                        <td><span tal:content="structure python:person.spamProtectFSD(person.getEmail())" class="emailAddress" /></td>
+                                         <td>
+                                               <span class="bold">Office Hours for <span tal:replace="personMembershipInformation/getQuarter">Quarter</span>
+		                          <span tal:condition="personMembershipInformation/getOfficeHours">
+            	                             <ul>
+                                                 <li class="day-time-row" tal:repeat="officeHours personMembershipInformation/getOfficeHours"
+                                                         tal:content="officeHours"><tal:comment replace="nothing">[Office Hours]</tal:comment></li>
+                                                   </ul>
+                                              </span>
+                                          
+                                        </td>
+                                       
+
+                                   </tal:block>
+                                </tal:block>
+                            </metal:block>
+                        </metal:block>
+                    </tbody>
+                 </table>
+			</div>
+		</metal:block>
+	</body>
+</html>
