@@ -25,6 +25,7 @@
  <property name="default_view">department_standard_view</property>
  <property name="view_methods">
   <element value="department_standard_view"/>
+  <element value="department_officehours_view"/>
   <element value="department_tabular_view"/>
   <element value="department_textual_view"/>
   <element value="fsd_atoz_view"/>
