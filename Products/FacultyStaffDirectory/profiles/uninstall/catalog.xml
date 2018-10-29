@@ -7,7 +7,7 @@
   <index name="getRawDepartments" remove="True" />
   <index name="getRawPeople" remove="True" />
   <index name="getRawLabs" remove="True" />
-  <index name="geLastNameLower" remove="True" />
+  <index name="getLastNameLower" remove="True" />
   <index name="getRawPrincipalInvestigators" remove="True" />
   <column value="getCommitteeNames" remove="True" />
   <column value="getDepartmentNames" remove="True" />

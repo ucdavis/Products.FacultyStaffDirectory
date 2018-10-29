@@ -85,39 +85,7 @@
             </section>
            
        
-            <div class="specialties"
-                 tal:define="specialtyTuples context/getSpecialties"
-                 tal:condition="python: showExpired and specialtyTuples">
-              <h3 i18n:translate="FacultyStaffDirectory_label_researchInterests">Specialty Areas:</h3>
-              <dl>
-                <tal:block tal:repeat="eachSpecialtyTuple specialtyTuples">
-                  <tal:block tal:define="specialtyBrain python:eachSpecialtyTuple[0];
-                                         personSpecialtyData python:eachSpecialtyTuple[1].getContentObject();">
-                    <dt>
-                      <a tal:attributes="href specialtyBrain/getURL">
-                        <span tal:content="specialtyBrain/Title" />:
-                      </a>
-                    </dt>
-                    <dd tal:define="researchTopic personSpecialtyData/getResearchTopic">
-                      <tal:block tal:condition="researchTopic"
-                                 tal:replace="structure researchTopic">
-                      </tal:block>
-                      <span tal:condition="python:checkPermission('Modify portal content', context)"
-                            class="discreet">[
-                        <a tal:attributes="href python:'%s/edit' % personSpecialtyData.absolute_url()">
-                          <tal:block tal:condition="researchTopic"
-                                     i18n:translate="FacultyStaffDirectory_editResearchTopic">Edit specialty</tal:block>
-                          <tal:block tal:condition="not:researchTopic"
-                                     i18n:translate="FacultyStaffDirectory_assignResearchTopic">Assign a specialty</tal:block>
-                        </a>
-                      ]</span>
-                    </dd>
-                  </tal:block>
-                </tal:block>
-				
-              </dl>
-			  
-            </div>
+            
           <div id="extra_information" tal:condition="python:checkPermission('Modify portal content', context)" class="normal">
             <div class="departments"
                  tal:define="departmentsList context/getDepartments"

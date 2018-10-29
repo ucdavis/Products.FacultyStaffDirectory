@@ -686,8 +686,8 @@ class Person(OrderedBaseFolder, ATCTContent):
         if self.getSuffix():
             t = t + ", " + self.getSuffix()
             
-            
-        return t.encode('utf-8')
+        return t    
+       # return t.encode('utf-8')
 
         
     

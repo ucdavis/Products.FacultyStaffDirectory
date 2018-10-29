@@ -9,6 +9,7 @@
   <index name="getRawSpecialties" meta_type="KeywordIndex">
     <indexed_attr value="getRawSpecialties" />
   </index>
+  
   <index name="getRawCommittees" meta_type="KeywordIndex">
     <indexed_attr value="getRawCommittees" />
   </index>
@@ -31,6 +32,7 @@
   <column value="getDepartmentNames" />
   <column value="getLabNames" />
   <column value="getSpecialtyNames" />
+  
   <column value="getClassificationNames" />
   <column value="getResearchTopics" />
   <!--column value="getLastNameLower" /-->

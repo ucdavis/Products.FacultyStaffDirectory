@@ -79,7 +79,20 @@
  	  </value>
          <value key="vocabulary">People Names</value>
  		  <value key="group">Metadata</value>
- 	  </records>
+	  </records>
+      <records condition="installed plone.app.collection"
+ 		      interface="plone.app.querystring.interfaces.IQueryField"
+             prefix="plone.app.querystring.field.getRawPeople">
+      <value key="title">Specialty folders</value>
+      <value key="description">specialties folder index</value>
+      <value key="enabled">True</value>
+      <value key="sortable">False</value>
+      <value key="operations">
+          <element>plone.app.querystring.operation.selection.is</element>
+  	  </value>
+          <value key="vocabulary">Specialty Folder Names</value>
+  		  <value key="group">Metadata</value>
+  	  </records>
    
    
   

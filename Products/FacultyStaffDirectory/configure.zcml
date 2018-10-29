@@ -50,6 +50,11 @@
         component=".vocab.lab_vocab"
         name="Lab Names"
         />
+   <utility
+       provides="zope.schema.interfaces.IVocabularyFactory"
+       component=".vocab.specialtiesFolder_vocab"
+       name="Specialty Folder Names"
+       />
      
 
 </configure>
