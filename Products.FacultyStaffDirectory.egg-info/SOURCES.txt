@@ -45,6 +45,7 @@ Products/FacultyStaffDirectory/Extensions/clearJobTitles.py
 Products/FacultyStaffDirectory/Extensions/fixdeptperms.py
 Products/FacultyStaffDirectory/Extensions/importfromcsv.py
 Products/FacultyStaffDirectory/Extensions/importmesafac.py
+Products/FacultyStaffDirectory/Extensions/lslinkfixer.py
 Products/FacultyStaffDirectory/Extensions/newpic.py
 Products/FacultyStaffDirectory/Extensions/nginx.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py

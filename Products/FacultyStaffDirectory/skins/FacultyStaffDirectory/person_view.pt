@@ -103,13 +103,13 @@
 			</div-->
             <div id="cm-section">
 			
-            <section tal:condition="python: showExpired and context.getBiography()">
+            <section arial-label="about" tal:condition="python: showExpired and context.getBiography()">
 			 <a name=about>
               <h2 i18n:translate="FacultyStaffDirectory_label_biography_heading">About</h2> </a>
               <div id="inline-content" tal:content="structure context/getBiography"> </div>
 			 
             </section>
-            <section tal:condition="python: showExpired and context.getOptionalImage()" >
+            <section aria-label="headshot" tal:condition="python: showExpired and context.getOptionalImage()" >
               <div class="picture">
               	<figure class="picture-processsed"> 
 				<span class="img-responsive" tal:content="structure context/getOptionalImage" />
@@ -117,24 +117,24 @@
 			</figure> 
               </div>
             </section>
-            <section tal:condition="python: showExpired and context.getResearch()">
+            <section aria-label="research" tal:condition="python: showExpired and context.getResearch()">
 			 <a name=research>
               <h2 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h2></a>
               <div class="inline-content" title="research" tal:content="structure context/getResearch"></div> 
             </section>
-		  <section tal:condition="python: showExpired and context.getPublications()">
+		  <section aria-label="publications" tal:condition="python: showExpired and context.getPublications()">
 			  <a name="pubs">
 		      <h2 i18n:translate="FacultyStaffDirectory_label_publications_heading">Selected Publications</h2></a>
 		       <div class="inline-content" tal:content="structure context/getPublications"></div>
 		   
 		   </section>
-            <section tal:condition="python: showExpired and context.getTeaching()" >
+            <section aria-label="teaching" tal:condition="python: showExpired and context.getTeaching()" >
 				<a name="teaching">
               <h2 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h2></a>
               <div class="inline-content" tal:content="structure context/getTeaching" ></div>
 		 
             </section>
-            <section tal:condition="python: showExpired and context.getAwards()" >
+            <section aria-label="awards" tal:condition="python: showExpired and context.getAwards()" >
 				<a name="awards">
               <h2 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h2> </a>
               <div class="inline-content" tal:content="structure context/getAwards"></div>
