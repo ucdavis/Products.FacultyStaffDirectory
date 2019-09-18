@@ -83,6 +83,29 @@
 			</figure> 
               </div>
             </section>
+              <section aria-label="research" tal:condition="python: showExpired and context.getResearch()">
+  			 <a name=research>
+                <h2 i18n:translate="FacultyStaffDirectory_label_research_heading">Research Focus</h2></a>
+                <div class="inline-content" title="research" tal:content="structure context/getResearch"></div> 
+              </section>
+  		  <section aria-label="publications" tal:condition="python: showExpired and context.getPublications()">
+  			  <a name="pubs">
+  		      <h2 i18n:translate="FacultyStaffDirectory_label_publications_heading">Selected Publications</h2></a>
+  		       <div class="inline-content" tal:content="structure context/getPublications"></div>
+		   
+  		   </section>
+              <section aria-label="teaching" tal:condition="python: showExpired and context.getTeaching()" >
+  				<a name="teaching">
+                <h2 i18n:translate="FacultyStaffDirectory_label_teaching_heading">Teaching</h2></a>
+                <div class="inline-content" tal:content="structure context/getTeaching" ></div>
+		 
+              </section>
+              <section aria-label="awards" tal:condition="python: showExpired and context.getAwards()" >
+  				<a name="awards">
+                <h2 i18n:translate="FacultyStaffDirectory_label_awards_heading">Awards</h2> </a>
+                <div class="inline-content" tal:content="structure context/getAwards"></div>
+		 
+              </section>
            
        
             
