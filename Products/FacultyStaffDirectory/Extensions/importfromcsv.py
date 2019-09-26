@@ -35,8 +35,10 @@ def ImportFSDPeople(self):
   for line in file.data.split("\n")[1:]:
     if line.strip() <> "":
       # define all the values in the line
-      rawId, firstname, middlename, lastname, classification, email = line.split(',')
+      rawId, firstname, middlename, lastname, classification, department, email = line.split(',')
       id = rawId.strip()
+      classification = classification.strip()
+      department = department.strip()
 
       # make sure the ID field is not blank
       if id <> "":
@@ -45,15 +47,29 @@ def ImportFSDPeople(self):
         if not id in directory.objectIds():
           # the user does not exist
       
-          if classification.strip() <> "":
+          if classification<>"" and department<>"":
 	          # get the classification UID for this user's classification
-	          print "Looking up the classification"
-	          classificationUID = self.portal_catalog(Title=classification, portal_type="FSDClassification")[0].UID
-	      
-	          # create the FSD person
-	          print "Creating a FSD person object with a classification"
-	          directory.invokeFactory(type_name='FSDPerson', id=id, firstName=firstname.strip(), middleName=middlename.strip(), lastName=lastname.strip(), classifications=[classificationUID], email=email.strip())
-	          directory[id].at_post_create_script()
+              print "Looking up the classification" 
+              classificationUID = self.portal_catalog(Title=classification, portal_type="FSDClassification")[0].UID
+              print "looking up the department"
+              departmentUID = self.portal_catalog(id=department, portal_type="FSDDepartment")[0].UID
+          
+          # create the FSD person
+              print "Creating a FSD person object with a classification and department"
+              directory.invokeFactory(type_name='FSDPerson', id=id, firstName=firstname.strip(), middleName=middlename.strip(), lastName=lastname.strip(), classifications=[classificationUID], departments=[departmentUID], email=email.strip())
+              directory[id].at_post_create_script()
+
+              
+          elif classification <> "":
+              print "looking up the department"
+              departmentUID = self.portal_catalog(Title=department, portal_type="FSDDepartment")[0].UID
+      
+      
+      
+              # create the FSD person
+              print "Creating a FSD person object with a classification"
+              directory.invokeFactory(type_name='FSDPerson', id=id, firstName=firstname.strip(), middleName=middlename.strip(), lastName=lastname.strip(), classifications=[classificationUID], email=email.strip())
+              directory[id].at_post_create_script()
 	          
 	  else:
 	          # create the FSD person
