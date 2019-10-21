@@ -55,6 +55,18 @@
        component=".vocab.specialtiesFolder_vocab"
        name="Specialty Folder Names"
        />
+	   
+   <utility
+       provides="zope.schema.interfaces.IVocabularyFactory"
+       component=".vocab.historyGeoAreas_vocab"
+       name="History Geography Areas"
+       />
+   <utility
+       provides="zope.schema.interfaces.IVocabularyFactory"
+       component=".vocab.historyTemporal_vocab"
+       name="History Temporal Designations"
+       />
+	 
      
 
 </configure>

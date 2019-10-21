@@ -1,8 +1,9 @@
 from five import grok
 from zope import schema
-
+from zope.component.hooks import getSite
 from Products.CMFCore.interfaces import ISiteRoot, IFolderish
 from Products.statusmessages.interfaces import IStatusMessage
+from plone import api
 
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
@@ -164,6 +165,30 @@ def specialtiesFolder_vocab(context):
     result = [ (brain["UID"], brain["Title"]) for brain in brains ]
 
     # Convert tuples to SimpleTerm objects
+    terms = make_terms(result)
+    
+    return SimpleVocabulary(terms)
+    
+def historyGeoAreas_vocab(context):
+    root = context.portal_url.getPortalObject()
+    portal_catalog = root.portal_catalog
+    site = getSite()
+    histGeo = site.people['history-geographic']
+    brains = api.content.find(context=histGeo, depth=1)
+    
+    result = [ (brain["UID"], brain["Title"]) for brain in brains ]
+    terms = make_terms(result)
+    
+    return SimpleVocabulary(terms)
+
+def historyTemporal_vocab(context):
+    root = context.portal_url.getPortalObject()
+    portal_catalog = root.portal_catalog
+    site = getSite()
+    histTime = site.people['history-temporal']
+    brains = api.content.find(context=histTime, depth=1)
+    
+    result = [ (brain["UID"], brain["Title"]) for brain in brains ]
     terms = make_terms(result)
     
     return SimpleVocabulary(terms)
