@@ -82,7 +82,7 @@
 	  </records>
       <records condition="installed plone.app.collection"
  		      interface="plone.app.querystring.interfaces.IQueryField"
-             prefix="plone.app.querystring.field.getRawPeople">
+             prefix="plone.app.querystring.field.getRawSpecialtyFolders">
       <value key="title">Specialty folders</value>
       <value key="description">specialties folder index</value>
       <value key="enabled">True</value>

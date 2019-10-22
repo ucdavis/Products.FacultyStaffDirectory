@@ -174,25 +174,30 @@ def historyGeoAreas_vocab(context):
     portal_catalog = root.portal_catalog
     site = getSite()
     histGeo = site.people['history-geographic']
-    brains = api.content.find(context=histGeo, depth=1)
+    if histGeo:
+        brains = api.content.find(context=histGeo, depth=1)
     
-    result = [ (brain["UID"], brain["Title"]) for brain in brains ]
-    terms = make_terms(result)
+        result = [ (brain["UID"], brain["Title"]) for brain in brains ]
+        terms = make_terms(result)
     
-    return SimpleVocabulary(terms)
+        return SimpleVocabulary(terms)
+    else:
+        return None
 
 def historyTemporal_vocab(context):
     root = context.portal_url.getPortalObject()
     portal_catalog = root.portal_catalog
     site = getSite()
     histTime = site.people['history-temporal']
-    brains = api.content.find(context=histTime, depth=1)
+    if histTime:
+        brains = api.content.find(context=histTime, depth=1)
     
-    result = [ (brain["UID"], brain["Title"]) for brain in brains ]
-    terms = make_terms(result)
+        result = [ (brain["UID"], brain["Title"]) for brain in brains ]
+        terms = make_terms(result)
     
-    return SimpleVocabulary(terms)
-    
+        return SimpleVocabulary(terms)
+    else:
+        return None
 
 
      
