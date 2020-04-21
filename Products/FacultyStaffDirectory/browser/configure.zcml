@@ -1,0 +1,13 @@
+<configure
+   xmlns="http://namespaces.zope.org/five"
+   xmlns:zope="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser">
+
+<!-- CSV Export -->
+  <browser:page
+     name="fsd-person-export"
+     for="*"
+     permission="zope2.View"
+     class=".exporter.CSVExport"
+     />
+	 

@@ -6,6 +6,8 @@
     i18n_domain="FacultyStaffDirectory">
 
     <cmf:registerDirectory name="FacultyStaffDirectory"/>
+	
+	<include package=".browser" />
 
     <include package="zope.annotation" />
     <include package=".events" />
