@@ -58,4 +58,7 @@ remove="True"/>
 							  <records interface="plone.app.querystring.interfaces.IQueryField"
 								  field="getDepartments"
 								  remove="True"/>
+								  <records interface="plone.app.querystring.interfaces.IQueryField"
+									  field="getSortableName"
+									  remove="True"/>
 							  </registry>
