@@ -325,6 +325,7 @@ class FacultyStaffDirectoryTool(UniqueObject, BaseContent):
                     return True
                 else:
                     return False
+                    
                 
         
 registerType(FacultyStaffDirectoryTool, PROJECTNAME)

@@ -37,6 +37,12 @@
      i18n:attributes="description; friendlyName">
    <criteria>ATReferenceCriterion</criteria>
   </index>
+  <index name="getRawSpecialties2"
+     description="A person's listed specialty areas" enabled="True"
+     friendlyName="Specialty2"
+     i18n:attributes="description; friendlyName">
+   <criteria>ATReferenceCriterion</criteria>
+  </index>
   
   <index name="getSortableName"
      description="The person's name, last name first" enabled="True"
@@ -78,6 +84,10 @@
      description="The specialties with which the person is associated"
      enabled="True" friendlyName="Specialties"
      i18n:attributes="description; friendlyName"/>
+     <metadata name="getSpecialtyNames2"
+        description="The specialties with which the person is associated"
+        enabled="True" friendlyName="Specialties2"
+        i18n:attributes="description; friendlyName"/>
   <!--metadata name="getLastNameLower"
      description="LastName for eea alpha widget"
      enabled="True" friendlyName="LastName"

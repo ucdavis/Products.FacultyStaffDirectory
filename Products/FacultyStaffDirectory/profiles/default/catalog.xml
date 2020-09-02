@@ -9,7 +9,9 @@
   <index name="getRawSpecialties" meta_type="KeywordIndex">
     <indexed_attr value="getRawSpecialties" />
   </index>
-  
+  <index name="getRawSpecialties2" meta_type="KeywordIndex">
+    <indexed_attr value="getRawSpecialties" />
+  </index>
   <index name="getRawCommittees" meta_type="KeywordIndex">
     <indexed_attr value="getRawCommittees" />
   </index>

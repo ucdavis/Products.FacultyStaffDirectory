@@ -51,6 +51,8 @@ Products/FacultyStaffDirectory/Extensions/nginx.py
 Products/FacultyStaffDirectory/Extensions/rmbylogins.py
 Products/FacultyStaffDirectory/Extensions/weehaa.py
 Products/FacultyStaffDirectory/Extensions/weehaa2.py
+Products/FacultyStaffDirectory/browser/__init__.py
+Products/FacultyStaffDirectory/browser/exporter.py
 Products/FacultyStaffDirectory/events/__init__.py
 Products/FacultyStaffDirectory/events/events.py
 Products/FacultyStaffDirectory/events/facultystaffdirectorytool.py
