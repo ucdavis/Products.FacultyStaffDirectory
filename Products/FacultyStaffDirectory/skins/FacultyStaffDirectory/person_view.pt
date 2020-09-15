@@ -305,20 +305,7 @@
               </dl>
             </div>
 
-            <div class="assistants"
-                 tal:define="assistants context/getAssistants;
-                             mtool python:context.portal_membership"
-                 tal:condition="python: showExpired and assistants and mtool.checkPermission('Add portal content', here)">
-              <h3 i18n:translate="FacultyStaffDirectory_label_assistants_heading">Assistants:</h3>
-              <ul tal:repeat="assistant assistants">
-                <li tal:define="url assistant/absolute_url;
-                                name assistant/Title">
-                  <a tal:attributes="href url"
-                     tal:content="name"><tal:comment replace="nothing">Assistant's Full Name</tal:comment></a>
-                </li>
-              </ul>
-            </div>
-
+           
             <div class="bosses"
                  tal:define="bosses python:context.getReferences(relationship='assistants_people');
                              mtool python:context.portal_membership"

@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: Products.FacultyStaffDirectory
-Version: 3.1.3DS
+Version: 3.1.32
 Summary: Provides content types for creating and organizing personnel directories within educational institutions. Integrates with Plone's users and groups infrastructure and supports an extensibility framework for custom requirements.
 Home-page: https://weblion.psu.edu/svn/weblion/weblion/Products.FacultyStaffDirectory
 Author: WebLion Group, The Pennsylvania State University
