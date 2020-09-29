@@ -512,7 +512,26 @@ schema = ATContentTypeSchema.copy() + Schema((
         user_property='invisible_ids',
     ),
     
-   
+     RelationField(
+        name='assistants',
+        widget=ReferenceBrowserWidget
+           (
+               label=_(u"FacultyStaffDirectory_label_assistants", default=u"Personal Assistant(s)"),
+               description=_(u"FacultyStaffDirectory_description_assistants", default=u"Assistants can edit your directory entry."),
+               i18n_domain='FacultyStaffDirectory',
+               allow_browse=0,
+               allow_search=1,
+               show_results_without_query=1,
+               startup_directory_method="_get_parent_fsd_path",
+               base_query="_search_people_in_this_fsd",
+               restrict_browsing_to_startup_directory=True,
+           ),
+        write_permission="Modify portal content",
+        schemata="Basic Information",
+        multiValued=True,
+        relationship='people_assistants',
+        allowed_types=('FSDPerson'),
+     ),
     
     TextField(
         name='terminationDetails',
