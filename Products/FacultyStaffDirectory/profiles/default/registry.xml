@@ -26,6 +26,7 @@
 	  </value>
     <value key="group">Metadata</value>
   </records>
+  
   <records condition="installed plone.app.collection"
           interface="plone.app.querystring.interfaces.IQueryField"
           prefix="plone.app.querystring.field.getRawClassifications">

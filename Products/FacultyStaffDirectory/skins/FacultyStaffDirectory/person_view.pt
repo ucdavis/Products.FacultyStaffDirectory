@@ -207,6 +207,8 @@
 				<li tal:condition="personMembershipInformation/getDept_officePhone"
                                tal:replace="structure personMembershipInformation/getDept_officePhone">
                     </li>
+			   <li tal:condition="personMembershipInformation/getOfficeHours" tal:replace="structure personMembershipInformation/getOfficeHours"></li>
+				   		
 				<li tal:condition="personMembershipInformation/getSummarybio"
                                tal:replace="structure personMembershipInformation/getSummarybio">
                     </li>
@@ -257,6 +259,7 @@
 				<li tal:condition="personMembershipInformation/getLab_officePhone"
                                tal:replace="structure personMembershipInformation/getLab_officePhone">
                     </li>
+					<li tal:condition="personMembershipInformation/getOfficeHours" tal:replace="structure personMembershipInformation/getOfficeHours"></li>
 				<li tal:condition="personMembershipInformation/getSummarybio"
                                tal:replace="structure personMembershipInformation/getSummarybio">
                     </li>
