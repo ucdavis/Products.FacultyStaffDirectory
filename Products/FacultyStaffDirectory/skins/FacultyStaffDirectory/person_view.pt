@@ -207,7 +207,20 @@
 				<li tal:condition="personMembershipInformation/getDept_officePhone"
                                tal:replace="structure personMembershipInformation/getDept_officePhone">
                     </li>
-			   <li tal:condition="personMembershipInformation/getOfficeHours" tal:replace="structure personMembershipInformation/getOfficeHours"></li>
+			   <span tal:condition="personMembershipInformation/getOfficeHours | nothing">
+					    
+			  					   	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+			  					   	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours">
+	  				              	 
+			  					   	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+												  
+			  					   													 Office Hours </span> </p>
+											
+												
+											
+	
+			  					   							 </span>
+			  											 </span>
 				   		
 				<li tal:condition="personMembershipInformation/getSummarybio"
                                tal:replace="structure personMembershipInformation/getSummarybio">
@@ -259,7 +272,20 @@
 				<li tal:condition="personMembershipInformation/getLab_officePhone"
                                tal:replace="structure personMembershipInformation/getLab_officePhone">
                     </li>
-					<li tal:condition="personMembershipInformation/getOfficeHours" tal:replace="structure personMembershipInformation/getOfficeHours"></li>
+				    <span tal:condition="personMembershipInformation/getOfficeHours | nothing">
+					    
+				   					   	  				  		   <p class="phone-wrapper-sm">Office Hours: <span tal:replace="personMembershipInformation/getQuarter">Quarter</span></p>
+				   					   	  				  		<span tal:define="officeHours personMembershipInformation/getOfficeHours">
+	  				              	 
+				   					   	  				                   <p class="phone-wrapper-sm"><span tal:omit-tag="" tal:replace="python:' | '.join(officeHours)">
+												  
+				   					   													 Office Hours </span> </p>
+											
+												
+											
+	
+				   					   							 </span>
+				   											 </span>
 				<li tal:condition="personMembershipInformation/getSummarybio"
                                tal:replace="structure personMembershipInformation/getSummarybio">
                     </li>
