@@ -8,27 +8,28 @@ from Products.CMFCore.utils import getToolByName
 
 
 class CSVExport(BrowserView):
-
+  
     def __call__(self):
         buffer = BytesIO()
         encoding = self.request.get('encoding')
         writer = csv.writer(buffer)
         header = [
             'login',
-            'firstName',
-            'middleName',
-            'lastName',
+            'field_sf_first_name',
+            'field_sf_middle_initial',
+            'field_sf_last_name',
             'suffix',
-            'email',
-            'jobTitles',
-            'officeAddress',
+            'field_sf_emails',
+            'field_sf_position_title',
+            'field_sf_office_location',
             'officeCity',
             'officeState',
             'officePostalCode',
-            'officePhone',
-            'biography',
-            'education',
-            'websites',
+            'field_sf_phone_numbers',
+            'body',
+            'field_sf_education_and_degrees',
+            'field_sf_websites',
+            'field_sf_honors_and_awards',
             'image',
 
         ]
@@ -46,11 +47,14 @@ class CSVExport(BrowserView):
         duid = deptobj.UID()
         people = catalog(getRawDepartments=duid, portal_type="FSDPerson")
         
+        
 
         for person in people:
             
                 pobj = person.getObject()
-                imageurl = "https://it.dss.ucdavis.edu/people/%s/image_normal"%(pobj.id)
+                memberinfo = deptobj.getMembershipInformation(pobj)
+                #this image url won't work for staff - consider running against cortex
+                imageurl = "https://%s.ucdavis.edu/people/%s/image"%(targetDeptID, pobj.id)
                 row = []
                 row.append(pobj.id)
                 row.append(pobj.firstName)
@@ -58,15 +62,16 @@ class CSVExport(BrowserView):
                 row.append(pobj.lastName)
                 row.append(pobj.suffix)
                 row.append(pobj.email)
-                row.append(pobj.jobTitles)
-                row.append(pobj.officeAddress)
+                row.append(memberinfo.getPosition())
+                row.append(memberinfo.getDept_officeAddress())
                 row.append(pobj.officeCity)
                 row.append(pobj.officeState)
                 row.append(pobj.officePostalCode)
-                row.append(pobj.officePhone)
+                row.append(memberinfo.getDept_officePhone())
                 row.append(pobj.biography)
                 row.append(pobj.education)
                 row.append(pobj.websites)
+                row.append(pobj.awards)
                 row.append(imageurl)
 
                 writer.writerow(row)
@@ -77,6 +82,6 @@ class CSVExport(BrowserView):
         self.request.response.setHeader('Content-type',
                         'text/csv;charset='+encoding)
         self.request.response.setHeader('Content-Disposition',
-                        'attachment; ilename=export.csv')
+                        'attachment; filename=export.csv')
 
         return value
