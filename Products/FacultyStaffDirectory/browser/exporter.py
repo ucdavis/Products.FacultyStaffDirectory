@@ -30,6 +30,9 @@ class CSVExport(BrowserView):
             'field_sf_education_and_degrees',
             'field_sf_websites',
             'field_sf_honors_and_awards',
+            'field_sf_publications',
+            'field_sf_research_interests',
+            'field_sf_courses'
             'image',
 
         ]
@@ -55,6 +58,7 @@ class CSVExport(BrowserView):
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 imageurl = "https://%s.ucdavis.edu/people/%s/image"%(targetDeptID, pobj.id)
+                
                 row = []
                 row.append(pobj.id)
                 row.append(pobj.firstName)
@@ -72,8 +76,11 @@ class CSVExport(BrowserView):
                 row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.awards)
+                row.append(pobj.publications)
+                row.append(pobj.research)
+                row.append(pobj.teaching)
                 row.append(imageurl)
-
+                
                 writer.writerow(row)
         value = buffer.getvalue()
 
