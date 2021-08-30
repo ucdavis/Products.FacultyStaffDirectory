@@ -34,6 +34,8 @@ class CSVExport(BrowserView):
             'field_sf_research_interests',
             'field_sf_courses'
             'image',
+            'lab name',
+            'lab url'
 
         ]
 
@@ -80,6 +82,8 @@ class CSVExport(BrowserView):
                 row.append(pobj.research)
                 row.append(pobj.teaching)
                 row.append(imageurl)
+                row.append(pobj.getLabs[0])
+                row.append(pobj.getLabs[0].absolute_url())
                 
                 writer.writerow(row)
         value = buffer.getvalue()
