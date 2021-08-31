@@ -19,7 +19,8 @@ class CSVExport(BrowserView):
             'body',
             'field_sf_education_and_degrees',
             'field_sf_websites',
-            'field_sf_research_interests',
+            'field_sf_research_interests'
+
 
         ]
 
@@ -27,7 +28,6 @@ class CSVExport(BrowserView):
 
         site = getSite()
         catalog = getToolByName(site, 'portal_catalog')
-
 
         targetDeptID = "mindbrain"
         department = catalog(portal_type='FSDDepartment', id=targetDeptID)
@@ -57,6 +57,11 @@ class CSVExport(BrowserView):
                     bio = ("".join(bio,teachHead,pobj.teaching))
                 if pobj.awards:
                     bio = ("".join(bio,awdHead,pobj.awards))
+                if pobj.getLabs():
+                    lab = getLabs()[0]
+                    laburl = lab.dept_url
+
+                
                 row = []
                 row.append(pobj.id)
                 row.append(pobj.firstName)
@@ -73,6 +78,7 @@ class CSVExport(BrowserView):
                 row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.getSpecialtyNames())
+                
                 writer.writerow(row)
         value = buffer.getvalue()
 
@@ -84,4 +90,3 @@ class CSVExport(BrowserView):
                         'attachment; filename=export.csv')
 
         return value
-~                                                                                
