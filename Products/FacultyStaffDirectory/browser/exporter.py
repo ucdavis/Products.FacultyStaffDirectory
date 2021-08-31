@@ -50,13 +50,11 @@ class CSVExport(BrowserView):
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 #create bio
-                try:
-                    pobj.research:
+        
+                if pobj.research:
                     bio = ("".join(bioHead,pobj.biography,resHead,pobj.research))
-                except:
-                    pass
-                try:
-                     pobj.getLabs():
+                
+                if pobj.getLabs():
                     lab = getLabs()[0]
                     labname = getLabsNames()[0]
                     laburl = lab.dept_url
@@ -65,25 +63,15 @@ class CSVExport(BrowserView):
                     s3 = ">%s</>" %(labname)
                     lablink = '"'.join([s1,s2,s3])
                     bio = ("".join(bio,labHead,lablink))
-                except:
-                    pass 
-                try:
-                    pobj.publications:
+               
+                if pobj.publications:
                     bio = ("".join(bio,pubHead,pobj.publications))
-                except:
-                    pass
-                try:
-                    pobj.teaching:
+                
+                if pobj.teaching:
                     bio = ("".join(bio,teachHead,pobj.teaching))
-                except:
-                    pass
-                    
-                try:
-                    pobj.awards:
-                    bio = ("".join(bio,awdHead,pobj.awards))
-                except:
-                    pass
-                          
+                
+                if pobj.awards:
+                    bio = ("".join(bio,awdHead,pobj.awards)) 
 
                 
                 row = []
