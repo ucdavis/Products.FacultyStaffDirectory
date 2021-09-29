@@ -1,3 +1,12 @@
+import csv
+import os
+from io import BytesIO
+from zope.component.hooks import getSite
+from Products.Five.browser import BrowserView
+from Products.CMFPlone.utils import safe_unicode
+
+from Products.CMFCore.utils import getToolByName
+
 class CSVExport(BrowserView):
 
     def __call__(self):
@@ -12,6 +21,7 @@ class CSVExport(BrowserView):
             'field_sf_emails',
             'field_sf_position_title',
             'field_sf_office_location',
+            'field_sf_street_address',
             'field_sf_office_city',
             'field_sf_office_state',
             'field_sf_office_zip',
@@ -35,12 +45,12 @@ class CSVExport(BrowserView):
         deptobj = department[0].getObject()
         duid = deptobj.UID()
         people = catalog(getRawDepartments=duid, portal_type="FSDPerson")
-        bioHead = """<h3 class="heading--auxiliary">Biography</h3>"""
-        resHead = """<h3 class="heading--auxiliary"Research Focus</h3>"""
-        labHead = """<h3 class="heading--auxiliary"Lab</h3>"""
-        pubHead = """<h3 class="heading--auxiliary">Publications</h3>"""
-        teachHead = """<h3 class="heading--auxiliary">Teaching</h3>"""
-        awdHead = """<h3 class="heading--auxiliary">Awards</h3>"""
+        bioHead = """<div class="heading--secondary field__label">About</div>"""
+        resHead = """div class="heading_secondary field__label">Research Focus</h3>"""
+        labHead = """<div class="heading_secondary field__label">Lab</h3>"""
+        pubHead = """<div class="heading_secondary field__label">>Publications</h3>"""
+        teachHead = """<div class="heading_secondary field__label">>Teaching</h3>"""
+        awdHead = """<div class="heading_secondary field__label">>Awards</h3>"""
         
 
 
@@ -50,28 +60,26 @@ class CSVExport(BrowserView):
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 #create bio
-        
+                
                 if pobj.research:
-                    bio = ("".join(bioHead,pobj.biography,resHead,pobj.research))
+                    bio = ("".join([bioHead,pobj.getBiography(),resHead,pobj.getResearch()]))
                 
                 if pobj.getLabs():
-                    lab = getLabs()[0]
-                    labname = getLabsNames()[0]
-                    laburl = lab.dept_url
-                    s1 = "<a ref="
-                    s2 = "%s" %(laburl)
-                    s3 = ">%s</>" %(labname)
-                    lablink = '"'.join([s1,s2,s3])
-                    bio = ("".join(bio,labHead,lablink))
+                    lab = pobj.getLabs()[0]
+                    labname = pobj.getLabNames()[0]
+                    laburl = pobj.getWebsites()[0]
+                    hyperlink_format = '<a href="{link}">{text}</a>'
+                    labLink = hyperlink_format.format(link=laburl, text=labname)
+                    bio = ("".join([bio,labHead,labLink]))
                
-                if pobj.publications:
-                    bio = ("".join(bio,pubHead,pobj.publications))
+                if pobj.getPublications():
+                    bio = ("".join([bio,pubHead,pobj.getPublications()]))
                 
-                if pobj.teaching:
-                    bio = ("".join(bio,teachHead,pobj.teaching))
+                if pobj.getTeaching():
+                    bio = ("".join([bio,teachHead,pobj.getTeaching()]))
                 
-                if pobj.awards:
-                    bio = ("".join(bio,awdHead,pobj.awards)) 
+                if pobj.getAwards():
+                    bio = ("".join([bio,awdHead,pobj.getAwards()])) 
 
                 
                 row = []
@@ -82,9 +90,10 @@ class CSVExport(BrowserView):
                 row.append(pobj.email)
                 row.append(memberinfo.getPosition())
                 row.append(memberinfo.getDept_officeAddress())
-                row.append(pobj.getDept_officeCity())
-                row.append(pobj.getDept_officeState())
-                row.append(pobj.getDept_officePostalCode())
+                row.append(memberinfo.getDept_streetAddress())
+                row.append(memberinfo.getDept_city())
+                row.append(memberinfo.getDept_state())
+                row.append(memberinfo.getDept_zip())
                 row.append(memberinfo.getDept_officePhone())
                 row.append(bio)
                 row.append(pobj.education)
