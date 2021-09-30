@@ -29,7 +29,8 @@ class CSVExport(BrowserView):
             'body',
             'field_sf_education_and_degrees',
             'field_sf_websites',
-            'field_sf_research_interests'
+            'field_sf_research_interests',
+            'person_type'
 
 
         ]
