@@ -100,7 +100,7 @@ class CSVExport(BrowserView):
                 row.append(memberinfo.getDept_state())
                 row.append(memberinfo.getDept_zip())
                 row.append(memberinfo.getDept_officePhone())
-                row.append(unicodedata.normalize("NFKD", bio))
+                row.append(bio)
                 row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.getSpecialtyNames())
