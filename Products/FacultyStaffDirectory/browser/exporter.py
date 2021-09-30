@@ -4,7 +4,7 @@ from io import BytesIO
 from zope.component.hooks import getSite
 from Products.Five.browser import BrowserView
 from Products.CMFPlone.utils import safe_unicode
-
+import unicodedata
 from Products.CMFCore.utils import getToolByName
 
 class CSVExport(BrowserView):
@@ -100,7 +100,7 @@ class CSVExport(BrowserView):
                 row.append(memberinfo.getDept_state())
                 row.append(memberinfo.getDept_zip())
                 row.append(memberinfo.getDept_officePhone())
-                row.append(bio)
+                row.append(unicodedata.normalize("NFKD", bio))
                 row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.getSpecialtyNames())
