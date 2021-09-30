@@ -63,7 +63,7 @@ class CSVExport(BrowserView):
                 bio = ("".join([bioHead,pobj.getBiography()]))
                 
                 if pobj.research:
-                    bio = ("".join(bio,resHead,pobj.getResearch()]))
+                    bio = ("".join([bio,resHead,pobj.getResearch()]))
                 
                 if pobj.getLabs():
                     lab = pobj.getLabs()[0]
