@@ -103,6 +103,7 @@ class CSVExport(BrowserView):
                 row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.getSpecialtyNames())
+                row.append(pobj.getClassificationNames())
                 
                 writer.writerow(row)
         value = buffer.getvalue()
