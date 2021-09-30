@@ -60,9 +60,10 @@ class CSVExport(BrowserView):
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 #create bio
+                bio = (""join.([bioHead,pobj.getBiography()]))
                 
                 if pobj.research:
-                    bio = ("".join([bioHead,pobj.getBiography(),resHead,pobj.getResearch()]))
+                    bio = ("".join(bio,resHead,pobj.getResearch()]))
                 
                 if pobj.getLabs():
                     lab = pobj.getLabs()[0]
