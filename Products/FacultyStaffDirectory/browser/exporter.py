@@ -67,10 +67,13 @@ class CSVExport(BrowserView):
                 if pobj.getLabs():
                     lab = pobj.getLabs()[0]
                     labname = pobj.getLabNames()[0]
-                    laburl = pobj.getWebsites()[0]
-                    hyperlink_format = '<a href="{link}">{text}</a>'
-                    labLink = hyperlink_format.format(link=laburl, text=labname)
-                    bio = ("".join([bio,labHead,labLink]))
+                    if pobj.getWebsites()[0]:
+                        laburl = pobj.getWebsites()[0]
+                        hyperlink_format = '<a href="{link}">{text}</a>'
+                        labLink = hyperlink_format.format(link=laburl, text=labname)
+                        bio = ("".join([bio,labHead,labLink]))
+                    else:
+                        bio = ("".join([bio,labHead]))
                
                 if pobj.getPublications():
                     bio = ("".join([bio,pubHead,pobj.getPublications()]))
