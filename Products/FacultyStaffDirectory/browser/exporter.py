@@ -46,12 +46,12 @@ class CSVExport(BrowserView):
         deptobj = department[0].getObject()
         duid = deptobj.UID()
         people = catalog(getRawDepartments=duid, portal_type="FSDPerson")
-        bioHead = """<div class="heading--secondary field__label">About</div>"""
-        resHead = """div class="heading_secondary field__label">Research Focus</h3>"""
-        labHead = """<div class="heading_secondary field__label">Lab</h3>"""
-        pubHead = """<div class="heading_secondary field__label">>Publications</h3>"""
-        teachHead = """<div class="heading_secondary field__label">>Teaching</h3>"""
-        awdHead = """<div class="heading_secondary field__label">>Awards</h3>"""
+        bioHead = """<h3>About</h3>"""
+        resHead = """<h3>Research Focus</h3>"""
+        labHead = """<h3>Lab</h3>"""
+        pubHead = """<h3>Publications</h3>"""
+        teachHead = """<h3>Teaching</h3>"""
+        awdHead = """<h3>Awards</h3>"""
         
 
 
