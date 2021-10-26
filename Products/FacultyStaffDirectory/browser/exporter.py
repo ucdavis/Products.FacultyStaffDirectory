@@ -27,7 +27,6 @@ class CSVExport(BrowserView):
             'field_sf_office_zip',
             'field_sf_phone_numbers',
             'body',
-            'field_sf_education_and_degrees',
             'field_sf_websites',
             'field_sf_research_interests',
             'person_type'
@@ -46,6 +45,9 @@ class CSVExport(BrowserView):
         deptobj = department[0].getObject()
         duid = deptobj.UID()
         people = catalog(getRawDepartments=duid, portal_type="FSDPerson")
+        edHead = """<h3>Education</h3>"""
+        eduHead = """<ul class="list--arrow">"""
+        eduClose = """"</ul>"""
         bioHead = """<h3>About</h3>"""
         resHead = """<h3>Research Focus</h3>"""
         labHead = """<h3>Lab</h3>"""
@@ -53,18 +55,32 @@ class CSVExport(BrowserView):
         teachHead = """<h3>Teaching</h3>"""
         awdHead = """<h3>Awards</h3>"""
         
+        
 
-
+        def listToString(edList)
+            edString = " "
+            return(edString.join.(edList)
+            
         for person in people:
 
                 pobj = person.getObject()
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 #create bio
-                bio = ("".join([bioHead,pobj.getBiography()]))
+                if pobj.education:
+                    edList = []
+                    for degree in education:
+                        Ed = "<li>" + item + "</li>"
+                        edList.append(Ed)
+                        edString = listToString(edList)
+                        bio = (" ".join([edHead,eduHead,edString,edClose]))
+                        
+                      
+                if bio = (" ".join([bio,bioHead,pobj.getBiography()]))
+                
                 
                 if pobj.research:
-                    bio = ("".join([bio,resHead,pobj.getResearch()]))
+                    bio = (" ".join([bio,resHead,pobj.getResearch()]))
                 
                 if pobj.getLabs():
                     lab = pobj.getLabs()[0]
@@ -101,7 +117,6 @@ class CSVExport(BrowserView):
                 row.append(memberinfo.getDept_zip())
                 row.append(memberinfo.getDept_officePhone())
                 row.append(bio)
-                row.append(pobj.education)
                 row.append(pobj.websites)
                 row.append(pobj.getSpecialtyNames())
                 row.append(pobj.getClassificationNames())
