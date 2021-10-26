@@ -47,7 +47,7 @@ class CSVExport(BrowserView):
         people = catalog(getRawDepartments=duid, portal_type="FSDPerson")
         edHead = """<h3>Education</h3>"""
         eduHead = """<ul class="list--arrow">"""
-        eduClose = """"</ul>"""
+        eduClose = """</ul>"""
         bioHead = """<h3>About</h3>"""
         resHead = """<h3>Research Focus</h3>"""
         labHead = """<h3>Lab</h3>"""
@@ -57,9 +57,9 @@ class CSVExport(BrowserView):
         
         
 
-        def listToString(edList)
+        def listToString(edList):
             edString = " "
-            return(edString.join.(edList)
+            return(edString.join(edList))
             
         for person in people:
 
@@ -67,16 +67,16 @@ class CSVExport(BrowserView):
                 memberinfo = deptobj.getMembershipInformation(pobj)
                 #this image url won't work for staff - consider running against cortex
                 #create bio
-                if pobj.education:
+                if pobj.getEducation():
                     edList = []
-                    for degree in education:
-                        Ed = "<li>" + item + "</li>"
+                    for degree in pobj.getEducation():
+                        Ed = "<li>" + degree + "</li>"
                         edList.append(Ed)
-                        edString = listToString(edList)
-                        bio = (" ".join([edHead,eduHead,edString,edClose]))
-                        
+                    edString = listToString(edList)
+                    bio = (" ".join([edHead,eduHead,edString,eduClose]))                        
                       
-                if bio = (" ".join([bio,bioHead,pobj.getBiography()]))
+                if pobj.getBiography():
+                    bio = ("".join([bio,bioHead,pobj.getBiography()]))
                 
                 
                 if pobj.research:
