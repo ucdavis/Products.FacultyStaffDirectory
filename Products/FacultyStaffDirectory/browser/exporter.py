@@ -65,6 +65,7 @@ class CSVExport(BrowserView):
 
                 pobj = person.getObject()
                 memberinfo = deptobj.getMembershipInformation(pobj)
+                
                 #this image url won't work for staff - consider running against cortex
                 #create bio
                 if pobj.getEducation():
@@ -73,11 +74,12 @@ class CSVExport(BrowserView):
                         Ed = "<li>" + degree + "</li>"
                         edList.append(Ed)
                     edString = listToString(edList)
-                    bio = (" ".join([edHead,eduHead,edString,eduClose]))                        
+                    bio = (" ".join([edHead,eduHead,edString,eduClose]))
+                else:
+                    bio = ""                      
                       
                 if pobj.getBiography():
                     bio = ("".join([bio,bioHead,pobj.getBiography()]))
-                
                 
                 if pobj.research:
                     bio = (" ".join([bio,resHead,pobj.getResearch()]))
