@@ -13,5 +13,11 @@
      class=".exporter.CSVExport"
      />
 	 
-	 
+<!-- Event Export -->
+	<browser:page
+	name = "events-export"
+	for="*"
+    permission="zope2.View"
+    class=".exportevents.CSVEventExport"
+	/>
 </configure>
