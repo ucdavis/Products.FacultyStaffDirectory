@@ -20,4 +20,12 @@
     permission="zope2.View"
     class=".exportevents.CSVEventExport"
 	/>
+	
+<!-- News Export -->
+	<browser:page
+	name = "news-export"
+	for="*"
+    permission="zope2.View"
+    class=".exportnews.CSVNewsExport"
+	/>
 </configure>

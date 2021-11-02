@@ -76,7 +76,7 @@ class CSVExport(BrowserView):
                     edString = listToString(edList)
                     bio = (" ".join([edHead,eduHead,edString,eduClose]))
                 else:
-                    bio = ""                      
+                    bio = ""                
                       
                 if pobj.getBiography():
                     bio = ("".join([bio,bioHead,pobj.getBiography()]))
