@@ -13,67 +13,80 @@ class CSVEventExport(BrowserView):
         buffer = BytesIO()
         encoding = self.request.get('encoding')
         writer = csv.writer(buffer)
-        attendees = """<h3>Who is Invited?</h3>"""
-        contactOpen = """<ul class="list--arrow">"""
-        contactClose = """</ul>"""
+        
         header = [
             'url',
             'field_sf_title',
-            'field_sf_description',
             'field_sf_event_location',
             'start_date',
             'end_date',
             'field sf_body',
             'tags'
-            
-            text, attendees, eventUrl, contactName, contactEmail, contactPhone, subject,
-            
-
 
         ]
 
         writer.writerow(header)
         site = getSite()
         #catalog = getToolByName(site, 'portal_catalog')
+        attendees = """<strong>Who is Invited?</strong>"""
+        contactInfoHead = """<strong>Contact</strong>"""
+        contactOpen = """<ul class="list--arrow">"""
+        contactClose = """</ul>"""
         targetDeptID = "mindbrain"
-        eventsPath = site.targetDeptID.events
-        items = eventsPath.contentItems()
-        for item in items:
-            if "Event" in item.getPortalTypeName():
-                contactInfo = []
-                    try:
-                        contactInfo.append("<li>" + item.contactName + "<li>")
-                    except:
-                        pass
-                    try:
-                         contactInfo.append("<li>" + item.contactEmail + "<li>")
-                    except:
-                        pass
-                    try: 
-                        contactInfo.append("<li>" item.contactPhone + "<li>")
-                        
-                body = ""
-                if item.Description:
-                    body = item.Description
-                if item.getText():
-                    body = (" ".join([body,item.getText()]))
-                if item.getAttendees():
-                    body = (" ".join([body,attendees,item.getAttendees()]))
-                    
-                if contactInfo:
-                    body = (" ".join([body,contactOpen,contactInfo,contactClose]))
-                
-              
-                row = []
-                row.append(item.id)
-                row.append(item.Title())
-                row.append(item.getLocation())
-                row.append(item.startDate.ISO() )
-                row.append(item.endDate.ISO())
-                row.append(body)
-                row.append(item.Subject())
+        eventsPath = site[targetDeptID]['events'] 
+        events = eventsPath.listFolderContents(contentFilter={"portal_type" : "Event"})
         
-                writer.writerow(row)
+        def listToString(somelist):
+            newString = " "
+            return(newString.join(somelist))
+            
+        for event in events:
+            contactInfo = []
+            
+            if event.contactName:
+                contactInfo = ["<li>" + unicodedata.normalize('NFKD', event.contactName).encode('ascii', 'ignore') + "</li>"]
+
+            if event.contactEmail:
+                contactInfo.append("<li>" + unicodedata.normalize('NFKD', event.contactEmail).encode('ascii', 'ignore') + "</li>")
+            
+            if event.contactPhone: 
+                contactInfo.append("<li>" + unicodedata.normalize('NFKD', event.contactPhone).encode('ascii', 'ignore') + "</li>")
+                
+            try:
+                contactStr = listToString(contactInfo)
+                #newContact = unicodedata.normalize('NFKD', contactStr).encode('ascii', 'ignore').decode('ascii')
+                #print newContact
+            except:
+                pass
+                    
+            if event.Description():
+                body = event.Description()
+            else:
+                body = ""
+            if event.getText():
+                body = (" ".join([body,event.getText()]))
+                
+            if event.getAttendees():
+                attendeesStr = listToString(event.getAttendees())
+                body = (" ".join([body,attendees,attendeesStr]))
+                
+            if contactStr:
+                contactinfo = ""
+                contactinfo = (" ".join([contactInfoHead,contactOpen,contactStr,contactClose]))
+                
+                body = (" ".join([body,contactinfo]))
+            
+          
+            row = []
+            row.append(event.id)
+            row.append(event.Title())
+            row.append(event.getLocation())
+            row.append(event.startDate.ISO())
+            row.append(event.endDate.ISO())
+            row.append(body)
+            row.append(event.Subject())
+    
+            writer.writerow(row)
         value = buffer.getvalue()
 
         if not encoding:
